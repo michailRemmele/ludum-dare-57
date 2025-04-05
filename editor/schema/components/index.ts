@@ -9,6 +9,7 @@ import {
   Team,
   ShoalUnit,
   Shoal,
+  EnemyDetector,
 } from '../../../src/game/components';
 
 import { health } from './health';
@@ -19,6 +20,7 @@ import { viewDirection } from './view-direction';
 import { team } from './team';
 import { shoalUnit } from './shoal-unit';
 import { shoal } from './shoal';
+import { enemyDetector } from './enemy-detector';
 
 export const componentsSchema: Record<string, WidgetSchema> = {
   [Health.componentName]: health,
@@ -29,4 +31,5 @@ export const componentsSchema: Record<string, WidgetSchema> = {
   [Team.componentName]: team,
   [ShoalUnit.componentName]: shoalUnit,
   [Shoal.componentName]: shoal,
+  [EnemyDetector.componentName]: enemyDetector,
 };

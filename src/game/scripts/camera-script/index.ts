@@ -23,7 +23,7 @@ import { Health, Team } from '../../components';
 const VIEWPORT_SIZE = 160;
 
 const BORDER_DAMAGE = 1;
-const BORDER_DAMAGE_COOLDOWN = 750;
+const BORDER_DAMAGE_COOLDOWN = 500;
 
 const LEFT_BORDER_NAME = 'LeftBorder';
 const RIGHT_BORDER_NAME = 'RightBorder';

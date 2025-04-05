@@ -355,222 +355,6 @@
           ]
         },
         {
-          "id": "e926e66a-c76c-4cb1-b825-9e8195792288",
-          "name": "Enemy",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 392,
-                "offsetY": 40,
-                "offsetZ": 0,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            },
-            {
-              "name": "ColliderContainer",
-              "config": {
-                "type": "boxCollider",
-                "collider": {
-                  "sizeX": 16,
-                  "sizeY": 16,
-                  "centerX": 0,
-                  "centerY": 0
-                }
-              }
-            },
-            {
-              "name": "Health",
-              "config": {
-                "points": 1
-              }
-            },
-            {
-              "name": "RigidBody",
-              "config": {
-                "type": "dynamic",
-                "mass": 1,
-                "useGravity": false,
-                "isPermeable": false,
-                "ghost": false,
-                "drag": 0
-              }
-            },
-            {
-              "name": "Sprite",
-              "config": {
-                "src": "",
-                "width": 16,
-                "height": 16,
-                "slice": 1,
-                "rotation": 0,
-                "sortCenter": [
-                  0,
-                  0
-                ],
-                "flipX": false,
-                "flipY": false,
-                "sortingLayer": "default",
-                "fit": "stretch",
-                "material": {
-                  "type": "basic",
-                  "options": {
-                    "blending": "normal",
-                    "color": "#d30404",
-                    "opacity": 1
-                  }
-                }
-              }
-            }
-          ],
-          "children": [
-            {
-              "id": "0583d816-4ce7-45da-915b-fae29f14d224",
-              "name": "Hit Box",
-              "components": [
-                {
-                  "name": "Transform",
-                  "config": {
-                    "offsetX": 0,
-                    "offsetY": 0,
-                    "offsetZ": 0,
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                  }
-                },
-                {
-                  "name": "ColliderContainer",
-                  "config": {
-                    "type": "boxCollider",
-                    "collider": {
-                      "sizeX": 16,
-                      "sizeY": 16,
-                      "centerX": 0,
-                      "centerY": 0
-                    }
-                  }
-                },
-                {
-                  "name": "HitBox",
-                  "config": {}
-                }
-              ],
-              "children": []
-            }
-          ]
-        },
-        {
-          "id": "99bcc8bb-340a-4e2c-af30-cf993e8aa614",
-          "name": "Enemy 2",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 232,
-                "offsetY": -40,
-                "offsetZ": 0,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            },
-            {
-              "name": "ColliderContainer",
-              "config": {
-                "type": "boxCollider",
-                "collider": {
-                  "sizeX": 16,
-                  "sizeY": 16,
-                  "centerX": 0,
-                  "centerY": 0
-                }
-              }
-            },
-            {
-              "name": "Health",
-              "config": {
-                "points": 1
-              }
-            },
-            {
-              "name": "RigidBody",
-              "config": {
-                "type": "dynamic",
-                "mass": 1,
-                "useGravity": false,
-                "isPermeable": false,
-                "ghost": false,
-                "drag": 0
-              }
-            },
-            {
-              "name": "Sprite",
-              "config": {
-                "src": "",
-                "width": 16,
-                "height": 16,
-                "slice": 1,
-                "rotation": 0,
-                "sortCenter": [
-                  0,
-                  0
-                ],
-                "flipX": false,
-                "flipY": false,
-                "sortingLayer": "default",
-                "fit": "stretch",
-                "material": {
-                  "type": "basic",
-                  "options": {
-                    "blending": "normal",
-                    "color": "#d30404",
-                    "opacity": 1
-                  }
-                }
-              }
-            }
-          ],
-          "children": [
-            {
-              "id": "c0e6da56-daa6-4569-8e66-5f6d2a3bb6c4",
-              "name": "Hit Box",
-              "components": [
-                {
-                  "name": "Transform",
-                  "config": {
-                    "offsetX": 0,
-                    "offsetY": 0,
-                    "offsetZ": 0,
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                  }
-                },
-                {
-                  "name": "ColliderContainer",
-                  "config": {
-                    "type": "boxCollider",
-                    "collider": {
-                      "sizeX": 16,
-                      "sizeY": 16,
-                      "centerX": 0,
-                      "centerY": 0
-                    }
-                  }
-                },
-                {
-                  "name": "HitBox",
-                  "config": {}
-                }
-              ],
-              "children": []
-            }
-          ]
-        },
-        {
           "id": "0a15abde-fc15-4c57-9b1c-9507a474f5cf",
           "name": "Decoration",
           "components": [
@@ -1584,6 +1368,13 @@
               "name": "HitBox",
               "components": [],
               "children": []
+            },
+            {
+              "id": "458680d5-b68b-4dd3-b549-eb359b7f0f76",
+              "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
+              "name": "Template",
+              "components": [],
+              "children": []
             }
           ]
         },
@@ -1595,7 +1386,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 408,
+                "offsetX": 456,
                 "offsetY": -56,
                 "offsetZ": 0,
                 "rotation": 0,
@@ -1611,6 +1402,13 @@
               "name": "HitBox",
               "components": [],
               "children": []
+            },
+            {
+              "id": "10f582b5-6565-4816-8240-cb3abfac80a5",
+              "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
+              "name": "Template",
+              "components": [],
+              "children": []
             }
           ]
         },
@@ -1622,7 +1420,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 536,
+                "offsetX": 616,
                 "offsetY": 40,
                 "offsetZ": 0,
                 "rotation": 0,
@@ -1636,6 +1434,13 @@
               "id": "df1ce839-f062-4eca-a649-cc997a523ede",
               "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
               "name": "HitBox",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "5372ed9d-4c66-4558-b2fd-e87151be4edb",
+              "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
+              "name": "Template",
               "components": [],
               "children": []
             }
@@ -1665,6 +1470,13 @@
               "name": "HitBox",
               "components": [],
               "children": []
+            },
+            {
+              "id": "6d0162ea-c472-4081-8583-64e013e636e8",
+              "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
+              "name": "Template",
+              "components": [],
+              "children": []
             }
           ]
         },
@@ -1690,6 +1502,13 @@
               "id": "1da2c9c1-106a-440c-b1b1-bf58a654764e",
               "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
               "name": "HitBox",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "64c11184-9db7-480d-826a-b999caa3e00d",
+              "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
+              "name": "Template",
               "components": [],
               "children": []
             }
@@ -1725,6 +1544,13 @@
               "name": "HitBox",
               "components": [],
               "children": []
+            },
+            {
+              "id": "ad63e543-d338-47ef-9273-23869734fbfe",
+              "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
+              "name": "Template",
+              "components": [],
+              "children": []
             }
           ]
         },
@@ -1752,6 +1578,13 @@
               "name": "HitBox",
               "components": [],
               "children": []
+            },
+            {
+              "id": "bac2040c-000c-4cbd-9e91-c8c5bcbf7078",
+              "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
+              "name": "Template",
+              "components": [],
+              "children": []
             }
           ]
         },
@@ -1776,6 +1609,715 @@
             {
               "id": "4dc6866d-6b64-44bc-a1d5-143a03701b03",
               "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "71937e11-e00b-4ec9-aca4-55584364628b",
+              "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "1dcf6383-9308-443b-a9a7-c78a81d64a10",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 264,
+                "offsetY": -40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "117417cc-5a31-459d-a982-437815cf46c7",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "2a39ff92-01ec-43c6-a2d1-971d09dc1014",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 408,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "6ef554c6-e197-4e0d-b523-d4ab176d3e37",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "f8bc76c0-89e3-4111-897a-d3ef4a57ff43",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 536,
+                "offsetY": -24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "607b02fb-0387-40c1-a4e4-d4c9d8eedc6a",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "8a6baaae-547d-4d51-82e0-fdb60614d326",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 760,
+                "offsetY": -24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "8f877362-926b-41f8-85c9-9b63994d4b0c",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "d9829378-c59a-4740-9a0c-9a520ad03b39",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 760,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "37bd3e9b-bd00-4e55-bf90-0261c650e12e",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7a4d6aa2-60b0-40a7-a0ae-2a84ba7d89ab",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 760,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "f3c99bb8-b119-4bdb-b9ff-6bd8f97e3efd",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "a49922ba-a356-4167-a4fe-47c0e8834e1a",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 952,
+                "offsetY": -40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "0433494f-13dd-437c-b535-0c4f34caf34a",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "b6667097-f92d-4a2c-b500-6853f1d5061a",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 968,
+                "offsetY": -40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "80c9bdd8-bc01-4a93-8eaf-efed91ac2a6b",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "46e38809-747f-4f38-a932-bde24dc705de",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 9",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 984,
+                "offsetY": -40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "90c9c74a-9735-468f-b36c-a1441ffce219",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "c0af396c-4025-43cc-94aa-5cf7adb1e820",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 10",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 968,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "7a33a10f-c179-4110-b9ed-73625e21da33",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "8da309ca-cf72-49a5-af79-4e23880fb47e",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 11",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1240,
+                "offsetY": 24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "893b775f-c620-40b8-bd04-0ceedbf2cc05",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "4679da2f-b2f7-4764-b5a0-eb343d2a9f84",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 12",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1288,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "71cb3bb9-ff4c-4ae9-8820-92c92b0b16f7",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "c055d6ce-7b9e-4df9-bd1f-6a5ad341017c",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 13",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1288,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "7521cbfd-e297-4cf0-a765-a10fd5edb812",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "87ec0f00-bb52-4f41-90ea-e9ffacc90bc2",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 14",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1240,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "7276b767-743a-461b-ab96-4d0a50cb0da1",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bb6355ad-d722-4957-9b6e-18d6cc7b589b",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 15",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1608,
+                "offsetY": -24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "8c997d7f-ceb1-4065-80f7-061dca8af17a",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7a553874-fd1f-46a9-95ed-a2aa9d92079b",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 16",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1608,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "5ca70396-3135-4cdc-bee0-47e086d44d4d",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "e43af9cb-0286-44c8-b2e3-558630b4f189",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 17",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1608,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "f23f21f7-2bb3-4d70-9cd3-9df73fc6c3ab",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5188d1d2-3152-41aa-8513-23535fd1e75a",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 18",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1608,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "9727accc-b134-4b95-9a50-f19b94244557",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "905c426c-d5a2-41d4-8878-246bd8a5ad3d",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 19",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1608,
+                "offsetY": 24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "1773d095-5134-44c6-a280-259e4b3161ea",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "e6130573-eb7b-46ef-84db-e6d6fb93249c",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 20",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1624,
+                "offsetY": -24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "9da98d5e-26bf-44e0-9018-14762a19f311",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "63183bcc-90c2-4d7d-9a9a-629359fb16b0",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 21",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1624,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "e9235768-5e95-4c04-9c83-9daade864458",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "820ff765-7376-40f2-b938-e8818225abbc",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 22",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1624,
+                "offsetY": 24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "f63fdba5-20c8-47cf-9205-6a360fbc6170",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0fb62254-2d84-4ba5-817c-66fd49d4aafe",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 23",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1624,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "ebd3f28f-47a5-4e4d-ba72-d59984d37c25",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5789db7a-d2f5-468e-884f-b768dce2e6a6",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 24",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1624,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "c4f2fa59-59a9-49f2-8aa2-503df977a100",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "08e0e766-e566-4136-910f-eb519135022b",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 25",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1608,
+                "offsetY": -40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "8818005c-5d52-4af5-b43b-1782555a83ee",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7eea8c51-557c-428c-bba3-be2ac2a93bbc",
+          "templateId": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+          "name": "Enemy 26",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1624,
+                "offsetY": -40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "b8838a1c-db59-45c9-a6ea-d57ca0b56a88",
+              "templateId": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
               "name": "HitBox",
               "components": [],
               "children": []
@@ -2021,7 +2563,7 @@
           "name": "Weapon",
           "config": {
             "type": "melee",
-            "cooldown": 1000,
+            "cooldown": 500,
             "properties": {
               "damage": 1,
               "range": 10
@@ -2057,6 +2599,20 @@
                 "transitions": [
                   {
                     "id": "2bb1d8cd-0418-4636-a717-b4c589c35925",
+                    "state": "4ea9b92f-430f-4519-8287-2b92ff692c37",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "233c131c-25ad-468b-bbb0-20412953181d",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "fd01ae18-1c1b-4550-b072-ed46dd6e2af2",
                     "state": "fd30159e-a6b9-4bee-a5f0-b612e3bbaf56",
                     "time": 0,
                     "conditions": [
@@ -2095,11 +2651,48 @@
                 "transitions": [
                   {
                     "id": "1f97d112-9ecb-40cc-a601-10565fa45679",
+                    "state": "4ea9b92f-430f-4519-8287-2b92ff692c37",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "3f4e0bdc-8b02-480e-85c9-d5c29f6d0c59",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "6209e22a-8507-4325-9e22-9a2958321abd",
                     "state": "6de1130a-1f89-4c15-aa77-c4b8e296bafd",
                     "time": 1,
                     "conditions": []
                   }
                 ]
+              },
+              {
+                "id": "4ea9b92f-430f-4519-8287-2b92ff692c37",
+                "name": "Kill",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "e4a43bff-f63e-4fc7-a515-2b486a760c6e",
+                      "fields": [
+                        {
+                          "id": "e0fe0c73-8ef8-4cfc-b094-e7c4a1aa318d",
+                          "name": "components.Sprite.material.options.color",
+                          "type": "string",
+                          "value": "#000000"
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
               }
             ]
           }
@@ -2153,6 +2746,39 @@
             },
             {
               "name": "HitBox",
+              "config": {}
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
+          "name": "EnemyDetector",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ColliderContainer",
+              "config": {
+                "type": "circleCollider",
+                "collider": {
+                  "centerX": 0,
+                  "centerY": 0,
+                  "radius": 8
+                }
+              }
+            },
+            {
+              "name": "EnemyDetector",
               "config": {}
             }
           ],
@@ -4406,6 +5032,245 @@
                   }
                 }
               }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+      "name": "Enemy",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "ColliderContainer",
+          "config": {
+            "type": "circleCollider",
+            "collider": {
+              "centerX": 0,
+              "centerY": 0,
+              "radius": 4
+            }
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#dc0505",
+                "opacity": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+            "states": [
+              {
+                "id": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+                "name": "State",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.material.options.color",
+                          "type": "string",
+                          "value": "#DC0505"
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "7e61ce55-12e8-482f-b30c-713acd1958e6",
+                    "state": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "38e9ef6d-2acd-4227-849d-769bd1798130",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "8ac1f94a-9c20-4ae5-9a64-83422b3ab6a0",
+                    "state": "296d9ecc-ee64-4e46-bc17-eb4c08ff90ad",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "38e9ef6d-2acd-4227-849d-769bd1798130",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Damage"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "296d9ecc-ee64-4e46-bc17-eb4c08ff90ad",
+                "name": "Damage",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.material.options.color",
+                          "type": "string",
+                          "value": "#FFFFFF"
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": [
+                  {
+                    "id": "f7bfe0c4-327b-44ce-9104-0079c43b9faf",
+                    "state": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "ca7e783a-5dff-47b8-95b7-3561fd803b4e",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "1c656a66-bd06-458f-a385-b362e8c2ec5c",
+                    "state": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+                    "time": 1,
+                    "conditions": []
+                  }
+                ]
+              },
+              {
+                "id": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                "name": "Kill",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.material.options.color",
+                          "type": "string",
+                          "value": "#000000"
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Team",
+          "config": {
+            "index": 2
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "dynamic",
+            "mass": 1,
+            "useGravity": false,
+            "isPermeable": false,
+            "ghost": false,
+            "drag": 0
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 1
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "e08b1119-eafb-4006-baaa-994ee80e8b9f",
+          "name": "HitBox",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ColliderContainer",
+              "config": {
+                "type": "circleCollider",
+                "collider": {
+                  "centerX": 0,
+                  "centerY": 0,
+                  "radius": 8
+                }
+              }
+            },
+            {
+              "name": "HitBox",
+              "config": {}
             }
           ],
           "children": []
