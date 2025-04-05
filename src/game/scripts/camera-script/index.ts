@@ -11,23 +11,25 @@ import {
   Sprite,
   ColliderContainer,
 } from 'dacha';
-import { CollisionStay } from 'dacha/events';
-import type { CollisionStayEvent } from 'dacha/events';
+import { CollisionStay, CollisionEnter } from 'dacha/events';
+import type { CollisionStayEvent, CollisionEnterEvent } from 'dacha/events';
 
 import * as EventType from '../../events';
 import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
+import { CAMERA_SPEED } from '../../../consts/game';
 import type { BoxCollider } from '../../../types/collider';
+import { Health, Team } from '../../components';
 
 const VIEWPORT_SIZE = 160;
-const CAMERA_SPEED = 75;
 
 const BORDER_DAMAGE = 1;
-const BORDER_DAMAGE_COOLDOWN = 1000;
+const BORDER_DAMAGE_COOLDOWN = 750;
 
 const LEFT_BORDER_NAME = 'LeftBorder';
 const RIGHT_BORDER_NAME = 'RightBorder';
 const TOP_BORDER_NAME = 'TopBorder';
 const BOTTOM_BORDER_NAME = 'BottomBorder';
+const DEAD_ZONE = 'DeadZone';
 
 export class CameraScript extends Script {
   private actor: Actor;
@@ -64,6 +66,11 @@ export class CameraScript extends Script {
     this.topBorder.addEventListener(CollisionStay, this.handleCollisionStay);
     this.bottomBorder.addEventListener(CollisionStay, this.handleCollisionStay);
 
+    [this.leftBorder, this.rightBorder, this.topBorder, this.bottomBorder].forEach((actor) => {
+      const deadZone = actor.getEntityByName(DEAD_ZONE);
+      deadZone?.addEventListener(CollisionEnter, this.handleCollisionEnterDeadZone);
+    });
+
     this.scene.addEventListener(EventType.GameOver, this.handleGameOver);
   }
 
@@ -73,6 +80,11 @@ export class CameraScript extends Script {
     this.topBorder.removeEventListener(CollisionStay, this.handleCollisionStay);
     this.bottomBorder.removeEventListener(CollisionStay, this.handleCollisionStay);
 
+    [this.leftBorder, this.rightBorder, this.topBorder, this.bottomBorder].forEach((actor) => {
+      const deadZone = actor.getEntityByName(DEAD_ZONE);
+      deadZone?.removeEventListener(CollisionEnter, this.handleCollisionEnterDeadZone);
+    });
+
     this.scene.removeEventListener(EventType.GameOver, this.handleGameOver);
   }
 
@@ -81,19 +93,28 @@ export class CameraScript extends Script {
   };
 
   private handleCollisionStay = (event: CollisionStayEvent): void => {
-    const { actor } = event;
-
     if (this.damageCooldown > 0) {
       return;
     }
 
-    if (actor.name !== PLAYER_ACTOR_NAME) {
-      return;
+    const { actor } = event;
+    const health = actor.getComponent(Health);
+    const team = actor.getComponent(Team);
+
+    if (health && team?.index === 1) {
+      actor.dispatchEvent(EventType.Damage, { value: BORDER_DAMAGE });
+      this.damageCooldown = BORDER_DAMAGE_COOLDOWN;
     }
+  };
 
-    actor.dispatchEvent(EventType.Damage, { value: BORDER_DAMAGE });
+  private handleCollisionEnterDeadZone = (event: CollisionEnterEvent): void => {
+    const { actor } = event;
+    const health = actor.getComponent(Health);
+    const team = actor.getComponent(Team);
 
-    this.damageCooldown = BORDER_DAMAGE_COOLDOWN;
+    if (health && team?.index === 1) {
+      actor.dispatchEvent(EventType.Damage, { value: Infinity });
+    }
   };
 
   private updateZoom(): void {
@@ -157,7 +178,7 @@ export class CameraScript extends Script {
   }
 
   update(options: UpdateOptions): void {
-    // this.updateZoom();
+    this.updateZoom();
 
     if (this.isGameOver) {
       return;

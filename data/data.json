@@ -152,7 +152,7 @@
                   "type": "basic",
                   "options": {
                     "blending": "normal",
-                    "color": "#004e14",
+                    "color": "#0b194b",
                     "opacity": 1
                   }
                 }
@@ -201,27 +201,16 @@
                 ],
                 "flipX": false,
                 "flipY": false,
-                "sortingLayer": "units",
+                "sortingLayer": "decorations-3",
                 "fit": "stretch",
                 "material": {
                   "type": "basic",
                   "options": {
                     "blending": "normal",
                     "color": "#212bff",
-                    "opacity": 1
+                    "opacity": 0
                   }
                 }
-              }
-            },
-            {
-              "name": "RigidBody",
-              "config": {
-                "type": "dynamic",
-                "mass": 1,
-                "useGravity": false,
-                "isPermeable": false,
-                "ghost": false,
-                "drag": 0
               }
             },
             {
@@ -317,102 +306,9 @@
               }
             },
             {
-              "name": "Weapon",
-              "config": {
-                "type": "melee",
-                "cooldown": 1000,
-                "properties": {
-                  "damage": 1,
-                  "range": 16
-                }
-              }
-            },
-            {
               "name": "Team",
               "config": {
                 "index": 0
-              }
-            },
-            {
-              "name": "Health",
-              "config": {
-                "points": 3
-              }
-            },
-            {
-              "name": "Animatable",
-              "config": {
-                "initialState": "cde9de68-efd0-4855-b06d-3a0d9d073fff",
-                "states": [
-                  {
-                    "id": "cde9de68-efd0-4855-b06d-3a0d9d073fff",
-                    "name": "Idle",
-                    "type": "individual",
-                    "speed": 1,
-                    "timeline": {
-                      "frames": [
-                        {
-                          "id": "43fad05f-1a70-428e-be66-675197810c9e",
-                          "fields": [
-                            {
-                              "id": "af4d2bd3-8c79-4629-ab23-90f0ce52a3a4",
-                              "name": "components.Sprite.material.options.color",
-                              "type": "string",
-                              "value": "#212BFF"
-                            }
-                          ]
-                        }
-                      ],
-                      "looped": true
-                    },
-                    "transitions": [
-                      {
-                        "id": "635af14f-a548-4c4a-b573-2571cead2ff9",
-                        "state": "b638ebf0-a04c-4e4f-8a5a-580e5eab1cd7",
-                        "time": 0,
-                        "conditions": [
-                          {
-                            "id": "e2cb4141-ed57-429e-8d35-8eb041115292",
-                            "type": "event",
-                            "props": {
-                              "eventType": "Damage"
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "id": "b638ebf0-a04c-4e4f-8a5a-580e5eab1cd7",
-                    "name": "Damage",
-                    "type": "individual",
-                    "speed": 1,
-                    "timeline": {
-                      "frames": [
-                        {
-                          "id": "43fad05f-1a70-428e-be66-675197810c9e",
-                          "fields": [
-                            {
-                              "id": "af4d2bd3-8c79-4629-ab23-90f0ce52a3a4",
-                              "name": "components.Sprite.material.options.color",
-                              "type": "string",
-                              "value": "#FFFFFF"
-                            }
-                          ]
-                        }
-                      ],
-                      "looped": false
-                    },
-                    "transitions": [
-                      {
-                        "id": "fab96714-c257-41a7-9289-3b49c46271b5",
-                        "state": "cde9de68-efd0-4855-b06d-3a0d9d073fff",
-                        "time": 1,
-                        "conditions": []
-                      }
-                    ]
-                  }
-                ]
               }
             },
             {
@@ -428,7 +324,35 @@
               }
             }
           ],
-          "children": []
+          "children": [
+            {
+              "id": "75f49e40-6aff-44c9-91a9-24396ec195c8",
+              "templateId": "e0825b41-44d8-4df9-bae2-b1ab5b0c2e05",
+              "name": "Shoal 1",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "id": "fee1c271-a580-4775-8c72-b051b4c1f7ba",
+                  "templateId": "0e4783bb-f971-462b-bbc5-f7aac384f3af",
+                  "name": "ShoalUnit",
+                  "components": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "e926e66a-c76c-4cb1-b825-9e8195792288",
@@ -936,7 +860,64 @@
                   }
                 }
               ],
-              "children": []
+              "children": [
+                {
+                  "id": "dd7b078f-3463-48e3-9f63-449164129f61",
+                  "name": "DeadZone",
+                  "components": [
+                    {
+                      "name": "Transform",
+                      "config": {
+                        "offsetX": -8,
+                        "offsetY": 0,
+                        "offsetZ": 0,
+                        "rotation": 0,
+                        "scaleX": 1,
+                        "scaleY": 1
+                      }
+                    },
+                    {
+                      "name": "ColliderContainer",
+                      "config": {
+                        "type": "boxCollider",
+                        "collider": {
+                          "sizeX": 16,
+                          "sizeY": 240,
+                          "centerX": 0,
+                          "centerY": 0
+                        }
+                      }
+                    },
+                    {
+                      "name": "Sprite",
+                      "config": {
+                        "src": "",
+                        "width": 16,
+                        "height": 240,
+                        "slice": 1,
+                        "rotation": 0,
+                        "sortCenter": [
+                          0,
+                          0
+                        ],
+                        "flipX": false,
+                        "flipY": false,
+                        "sortingLayer": "default",
+                        "fit": "stretch",
+                        "material": {
+                          "type": "basic",
+                          "options": {
+                            "blending": "normal",
+                            "color": "#470000",
+                            "opacity": 1
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "children": []
+                }
+              ]
             },
             {
               "id": "c6f5d23f-9fa2-4d21-a56d-9b78b73e64ff",
@@ -992,7 +973,64 @@
                   }
                 }
               ],
-              "children": []
+              "children": [
+                {
+                  "id": "cce5b4a3-fccd-4b6b-a679-a38a13e7a42a",
+                  "name": "DeadZone",
+                  "components": [
+                    {
+                      "name": "Transform",
+                      "config": {
+                        "offsetX": 8,
+                        "offsetY": 0,
+                        "offsetZ": 0,
+                        "rotation": 0,
+                        "scaleX": 1,
+                        "scaleY": 1
+                      }
+                    },
+                    {
+                      "name": "ColliderContainer",
+                      "config": {
+                        "type": "boxCollider",
+                        "collider": {
+                          "sizeX": 16,
+                          "sizeY": 240,
+                          "centerX": 0,
+                          "centerY": 0
+                        }
+                      }
+                    },
+                    {
+                      "name": "Sprite",
+                      "config": {
+                        "src": "",
+                        "width": 16,
+                        "height": 240,
+                        "slice": 1,
+                        "rotation": 0,
+                        "sortCenter": [
+                          0,
+                          0
+                        ],
+                        "flipX": false,
+                        "flipY": false,
+                        "sortingLayer": "default",
+                        "fit": "stretch",
+                        "material": {
+                          "type": "basic",
+                          "options": {
+                            "blending": "normal",
+                            "color": "#470000",
+                            "opacity": 1
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "children": []
+                }
+              ]
             },
             {
               "id": "37972df0-a6b8-42fc-85b7-ae36ef908f83",
@@ -1048,7 +1086,64 @@
                   }
                 }
               ],
-              "children": []
+              "children": [
+                {
+                  "id": "7efcca57-d4a2-42c0-965a-a59bf0e8a697",
+                  "name": "DeadZone",
+                  "components": [
+                    {
+                      "name": "Transform",
+                      "config": {
+                        "offsetX": 0,
+                        "offsetY": -8,
+                        "offsetZ": 0,
+                        "rotation": 0,
+                        "scaleX": 1,
+                        "scaleY": 1
+                      }
+                    },
+                    {
+                      "name": "ColliderContainer",
+                      "config": {
+                        "type": "boxCollider",
+                        "collider": {
+                          "sizeX": 240,
+                          "sizeY": 16,
+                          "centerX": 0,
+                          "centerY": 0
+                        }
+                      }
+                    },
+                    {
+                      "name": "Sprite",
+                      "config": {
+                        "src": "",
+                        "width": 240,
+                        "height": 16,
+                        "slice": 1,
+                        "rotation": 0,
+                        "sortCenter": [
+                          0,
+                          0
+                        ],
+                        "flipX": false,
+                        "flipY": false,
+                        "sortingLayer": "default",
+                        "fit": "stretch",
+                        "material": {
+                          "type": "basic",
+                          "options": {
+                            "blending": "normal",
+                            "color": "#470000",
+                            "opacity": 1
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "children": []
+                }
+              ]
             },
             {
               "id": "51653ac5-3bae-4cce-8391-8eeeec91fe77",
@@ -1104,7 +1199,64 @@
                   }
                 }
               ],
-              "children": []
+              "children": [
+                {
+                  "id": "dec945c4-3f8c-4780-b1e5-d56e753bfd9e",
+                  "name": "DeadZone",
+                  "components": [
+                    {
+                      "name": "Transform",
+                      "config": {
+                        "offsetX": 0,
+                        "offsetY": 8,
+                        "offsetZ": 0,
+                        "rotation": 0,
+                        "scaleX": 1,
+                        "scaleY": 1
+                      }
+                    },
+                    {
+                      "name": "ColliderContainer",
+                      "config": {
+                        "type": "boxCollider",
+                        "collider": {
+                          "sizeX": 240,
+                          "sizeY": 16,
+                          "centerX": 0,
+                          "centerY": 0
+                        }
+                      }
+                    },
+                    {
+                      "name": "Sprite",
+                      "config": {
+                        "src": "",
+                        "width": 240,
+                        "height": 16,
+                        "slice": 1,
+                        "rotation": 0,
+                        "sortCenter": [
+                          0,
+                          0
+                        ],
+                        "flipX": false,
+                        "flipY": false,
+                        "sortingLayer": "default",
+                        "fit": "stretch",
+                        "material": {
+                          "type": "basic",
+                          "options": {
+                            "blending": "normal",
+                            "color": "#470000",
+                            "opacity": 1
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "children": []
+                }
+              ]
             }
           ]
         },
@@ -1407,6 +1559,228 @@
             }
           ],
           "children": []
+        },
+        {
+          "id": "25f54876-dfe6-4e3f-b5ef-90d2caa6af37",
+          "templateId": "ac95931c-57d4-49fc-9498-700ec0fe0638",
+          "name": "Piranha",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 216,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "ebf3cea8-348f-4e01-a925-333c267c37ce",
+              "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "22c1399e-3eb2-4bb1-8ea4-7afdef2c66ba",
+          "templateId": "ac95931c-57d4-49fc-9498-700ec0fe0638",
+          "name": "Piranha 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 408,
+                "offsetY": -56,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "b949af81-3e0d-4999-b538-b1c4f19fec9f",
+              "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "4c0f142c-652e-4d46-81ec-13cfafa34f14",
+          "templateId": "ac95931c-57d4-49fc-9498-700ec0fe0638",
+          "name": "Piranha 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 536,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "df1ce839-f062-4eca-a649-cc997a523ede",
+              "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "80940d83-c453-4204-ae49-2ec5d4e7e6e3",
+          "templateId": "ac95931c-57d4-49fc-9498-700ec0fe0638",
+          "name": "Piranha 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 696,
+                "offsetY": -40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "fca3fd43-2628-4c36-8379-3dcf6c345b35",
+              "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "e268ee61-b57c-467a-a39c-67f1c99d785d",
+          "templateId": "ac95931c-57d4-49fc-9498-700ec0fe0638",
+          "name": "Piranha 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1016,
+                "offsetY": 24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "1da2c9c1-106a-440c-b1b1-bf58a654764e",
+              "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "b4a61bf5-a64b-4d2d-9b9a-9a794dfc40fd",
+          "templateId": "ac95931c-57d4-49fc-9498-700ec0fe0638",
+          "name": "Initial Fish",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -8,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Team",
+              "config": {
+                "index": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "0cddc490-3c82-460a-82bf-7e268226164e",
+              "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ddc2457c-a08d-4932-99cc-b8ff918bf857",
+          "templateId": "ac95931c-57d4-49fc-9498-700ec0fe0638",
+          "name": "Piranha 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1224,
+                "offsetY": -40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "75182875-7580-4d19-bbaf-d36d78d56e4c",
+              "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "54350ef2-9c89-4dc4-9a07-8656919ec41c",
+          "templateId": "ac95931c-57d4-49fc-9498-700ec0fe0638",
+          "name": "Piranha 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1560,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "4dc6866d-6b64-44bc-a1d5-143a03701b03",
+              "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
+              "name": "HitBox",
+              "components": [],
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -1561,6 +1935,2482 @@
         }
       ],
       "children": []
+    },
+    {
+      "id": "ac95931c-57d4-49fc-9498-700ec0fe0638",
+      "name": "Piranha",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#00e735",
+                "opacity": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "dynamic",
+            "mass": 1,
+            "useGravity": false,
+            "isPermeable": false,
+            "ghost": false,
+            "drag": 0
+          }
+        },
+        {
+          "name": "ColliderContainer",
+          "config": {
+            "type": "circleCollider",
+            "collider": {
+              "centerX": 0,
+              "centerY": 0,
+              "radius": 4
+            }
+          }
+        },
+        {
+          "name": "Team",
+          "config": {
+            "index": 3
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 3
+          }
+        },
+        {
+          "name": "Movement",
+          "config": {
+            "speed": 100
+          }
+        },
+        {
+          "name": "Weapon",
+          "config": {
+            "type": "melee",
+            "cooldown": 1000,
+            "properties": {
+              "damage": 1,
+              "range": 10
+            }
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "6de1130a-1f89-4c15-aa77-c4b8e296bafd",
+            "states": [
+              {
+                "id": "6de1130a-1f89-4c15-aa77-c4b8e296bafd",
+                "name": "Idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "e4a43bff-f63e-4fc7-a515-2b486a760c6e",
+                      "fields": [
+                        {
+                          "id": "e0fe0c73-8ef8-4cfc-b094-e7c4a1aa318d",
+                          "name": "components.Sprite.material.options.color",
+                          "type": "string",
+                          "value": "#00E735"
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "2bb1d8cd-0418-4636-a717-b4c589c35925",
+                    "state": "fd30159e-a6b9-4bee-a5f0-b612e3bbaf56",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "233c131c-25ad-468b-bbb0-20412953181d",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Damage"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "fd30159e-a6b9-4bee-a5f0-b612e3bbaf56",
+                "name": "Damage",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "e4a43bff-f63e-4fc7-a515-2b486a760c6e",
+                      "fields": [
+                        {
+                          "id": "e0fe0c73-8ef8-4cfc-b094-e7c4a1aa318d",
+                          "name": "components.Sprite.material.options.color",
+                          "type": "string",
+                          "value": "#FFFFFF"
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "1f97d112-9ecb-40cc-a601-10565fa45679",
+                    "state": "6de1130a-1f89-4c15-aa77-c4b8e296bafd",
+                    "time": 1,
+                    "conditions": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "ScriptBundle",
+          "config": {
+            "scripts": [
+              {
+                "id": "c1b59fbb-0eab-452f-8f1c-700b6ab5972c",
+                "name": "FishScript",
+                "options": {}
+              }
+            ]
+          }
+        },
+        {
+          "name": "ViewDirection",
+          "config": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
+          "name": "HitBox",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ColliderContainer",
+              "config": {
+                "type": "circleCollider",
+                "collider": {
+                  "centerX": 0,
+                  "centerY": 0,
+                  "radius": 8
+                }
+              }
+            },
+            {
+              "name": "HitBox",
+              "config": {}
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e0825b41-44d8-4df9-bae2-b1ab5b0c2e05",
+      "name": "Shoal 1",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shoal",
+          "config": {}
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0
+              }
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "0e4783bb-f971-462b-bbc5-f7aac384f3af",
+          "name": "ShoalUnit",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "97c8382e-ddff-4a67-8c44-c5eb1d88d151",
+      "name": "Shoal 2",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shoal",
+          "config": {}
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0
+              }
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "0e876c5a-17fe-4139-a469-03338d0a5047",
+          "name": "ShoalUnit",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "5443a13d-a0f9-41cd-a2a1-cb480c79496a",
+          "name": "ShoalUnit 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e0fbfce2-9040-4e78-8144-b2b45e91ac67",
+      "name": "Shoal 3",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shoal",
+          "config": {}
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0
+              }
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "41d094c3-db05-4b9d-939d-8d49ff687bd2",
+          "name": "ShoalUnit",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 8,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "d4e41f4d-db71-4151-8242-779c5fea6201",
+          "name": "ShoalUnit 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -8,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "b0594bcf-ab15-4f7d-b16e-0196f1bff940",
+          "name": "ShoalUnit 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -8,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 2
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "2818b0bd-1ffe-466f-b9d0-c660f905526f",
+      "name": "Shoal 4",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shoal",
+          "config": {}
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "ColliderContainer",
+          "config": {
+            "type": "boxCollider",
+            "collider": {
+              "sizeX": 32,
+              "sizeY": 32,
+              "centerX": 0,
+              "centerY": 0
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "8936a49c-47b9-4717-94c9-30bcb1689240",
+          "name": "ShoalUnit",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 8,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "104f3f33-7b4a-4229-9081-4124f7d4e55f",
+          "name": "ShoalUnit 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 8,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "b3fa0b51-1e60-498a-a86e-67e6ca7291d6",
+          "name": "ShoalUnit 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -8,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 2
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c8352391-2748-4537-8bcd-decae989c170",
+          "name": "ShoalUnit 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -8,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 3
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "d0ed6e83-9cfd-46f8-9fb1-0ba0c8b72bd8",
+      "name": "Shoal 5",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shoal",
+          "config": {}
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "ColliderContainer",
+          "config": {
+            "type": "boxCollider",
+            "collider": {
+              "sizeX": 32,
+              "sizeY": 32,
+              "centerX": 0,
+              "centerY": 0
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "20fb94f6-b21d-4803-b8e7-5056c20d4391",
+          "name": "ShoalUnit",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "65b510b1-f75a-402c-905c-09e63612f9f8",
+          "name": "ShoalUnit 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 16,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "fef3817c-b360-4309-a7a5-36d84c00fba1",
+          "name": "ShoalUnit 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 16,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 2
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "09b6f764-b036-4fe0-b5bc-50142f06e637",
+          "name": "ShoalUnit 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -16,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 3
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "1bd9588c-c64c-4f19-8286-b9ff31885af9",
+          "name": "ShoalUnit 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -16,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 4
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "758d3234-f11a-4876-92d2-dac6261ece31",
+      "name": "Shoal 6",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shoal",
+          "config": {}
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "ColliderContainer",
+          "config": {
+            "type": "boxCollider",
+            "collider": {
+              "sizeX": 48,
+              "sizeY": 32,
+              "centerX": 0,
+              "centerY": 0
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "9accf98c-6a12-4b6d-bbdf-0b5a014acb6f",
+          "name": "ShoalUnit",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 16,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "1a89e422-2e2a-49cd-833a-eb3000dbbc6e",
+          "name": "ShoalUnit 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 16,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "60c3833e-79a2-42b0-ba1a-0d7ad1cd0440",
+          "name": "ShoalUnit 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 2
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "731b84e7-06e9-42f1-bf5f-0907061260da",
+          "name": "ShoalUnit 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 3
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "624143ec-7813-464d-9061-ed2d3c8dbe64",
+          "name": "ShoalUnit 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -16,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 4
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "7f05ca0f-8640-4e41-a1cd-35e19f561e75",
+          "name": "ShoalUnit 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -16,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 5
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "3b756aaa-4d8f-4792-be9d-894a1b4319ce",
+      "name": "Shoal 7",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shoal",
+          "config": {}
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "ColliderContainer",
+          "config": {
+            "type": "boxCollider",
+            "collider": {
+              "sizeX": 48,
+              "sizeY": 32,
+              "centerX": 0,
+              "centerY": 0
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "d373c077-91f4-40d3-a862-e0c374c75dba",
+          "name": "ShoalUnit",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 16,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "e751e67c-3750-41d7-8ffe-a422960dd4f9",
+          "name": "ShoalUnit 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 16,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 2
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "4685224d-de06-40e1-917a-9dbe79ec89c6",
+          "name": "ShoalUnit 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 3
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "fbad2ade-1f96-4f0a-82f4-845a48d9ce83",
+          "name": "ShoalUnit 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 4
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c9fa55ab-6470-4997-b7a4-e5b1d0339e1b",
+          "name": "ShoalUnit 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -16,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 5
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "a31631f7-f766-4674-a2d6-79d22c6969b1",
+          "name": "ShoalUnit 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -16,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 6
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "09be62f0-aa19-4b56-b809-f8b66b5ae67b",
+          "name": "ShoalUnit 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 32,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "48a24254-2f1b-48c8-a29f-a1d7ce26bb77",
+      "name": "Shoal 8",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shoal",
+          "config": {}
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0
+              }
+            }
+          }
+        },
+        {
+          "name": "ColliderContainer",
+          "config": {
+            "type": "boxCollider",
+            "collider": {
+              "sizeX": 32,
+              "sizeY": 32,
+              "centerX": 0,
+              "centerY": 0
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "5ae376b3-2594-47de-974b-b2b8a05fe70d",
+          "name": "ShoalUnit",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 8,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "0dc18cd0-f6e1-455f-85b9-7b220365b41d",
+          "name": "ShoalUnit 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 8,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "9ce09d02-0666-4932-b4a5-46fc8df27c8f",
+          "name": "ShoalUnit 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -8,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 2
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "30856f2e-94c8-407d-a0c4-ff71679c13db",
+          "name": "ShoalUnit 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -8,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 3
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "ab1ed3f4-e165-4e86-85ae-8a78484efaee",
+          "name": "ShoalUnit 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": -24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 4
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3df3da73-b0fb-429c-9940-7b5a6439fa25",
+          "name": "ShoalUnit 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 24,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 5
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "ebd694e6-54c8-41ce-8476-af9d79f88074",
+          "name": "ShoalUnit 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 6
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "74fefe2c-12c2-4631-a122-4c1ad461f150",
+          "name": "ShoalUnit 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -24,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ShoalUnit",
+              "config": {
+                "index": 7
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#4d8936",
+                    "opacity": 0
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
     }
   ],
   "loaders": [],

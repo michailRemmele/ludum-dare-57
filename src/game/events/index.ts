@@ -14,6 +14,9 @@ export const SendAnalytics = 'SendAnalytics';
 
 export const GameOver = 'GameOver';
 
+export const UpdateShoalIndex = 'UpdateShoalIndex';
+export const FishDied = 'FishDied';
+
 export type MovementEvent = ActorEvent<{
   angle?: number
   x?: number
@@ -23,6 +26,10 @@ export type MovementEvent = ActorEvent<{
 export type AttackInputEvent = ActorEvent<{ x: number, y: number }>;
 export type AttackEvent = ActorEvent<{ x: number, y: number }>;
 export type DamageEvent = ActorEvent<{ value: number, actor?: Actor }>;
+
+export type UpdateShoalIndexEvent = ActorEvent<{
+  index: number
+}>;
 
 export type SendAnalyticsEvent = SceneEvent<{
   name: string
@@ -42,6 +49,9 @@ declare module 'dacha' {
     [Attack]: ActorEvent
     [Damage]: DamageEvent
     [Kill]: ActorEvent
+
+    [UpdateShoalIndex]: UpdateShoalIndexEvent
+    [FishDied]: ActorEvent
   }
 
   export interface SceneEventMap {
