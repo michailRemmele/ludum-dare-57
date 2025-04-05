@@ -25,7 +25,12 @@ import {
   HitBox,
 } from '../../components';
 import * as EventType from '../../events';
-import type { UpdateShoalIndexEvent, MovementEvent } from '../../events';
+import type {
+  UpdateShoalIndexEvent,
+  MovementEvent,
+} from '../../events';
+
+const IMMORTAL_DURATION = 500;
 
 export class FishScript extends Script {
   private actor: Actor;
@@ -36,6 +41,8 @@ export class FishScript extends Script {
 
   private shoalIndex: number;
   private shouldCatchUp: boolean;
+
+  private immortalDuration: number;
 
   constructor(options: ScriptOptions) {
     super();
@@ -49,8 +56,11 @@ export class FishScript extends Script {
     this.shoalIndex = 0;
     this.shouldCatchUp = false;
 
+    this.immortalDuration = 0;
+
     this.actor.addEventListener(EventType.UpdateShoalIndex, this.handleUpdateShoalIndex);
     this.actor.addEventListener(EventType.Kill, this.handleKill);
+    this.actor.addEventListener(EventType.Damage, this.handleDamage);
 
     this.player.addEventListener(EventType.Movement, this.handlePlayerMovement);
 
@@ -60,11 +70,21 @@ export class FishScript extends Script {
   destroy(): void {
     this.actor.removeEventListener(EventType.UpdateShoalIndex, this.handleUpdateShoalIndex);
     this.actor.removeEventListener(EventType.Kill, this.handleKill);
+    this.actor.removeEventListener(EventType.Damage, this.handleDamage);
 
     this.player.removeEventListener(EventType.Movement, this.handlePlayerMovement);
 
     this.enemyDetector.removeEventListener(CollisionStay, this.handleCollisionEnemyDetector);
   }
+
+  private handleDamage = (): void => {
+    const health = this.actor.getComponent(Health);
+    if (health.immortal) {
+      return;
+    }
+
+    this.immortalDuration = IMMORTAL_DURATION;
+  };
 
   private handleCollisionEnemyDetector = (event: CollisionStayEvent): void => {
     const { actor } = event;
@@ -115,6 +135,16 @@ export class FishScript extends Script {
       angle: event.angle,
     });
   };
+
+  private updateShield(deltaTime: number): void {
+    const health = this.actor.getComponent(Health);
+    if (this.immortalDuration > 0) {
+      health.immortal = true;
+      this.immortalDuration -= deltaTime;
+    } else {
+      health.immortal = false;
+    }
+  }
 
   private updateMovement(deltaTime: number): void {
     const deltaTimeInSeconds = deltaTime / 1000;
@@ -169,6 +199,7 @@ export class FishScript extends Script {
     }
 
     this.updateMovement(options.deltaTime);
+    this.updateShield(options.deltaTime);
   }
 }
 

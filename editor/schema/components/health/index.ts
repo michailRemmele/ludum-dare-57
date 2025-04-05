@@ -8,8 +8,14 @@ export const health: WidgetSchema = {
       title: 'Points',
       type: 'number',
     },
+    {
+      name: 'immortal',
+      title: 'Immortal',
+      type: 'boolean',
+    },
   ],
   getInitialState: () => ({
     points: 100,
+    immortal: false,
   }),
 };

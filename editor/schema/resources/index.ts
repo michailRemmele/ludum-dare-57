@@ -6,6 +6,7 @@ import {
   PlayerScript,
   FishScript,
   TrackScript,
+  ThornsScript,
 } from '../../../src/game/scripts';
 
 import {
@@ -13,6 +14,7 @@ import {
   playerScript,
   fishScript,
   trackScript,
+  thornsScript,
 } from './script-system';
 
 export const resourcesSchema = {
@@ -21,6 +23,7 @@ export const resourcesSchema = {
     [PlayerScript.scriptName]: playerScript,
     [FishScript.scriptName]: fishScript,
     [TrackScript.scriptName]: trackScript,
+    [ThornsScript.scriptName]: thornsScript,
   },
   [EffectsSystem.systemName]: {},
 };

@@ -6,6 +6,7 @@ export const MovementJump = 'MovementJump';
 export const AttackInput = 'AttackInput';
 export const Attack = 'Attack';
 export const Damage = 'Damage';
+export const DamageDone = 'DamageDone';
 export const Kill = 'Kill';
 
 export const ResetSaveState = 'ResetSaveState';
@@ -48,6 +49,7 @@ declare module 'dacha' {
     [AttackInput]: AttackInputEvent
     [Attack]: ActorEvent
     [Damage]: DamageEvent
+    [DamageDone]: ActorEvent
     [Kill]: ActorEvent
 
     [UpdateShoalIndex]: UpdateShoalIndexEvent

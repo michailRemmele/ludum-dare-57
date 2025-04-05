@@ -23,7 +23,6 @@ import { Health, Team } from '../../components';
 const VIEWPORT_SIZE = 192;
 
 const BORDER_DAMAGE = 1;
-const BORDER_DAMAGE_COOLDOWN = 500;
 
 const LEFT_BORDER_NAME = 'LeftBorder';
 const RIGHT_BORDER_NAME = 'RightBorder';
@@ -42,7 +41,6 @@ export class CameraScript extends Script {
 
   private player: Actor;
 
-  private damageCooldown: number;
   private isGameOver: boolean;
 
   constructor(options: ScriptOptions) {
@@ -58,7 +56,6 @@ export class CameraScript extends Script {
 
     this.player = this.scene.getEntityByName(PLAYER_ACTOR_NAME)!;
 
-    this.damageCooldown = 0;
     this.isGameOver = false;
 
     this.leftBorder.addEventListener(CollisionStay, this.handleCollisionStay);
@@ -93,17 +90,12 @@ export class CameraScript extends Script {
   };
 
   private handleCollisionStay = (event: CollisionStayEvent): void => {
-    if (this.damageCooldown > 0) {
-      return;
-    }
-
     const { actor } = event;
     const health = actor.getComponent(Health);
     const team = actor.getComponent(Team);
 
     if (health && team?.index === 1) {
       actor.dispatchEvent(EventType.Damage, { value: BORDER_DAMAGE });
-      this.damageCooldown = BORDER_DAMAGE_COOLDOWN;
     }
   };
 
@@ -187,10 +179,6 @@ export class CameraScript extends Script {
     this.updateCamera(options.deltaTime);
     this.updateBorders();
     this.updatePlayer(options.deltaTime);
-
-    if (this.damageCooldown > 0) {
-      this.damageCooldown -= options.deltaTime;
-    }
   }
 }
 

@@ -57,11 +57,13 @@ export class Reaper extends System {
     const { target, value } = event;
 
     const health = target.getComponent(Health);
-    if (!health) {
+    if (!health || health.immortal) {
       return;
     }
 
     health.points -= Math.round(value);
+
+    target.dispatchEvent(EventType.DamageDone);
 
     if (health.points <= 0) {
       health.points = 0;
