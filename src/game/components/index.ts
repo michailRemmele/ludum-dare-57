@@ -7,3 +7,6 @@ export { Team } from './team';
 export { ShoalUnit } from './shoal-unit';
 export { Shoal } from './shoal';
 export { EnemyDetector } from './enemy-detector';
+export { TrackActivator } from './track-activator';
+export { TrackSegment } from './track-segment';
+export { Track } from './track';

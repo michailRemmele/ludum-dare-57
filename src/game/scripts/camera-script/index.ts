@@ -20,7 +20,7 @@ import { CAMERA_SPEED } from '../../../consts/game';
 import type { BoxCollider } from '../../../types/collider';
 import { Health, Team } from '../../components';
 
-const VIEWPORT_SIZE = 160;
+const VIEWPORT_SIZE = 192;
 
 const BORDER_DAMAGE = 1;
 const BORDER_DAMAGE_COOLDOWN = 500;
@@ -119,7 +119,7 @@ export class CameraScript extends Script {
 
   private updateZoom(): void {
     const camera = this.actor.getComponent(Camera);
-    camera.zoom = Math.round(camera.windowSizeY / VIEWPORT_SIZE);
+    camera.zoom = Math.ceil(camera.windowSizeY / VIEWPORT_SIZE);
   }
 
   private updateCamera(deltaTime: number): void {
@@ -132,9 +132,9 @@ export class CameraScript extends Script {
 
   private updateBorders(): void {
     const camera = this.actor.getComponent(Camera);
-    const zoom = Math.round(camera.windowSizeY / VIEWPORT_SIZE);
+    const zoom = Math.ceil(camera.windowSizeY / VIEWPORT_SIZE);
 
-    const windowSizeY = VIEWPORT_SIZE;
+    const windowSizeY = camera.windowSizeY / zoom;
     const windowSizeX = camera.windowSizeX / zoom;
 
     const leftTransform = this.leftBorder.getComponent(Transform);

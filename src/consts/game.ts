@@ -1,1 +1,1 @@
-export const CAMERA_SPEED = 75;
+export const CAMERA_SPEED = 40;

@@ -1,16 +1,16 @@
 import type {
-  Actor,
   Scene,
   ScriptOptions,
   UpdateOptions,
 } from 'dacha';
 import {
+  Actor,
   Script,
   Transform,
   MathOps,
 } from 'dacha';
-import { CollisionEnter } from 'dacha/events';
-import type { CollisionEnterEvent } from 'dacha/events';
+import { CollisionStay } from 'dacha/events';
+import type { CollisionStayEvent } from 'dacha/events';
 
 import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
 import { CAMERA_SPEED } from '../../../consts/game';
@@ -22,6 +22,7 @@ import {
   Shoal,
   Weapon,
   EnemyDetector,
+  HitBox,
 } from '../../components';
 import * as EventType from '../../events';
 import type { UpdateShoalIndexEvent, MovementEvent } from '../../events';
@@ -53,7 +54,7 @@ export class FishScript extends Script {
 
     this.player.addEventListener(EventType.Movement, this.handlePlayerMovement);
 
-    this.enemyDetector.addEventListener(CollisionEnter, this.handleCollisionEnterEnemyDetector);
+    this.enemyDetector.addEventListener(CollisionStay, this.handleCollisionEnemyDetector);
   }
 
   destroy(): void {
@@ -62,16 +63,16 @@ export class FishScript extends Script {
 
     this.player.removeEventListener(EventType.Movement, this.handlePlayerMovement);
 
-    this.enemyDetector.removeEventListener(CollisionEnter, this.handleCollisionEnterEnemyDetector);
+    this.enemyDetector.removeEventListener(CollisionStay, this.handleCollisionEnemyDetector);
   }
 
-  private handleCollisionEnterEnemyDetector = (event: CollisionEnterEvent): void => {
+  private handleCollisionEnemyDetector = (event: CollisionStayEvent): void => {
     const { actor } = event;
 
-    const team = actor.getComponent(Team);
-    const health = actor.getComponent(Health);
+    const hitBox = actor.getComponent(HitBox);
+    const team = actor.parent instanceof Actor ? actor.parent.getComponent(Team) : undefined;
 
-    if (!health || team?.index !== 2) {
+    if (!hitBox || team?.index !== 2) {
       return;
     }
 

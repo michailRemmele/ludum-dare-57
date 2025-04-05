@@ -10,6 +10,9 @@ import {
   ShoalUnit,
   Shoal,
   EnemyDetector,
+  TrackActivator,
+  TrackSegment,
+  Track,
 } from '../../../src/game/components';
 
 import { health } from './health';
@@ -21,6 +24,9 @@ import { team } from './team';
 import { shoalUnit } from './shoal-unit';
 import { shoal } from './shoal';
 import { enemyDetector } from './enemy-detector';
+import { trackActivator } from './track-activator';
+import { trackSegment } from './track-segment';
+import { track } from './track';
 
 export const componentsSchema: Record<string, WidgetSchema> = {
   [Health.componentName]: health,
@@ -32,4 +38,7 @@ export const componentsSchema: Record<string, WidgetSchema> = {
   [ShoalUnit.componentName]: shoalUnit,
   [Shoal.componentName]: shoal,
   [EnemyDetector.componentName]: enemyDetector,
+  [TrackActivator.componentName]: trackActivator,
+  [TrackSegment.componentName]: trackSegment,
+  [Track.componentName]: track,
 };
