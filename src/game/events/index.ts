@@ -12,6 +12,8 @@ export const ResetSaveState = 'ResetSaveState';
 
 export const SendAnalytics = 'SendAnalytics';
 
+export const GameOver = 'GameOver';
+
 export type MovementEvent = ActorEvent<{
   angle?: number
   x?: number
@@ -25,6 +27,10 @@ export type DamageEvent = ActorEvent<{ value: number, actor?: Actor }>;
 export type SendAnalyticsEvent = SceneEvent<{
   name: string
   payload: Record<string, string | number | boolean>
+}>;
+
+export type GameOverEvent = SceneEvent<{
+  isWin: boolean
 }>;
 
 declare module 'dacha' {
@@ -41,5 +47,6 @@ declare module 'dacha' {
   export interface SceneEventMap {
     [ResetSaveState]: SceneEvent
     [SendAnalytics]: SendAnalyticsEvent
+    [GameOver]: GameOverEvent
   }
 }

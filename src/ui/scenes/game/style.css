@@ -50,8 +50,6 @@
 
   animation-duration: 3s;
   animation-name: gameOver;
-
-  display: none;
 }
 
 .game-over__content {
@@ -67,4 +65,12 @@
 .game-over__title {
   color: #fff;
   margin-top: 0;
+}
+
+.game-over__button {
+  width: 100%;
+}
+
+.game-over__button + .game-over__button {
+  margin-top: 16px;
 }
