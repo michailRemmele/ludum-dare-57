@@ -1,8 +1,10 @@
 .score-bar {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 700;
 
   color: white;
+
+  margin-top: 8px;
 }
 
 .score-bar__inner {

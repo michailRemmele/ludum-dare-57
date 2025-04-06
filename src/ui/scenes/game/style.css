@@ -7,13 +7,13 @@
 
 .game__header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
-.header__left {
+.header__right {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  justify-content: center;
 }
 
 .game__move-control {

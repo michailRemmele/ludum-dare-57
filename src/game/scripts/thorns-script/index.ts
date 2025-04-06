@@ -44,7 +44,7 @@ export class ThornsScript extends Script {
     const parent = actor.parent instanceof Actor ? actor.parent : undefined;
     const team = parent?.getComponent(Team);
 
-    if (!parent || !hitBox || team?.index !== 1) {
+    if (!parent || !hitBox || hitBox.disabled || team?.index !== 1) {
       return;
     }
 

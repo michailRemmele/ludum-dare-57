@@ -1,5 +1,4 @@
 import type {
-  Actor,
   ActorSpawner,
   Scene,
   ScriptOptions,
@@ -7,6 +6,7 @@ import type {
   UpdateOptions,
 } from 'dacha';
 import {
+  Actor,
   Script,
   Transform,
 } from 'dacha';
@@ -26,7 +26,7 @@ import {
 import { CAMERA_SPEED } from '../../../consts/game';
 import { INITIAL_FISH, MAIN_CAMERA_NAME } from '../../../consts/actors';
 import {
-  Team, Health, Movement, Shoal, LevelInfo, Score,
+  Team, Health, Movement, Shoal, LevelInfo, Score, HitBox,
 } from '../../components';
 import * as EventType from '../../events';
 import type { GameOverEvent } from '../../events';
@@ -99,15 +99,17 @@ export class PlayerScript extends Script {
   private handleCollisionEnter = (event: CollisionEnterEvent): void => {
     const { actor } = event;
 
-    const team = actor.getComponent(Team);
-    const health = actor.getComponent(Health);
+    const hitBox = actor.getComponent(HitBox);
+    const parent = actor.parent instanceof Actor ? actor.parent : undefined;
+    const health = parent?.getComponent(Health);
+    const team = parent?.getComponent(Team);
 
-    if (health && team?.index === 3) {
+    if (parent && health && hitBox && team?.index === 3) {
       team.index = 1;
       health.immortal = false;
-      actor.dispatchEvent(EventType.UpdateShoalIndex, { index: this.shoalSize });
+      hitBox.disabled = false;
       this.shoalSize += 1;
-      this.shoalActors.push(actor);
+      this.shoalActors.push(parent);
       this.updateShoal();
     }
   };

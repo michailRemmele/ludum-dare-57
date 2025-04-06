@@ -105,7 +105,7 @@ export class RangeAttack implements Attack {
       this.lifetime = 0;
     }
 
-    if (!hitBox || !target || !(target instanceof Actor)) {
+    if (!hitBox || hitBox.disabled || !target || !(target instanceof Actor)) {
       return;
     }
 

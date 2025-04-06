@@ -87,7 +87,7 @@ export class ShooterScript extends Script {
     const hitBox = actor.getComponent(HitBox);
     const team = actor.parent instanceof Actor ? actor.parent.getComponent(Team) : undefined;
 
-    if (!hitBox || team?.index !== 1) {
+    if (!hitBox || hitBox.disabled || team?.index !== 1) {
       return;
     }
 

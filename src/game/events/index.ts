@@ -20,6 +20,7 @@ export const FishDied = 'FishDied';
 export const UnlockWeapon = 'UnlockWeapon';
 
 export const IncreaseScorePoints = 'IncreaseScorePoints';
+export const LevelUp = 'LevelUp';
 
 export type MovementEvent = ActorEvent<{
   angle?: number
@@ -50,6 +51,12 @@ export type IncreaseScorePointsEvent = SceneEvent<{
   points: number
 }>;
 
+export type LevelUpEvent = SceneEvent<{
+  level: number
+  nextLevelScore: number
+  isMax: boolean
+}>;
+
 declare module 'dacha' {
   export interface ActorEventMap {
     [Movement]: MovementEvent
@@ -71,5 +78,6 @@ declare module 'dacha' {
     [SendAnalytics]: SendAnalyticsEvent
     [GameOver]: GameOverEvent
     [IncreaseScorePoints]: IncreaseScorePointsEvent
+    [LevelUp]: LevelUpEvent
   }
 }

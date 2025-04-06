@@ -10,6 +10,7 @@ import {
   ShooterScript,
   StaticTrackScript,
   FloatingTrackScript,
+  BonusTrackScript,
 } from '../../../src/game/scripts';
 
 import {
@@ -21,6 +22,7 @@ import {
   shooterScript,
   staticTrackScript,
   floatingTrackScript,
+  bonusTrackScript,
 } from './script-system';
 
 export const resourcesSchema = {
@@ -33,6 +35,7 @@ export const resourcesSchema = {
     [ShooterScript.scriptName]: shooterScript,
     [StaticTrackScript.scriptName]: staticTrackScript,
     [FloatingTrackScript.scriptName]: floatingTrackScript,
+    [BonusTrackScript.scriptName]: bonusTrackScript,
   },
   [EffectsSystem.systemName]: {},
 };

@@ -6,3 +6,4 @@ export { ThornsScript } from './thorns-script';
 export { ShooterScript } from './shooter-script';
 export { StaticTrackScript } from './static-track-script';
 export { FloatingTrackScript } from './floating-track-script';
+export { BonusTrackScript } from './bonus-track-script';

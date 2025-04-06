@@ -32,10 +32,6 @@ import type {
 
 const IMMORTAL_DURATION = 500;
 
-interface FishScriptOptions extends ScriptOptions {
-  shoalIndex: number
-}
-
 export class FishScript extends Script {
   private actor: Actor;
   private scene: Scene;
@@ -48,7 +44,7 @@ export class FishScript extends Script {
 
   private immortalDuration: number;
 
-  constructor(options: FishScriptOptions) {
+  constructor(options: ScriptOptions) {
     super();
 
     this.actor = options.actor;
@@ -57,7 +53,13 @@ export class FishScript extends Script {
     this.enemyDetector = this.actor.children.find((child) => child.getComponent(EnemyDetector))!;
     this.player = this.scene.getEntityByName(PLAYER_ACTOR_NAME)!;
 
-    this.shoalIndex = options.shoalIndex;
+    const team = this.actor.getComponent(Team);
+    const hitBoxActor = this.actor.children.find((child) => child.getComponent(HitBox))!;
+    const hitBox = hitBoxActor.getComponent(HitBox);
+
+    hitBox.disabled = team.index !== 1;
+
+    this.shoalIndex = team.index === 1 ? 0 : -1;
     this.shouldCatchUp = false;
 
     this.immortalDuration = 0;
@@ -91,12 +93,16 @@ export class FishScript extends Script {
   };
 
   private handleCollisionEnemyDetector = (event: CollisionStayEvent): void => {
+    if (this.shoalIndex === -1) {
+      return;
+    }
+
     const { actor } = event;
 
     const hitBox = actor.getComponent(HitBox);
     const team = actor.parent instanceof Actor ? actor.parent.getComponent(Team) : undefined;
 
-    if (!hitBox || team?.index !== 2) {
+    if (!hitBox || hitBox.disabled || team?.index !== 2) {
       return;
     }
 

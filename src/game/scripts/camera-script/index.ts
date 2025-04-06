@@ -16,7 +16,12 @@ import type { CollisionStayEvent, CollisionEnterEvent } from 'dacha/events';
 
 import * as EventType from '../../events';
 import type { IncreaseScorePointsEvent } from '../../events';
-import { CAMERA_SPEED, VIEWPORT_SIZE } from '../../../consts/game';
+import {
+  CAMERA_SPEED,
+  VIEWPORT_SIZE,
+  LEVEL_UP_BASE_STEP,
+  MAX_LEVEL,
+} from '../../../consts/game';
 import { FINISH_ZONE_NAME } from '../../../consts/templates';
 import type { BoxCollider } from '../../../types/collider';
 import {
@@ -50,6 +55,9 @@ export class CameraScript extends Script {
 
   private finishZone: Actor;
 
+  private playerLevel: number;
+  private nextLevelScore: number;
+
   private isGameOver: boolean;
 
   constructor(options: ScriptOptions) {
@@ -66,6 +74,9 @@ export class CameraScript extends Script {
     this.ultimateDeadZone = this.leftBorder.getEntityByName(ULTIMATE_DEAD_ZONE)!;
 
     this.finishZone = this.scene.getEntityByName(FINISH_ZONE_NAME)!;
+
+    this.playerLevel = 1;
+    this.nextLevelScore = LEVEL_UP_BASE_STEP;
 
     this.isGameOver = false;
 
@@ -112,6 +123,17 @@ export class CameraScript extends Script {
     const score = this.actor.getComponent(Score);
 
     score.value += event.points;
+
+    if (this.playerLevel < MAX_LEVEL && score.value >= this.nextLevelScore) {
+      this.playerLevel += 1;
+      this.nextLevelScore += this.playerLevel * LEVEL_UP_BASE_STEP;
+
+      this.scene.dispatchEvent(EventType.LevelUp, {
+        level: this.playerLevel,
+        nextLevelScore: this.nextLevelScore,
+        isMax: this.playerLevel === MAX_LEVEL,
+      });
+    }
   };
 
   private handleGameOver = (): void => {
@@ -125,7 +147,7 @@ export class CameraScript extends Script {
     const parent = actor.parent instanceof Actor ? actor.parent : undefined;
     const health = parent?.getComponent(Health);
 
-    if (!parent || !hitBox || !health) {
+    if (!parent || !hitBox || hitBox.disabled || !health) {
       return;
     }
 

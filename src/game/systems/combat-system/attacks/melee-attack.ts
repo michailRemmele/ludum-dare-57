@@ -101,7 +101,7 @@ export class MeleeAttack implements Attack {
       return;
     }
 
-    if (!hitBox || !target || !(target instanceof Actor)) {
+    if (!hitBox || hitBox.disabled || !target || !(target instanceof Actor)) {
       return;
     }
 

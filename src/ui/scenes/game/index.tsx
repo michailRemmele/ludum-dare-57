@@ -20,6 +20,7 @@ import type { GameOverEvent } from '../../../game/events';
 import {
   MoveControl,
   ScoreBar,
+  ExpBar,
 } from './components';
 import './style.css';
 
@@ -85,8 +86,10 @@ export const Game: FC = () => {
   return (
     <div className="game">
       <header className="game__header">
-        <div className="header__left" />
-        <ScoreBar />
+        <ExpBar />
+        <div className="header__right">
+          <ScoreBar />
+        </div>
       </header>
       {/* {process.env.NODE_ENV === 'development' && <FpsMeter />} */}
 

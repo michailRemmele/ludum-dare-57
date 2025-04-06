@@ -1,5 +1,5 @@
 import type { WidgetPartSchema } from 'dacha-workbench';
 
-export const fishScript: WidgetPartSchema = {
+export const bonusTrackScript: WidgetPartSchema = {
   fields: [],
 };

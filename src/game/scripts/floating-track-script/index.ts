@@ -23,8 +23,8 @@ import * as EventType from '../../events';
 import { MAIN_CAMERA_NAME } from '../../../consts/actors';
 import { CAMERA_SPEED, VIEWPORT_SIZE } from '../../../consts/game';
 
-const DESTINATION_THRESOLD = 4;
-const BORDER_OFFSET = 32;
+const FLOAT_BORDER_OFFSET = 32;
+const ATTACK_BORDER_OFFSET = 16;
 
 export class FloatingTrackScript extends Script {
   private actor: Actor;
@@ -44,6 +44,7 @@ export class FloatingTrackScript extends Script {
   private mobId: string;
   private mobsLeft: number;
   private isSpawnStarted: boolean;
+  private isWeaponUnlocked: boolean;
 
   constructor(options: ScriptOptions) {
     super();
@@ -65,6 +66,7 @@ export class FloatingTrackScript extends Script {
     this.mobId = track.mob;
     this.mobsLeft = 1;
     this.isSpawnStarted = false;
+    this.isWeaponUnlocked = false;
 
     this.trackActivator.addEventListener(CollisionEnter, this.handleCollisionEnterTrackActivator);
     this.actor.addEventListener(EventType.Kill, this.handleMobKill);
@@ -124,9 +126,12 @@ export class FloatingTrackScript extends Script {
     const spawnerTransform = this.actor.getComponent(Transform);
     const mobTransform = this.mob.getComponent(Transform);
 
-    const distance = Math.abs(spawnerTransform.offsetY - mobTransform.offsetY);
+    const distance = spawnerTransform.offsetY - mobTransform.offsetY;
 
-    if (Math.abs(this.patrolDistance - distance) < DESTINATION_THRESOLD) {
+    if (this.currentDirection < 0 && distance > this.patrolDistance) {
+      this.currentDirection *= -1;
+    }
+    if (this.currentDirection > 0 && distance < 0 && Math.abs(distance) > this.patrolDistance) {
       this.currentDirection *= -1;
     }
 
@@ -149,9 +154,12 @@ export class FloatingTrackScript extends Script {
 
     const distance = Math.abs(cameraTransform.offsetX - mobTransform.offsetX);
 
-    if (distance < (windowSizeX / 2 - BORDER_OFFSET)) {
-      this.shouldWaitBeforeFloat = false;
+    if (!this.isWeaponUnlocked && distance < (windowSizeX / 2 - ATTACK_BORDER_OFFSET)) {
       this.mob.dispatchEvent(EventType.UnlockWeapon);
+      this.isWeaponUnlocked = true;
+    }
+    if (distance < (windowSizeX / 2 - FLOAT_BORDER_OFFSET)) {
+      this.shouldWaitBeforeFloat = false;
     }
   }
 
