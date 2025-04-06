@@ -1,0 +1,16 @@
+.level-select-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.level-select-menu__button + .level-select-menu__button {
+  margin-top: 16px;
+}
+
+.level-select-menu__levels {
+  margin-bottom: 16px;
+}
+
+.level-select-menu__level {
+  margin-bottom: 16px;
+}

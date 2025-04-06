@@ -8,13 +8,16 @@ import type {
 import { SetAudioVolume } from 'dacha/events';
 
 import * as EventType from '../../events';
+import type { GameOverEvent } from '../../events';
+import { LEVELS } from '../../../consts/game';
 import { getAudioVolume } from '../../../utils/audio-settings';
 
-import type { SaveState } from './types';
+import type { SaveState, CompletedLevel } from './types';
 
 const SAVE_STATE_LS_KEY = 'saveState';
 
 const INITIAL_SAVE_STATE: SaveState = {
+  completedLevels: [],
   touched: false,
 };
 
@@ -43,12 +46,34 @@ export class Saver extends System {
     this.scene.dispatchEvent(SetAudioVolume, { group: 'music', value: getAudioVolume('music') });
     this.scene.dispatchEvent(SetAudioVolume, { group: 'effects', value: getAudioVolume('effects') });
 
+    this.scene.addEventListener(EventType.GameOver, this.handleGameOver);
     this.scene.addEventListener(EventType.ResetSaveState, this.handleResetSaveState);
   }
 
   unmount(): void {
+    this.scene.removeEventListener(EventType.GameOver, this.handleGameOver);
     this.scene.removeEventListener(EventType.ResetSaveState, this.handleResetSaveState);
   }
+
+  private handleGameOver = (event: GameOverEvent): void => {
+    if (!event.isWin) {
+      return;
+    }
+
+    const completedLevel: CompletedLevel = {
+      id: LEVELS[event.levelIndex].id,
+    };
+
+    const oldCompletedLevel = window.saveState!.completedLevels.find(
+      (level) => level.id === completedLevel.id,
+    );
+
+    if (!oldCompletedLevel) {
+      window.saveState!.completedLevels.push(completedLevel);
+    }
+
+    this.save();
+  };
 
   private handleResetSaveState = (): void => {
     window.saveState = structuredClone(INITIAL_SAVE_STATE);

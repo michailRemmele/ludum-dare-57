@@ -10,3 +10,4 @@ export { EnemyDetector } from './enemy-detector';
 export { TrackActivator } from './track-activator';
 export { TrackSegment } from './track-segment';
 export { Track } from './track';
+export { LevelInfo } from './level-info';

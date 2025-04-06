@@ -157,10 +157,14 @@ export class FishScript extends Script {
   private updateMovement(deltaTime: number): void {
     const deltaTimeInSeconds = deltaTime / 1000;
 
-    const movement = this.actor.getComponent(Movement);
     const transform = this.actor.getComponent(Transform);
 
     transform.offsetX += deltaTimeInSeconds * CAMERA_SPEED;
+
+    const movement = this.actor.getComponent(Movement);
+    if (!movement) {
+      return;
+    }
 
     const shoalActor = this.player.children.find((child) => child.getComponent(Shoal));
     const shoalUnitActor = shoalActor?.children.find((child) => {

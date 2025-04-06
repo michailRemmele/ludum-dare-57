@@ -40,6 +40,7 @@ export type SendAnalyticsEvent = SceneEvent<{
 
 export type GameOverEvent = SceneEvent<{
   isWin: boolean
+  levelIndex: number
 }>;
 
 declare module 'dacha' {

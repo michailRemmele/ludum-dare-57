@@ -13,7 +13,9 @@ import {
   Button,
 } from '../../components';
 import { GAME_ID, MAIN_MENU_ID } from '../../../consts/scenes';
+import { LEVELS } from '../../../consts/game';
 import { isTouchDevice } from '../../../utils/is-touch-device';
+import type { GameOverEvent } from '../../../game/events';
 
 import {
   MoveControl,
@@ -24,12 +26,24 @@ export const Game: FC = () => {
   const { scene } = useContext(EngineContext);
 
   const [isGameOver, setIsGameOver] = useState(false);
+  const [isWin, setIsWin] = useState(false);
+  const [levelIndex, setLevelIndex] = useState(0);
 
   const handleRestart = (): void => {
     scene.dispatchEvent(LoadScene, {
       sceneId: GAME_ID,
+      levelId: LEVELS[levelIndex].id,
       loaderId: null,
-      levelId: null,
+      unloadCurrent: true,
+      clean: true,
+    });
+  };
+
+  const handleContinue = (): void => {
+    scene.dispatchEvent(LoadScene, {
+      sceneId: GAME_ID,
+      levelId: LEVELS[levelIndex + 1].id,
+      loaderId: null,
       unloadCurrent: true,
       clean: true,
     });
@@ -54,8 +68,10 @@ export const Game: FC = () => {
   }, []);
 
   useEffect(() => {
-    const handleGameOver = (): void => {
+    const handleGameOver = (event: GameOverEvent): void => {
       setIsGameOver(true);
+      setIsWin(event.isWin);
+      setLevelIndex(event.levelIndex);
     };
 
     scene.addEventListener(EventType.GameOver, handleGameOver);
@@ -80,9 +96,16 @@ export const Game: FC = () => {
         <div className="game-over__overlay">
           <div className="game-over__content">
             <h1 className="game-over__title">
-              Game Over
+              {isWin && levelIndex === LEVELS.length - 1 && 'Game Complete'}
+              {isWin && levelIndex !== LEVELS.length - 1 && 'Level Complete'}
+              {!isWin && 'Game Over'}
             </h1>
-            <Button className="game-over__button" onClick={handleRestart}>Restart</Button>
+            {!isWin && (
+              <Button className="game-over__button" onClick={handleRestart}>Restart</Button>
+            )}
+            {isWin && levelIndex !== LEVELS.length - 1 && (
+              <Button className="game-over__button" onClick={handleContinue}>Continue</Button>
+            )}
             <Button className="game-over__button" onClick={handleMainMenu}>Main Menu</Button>
           </div>
         </div>

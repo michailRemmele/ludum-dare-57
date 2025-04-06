@@ -15,12 +15,18 @@ import { CollisionStay, CollisionEnter } from 'dacha/events';
 import type { CollisionStayEvent, CollisionEnterEvent } from 'dacha/events';
 
 import * as EventType from '../../events';
-import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
 import { CAMERA_SPEED, VIEWPORT_SIZE } from '../../../consts/game';
+import { FINISH_ZONE_NAME } from '../../../consts/templates';
 import type { BoxCollider } from '../../../types/collider';
-import { Health, Team, HitBox } from '../../components';
+import {
+  Health,
+  Team,
+  HitBox,
+  LevelInfo,
+} from '../../components';
 
 const BORDER_DAMAGE = 1;
+const FINISH_ZONE_DISTANCE_THRESHOLD = 32;
 
 const LEFT_BORDER_NAME = 'LeftBorder';
 const RIGHT_BORDER_NAME = 'RightBorder';
@@ -40,7 +46,7 @@ export class CameraScript extends Script {
 
   private ultimateDeadZone: Actor;
 
-  private player: Actor;
+  private finishZone: Actor;
 
   private isGameOver: boolean;
 
@@ -57,7 +63,7 @@ export class CameraScript extends Script {
 
     this.ultimateDeadZone = this.leftBorder.getEntityByName(ULTIMATE_DEAD_ZONE)!;
 
-    this.player = this.scene.getEntityByName(PLAYER_ACTOR_NAME)!;
+    this.finishZone = this.scene.getEntityByName(FINISH_ZONE_NAME)!;
 
     this.isGameOver = false;
 
@@ -189,11 +195,16 @@ export class CameraScript extends Script {
     bottomSprite.width = windowSizeX;
   }
 
-  private updatePlayer(deltaTime: number): void {
-    const deltaTimeInSeconds = deltaTime / 1000;
+  private updateLevelCompletion(): void {
+    const finishZoneTransform = this.finishZone.getComponent(Transform);
+    const cameraTransform = this.actor.getComponent(Transform);
+    const levelInfo = this.actor.getComponent(LevelInfo);
 
-    const playerTransform = this.player.getComponent(Transform);
-    playerTransform.offsetX += deltaTimeInSeconds * CAMERA_SPEED;
+    const distance = Math.abs(cameraTransform.offsetX - finishZoneTransform.offsetX);
+
+    if (distance < FINISH_ZONE_DISTANCE_THRESHOLD) {
+      this.scene.dispatchEvent(EventType.GameOver, { isWin: true, levelIndex: levelInfo.index });
+    }
   }
 
   update(options: UpdateOptions): void {
@@ -205,7 +216,7 @@ export class CameraScript extends Script {
 
     this.updateCamera(options.deltaTime);
     this.updateBorders();
-    this.updatePlayer(options.deltaTime);
+    this.updateLevelCompletion();
   }
 }
 

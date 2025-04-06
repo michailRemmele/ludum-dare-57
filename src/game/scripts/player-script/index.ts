@@ -4,9 +4,11 @@ import type {
   Scene,
   ScriptOptions,
   ActorEvent,
+  UpdateOptions,
 } from 'dacha';
 import {
   Script,
+  Transform,
 } from 'dacha';
 import { CollisionEnter } from 'dacha/events';
 import type { CollisionEnterEvent } from 'dacha/events';
@@ -21,11 +23,13 @@ import {
   SHOAL_7_ID,
   SHOAL_8_ID,
 } from '../../../consts/templates';
-import { INITIAL_FISH } from '../../../consts/actors';
+import { CAMERA_SPEED } from '../../../consts/game';
+import { INITIAL_FISH, MAIN_CAMERA_NAME } from '../../../consts/actors';
 import {
-  Team, Health, Movement, Shoal,
+  Team, Health, Movement, Shoal, LevelInfo,
 } from '../../components';
 import * as EventType from '../../events';
+import type { GameOverEvent } from '../../events';
 
 const SHOAL_ORDER = [
   SHOAL_1_ID,
@@ -43,6 +47,8 @@ export class PlayerScript extends Script {
   private scene: Scene;
   private actorSpawner: ActorSpawner;
 
+  private mainCamera: Actor;
+
   private shoalSize: number;
   private isGameOver: boolean;
   private shoalActors: Actor[];
@@ -54,6 +60,8 @@ export class PlayerScript extends Script {
     this.scene = options.scene;
     this.actorSpawner = options.actorSpawner;
 
+    this.mainCamera = this.scene.getEntityByName(MAIN_CAMERA_NAME)!;
+
     this.shoalSize = 1;
     this.isGameOver = false;
 
@@ -63,12 +71,30 @@ export class PlayerScript extends Script {
 
     this.actor.addEventListener(CollisionEnter, this.handleCollisionEnter);
     this.scene.addEventListener(EventType.FishDied, this.handleFishDied);
+    this.scene.addEventListener(EventType.GameOver, this.handleGameOver);
   }
 
   destroy(): void {
     this.actor.removeEventListener(CollisionEnter, this.handleCollisionEnter);
     this.scene.removeEventListener(EventType.FishDied, this.handleFishDied);
+    this.scene.removeEventListener(EventType.GameOver, this.handleGameOver);
   }
+
+  private handleGameOver = (event: GameOverEvent): void => {
+    this.actor.removeComponent(Movement);
+
+    if (event.isWin) {
+      this.shoalActors.forEach((actor) => {
+        actor.removeComponent(Movement);
+        const health = actor.getComponent(Health);
+        if (health) {
+          health.immortal = true;
+        }
+      });
+    }
+
+    this.isGameOver = true;
+  };
 
   private handleCollisionEnter = (event: CollisionEnterEvent): void => {
     const { actor } = event;
@@ -111,16 +137,23 @@ export class PlayerScript extends Script {
     }));
   }
 
-  update(): void {
+  private updatePlayer(deltaTime: number): void {
+    const deltaTimeInSeconds = deltaTime / 1000;
+
+    const playerTransform = this.actor.getComponent(Transform);
+    playerTransform.offsetX += deltaTimeInSeconds * CAMERA_SPEED;
+  }
+
+  update(options: UpdateOptions): void {
+    this.updatePlayer(options.deltaTime);
+
     if (this.isGameOver) {
       return;
     }
 
     if (this.shoalSize <= 0) {
-      this.scene.dispatchEvent(EventType.GameOver, { isWin: false });
-      this.actor.removeComponent(Movement);
-
-      this.isGameOver = true;
+      const levelInfo = this.mainCamera.getComponent(LevelInfo);
+      this.scene.dispatchEvent(EventType.GameOver, { isWin: false, levelIndex: levelInfo.index });
     }
   }
 }

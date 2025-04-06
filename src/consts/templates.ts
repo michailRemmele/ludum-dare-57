@@ -8,3 +8,5 @@ export const SHOAL_5_ID = 'd0ed6e83-9cfd-46f8-9fb1-0ba0c8b72bd8';
 export const SHOAL_6_ID = '758d3234-f11a-4876-92d2-dac6261ece31';
 export const SHOAL_7_ID = '3b756aaa-4d8f-4792-be9d-894a1b4319ce';
 export const SHOAL_8_ID = '48a24254-2f1b-48c8-a29f-a1d7ce26bb77';
+
+export const FINISH_ZONE_NAME = 'FinishZone';

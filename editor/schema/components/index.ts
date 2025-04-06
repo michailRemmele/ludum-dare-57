@@ -13,6 +13,7 @@ import {
   TrackActivator,
   TrackSegment,
   Track,
+  LevelInfo,
 } from '../../../src/game/components';
 
 import { health } from './health';
@@ -27,6 +28,7 @@ import { enemyDetector } from './enemy-detector';
 import { trackActivator } from './track-activator';
 import { trackSegment } from './track-segment';
 import { track } from './track';
+import { levelInfo } from './level-info';
 
 export const componentsSchema: Record<string, WidgetSchema> = {
   [Health.componentName]: health,
@@ -41,4 +43,5 @@ export const componentsSchema: Record<string, WidgetSchema> = {
   [TrackActivator.componentName]: trackActivator,
   [TrackSegment.componentName]: trackSegment,
   [Track.componentName]: track,
+  [LevelInfo.componentName]: levelInfo,
 };

@@ -5,7 +5,7 @@ import { LoadScene } from 'dacha/events';
 import { Button } from '../../../../components';
 import { EngineContext } from '../../../../providers';
 import { GAME_ID } from '../../../../../consts/scenes';
-import { SETTINGS_MENU } from '../../consts';
+import { SETTINGS_MENU, LEVEL_SELECT_MENU } from '../../consts';
 
 import './style.css';
 
@@ -25,11 +25,18 @@ export const Main: FC<MainProps> = ({ openMenu }) => {
     });
   };
 
+  const handleOpenSelectLevel = (): void => openMenu(LEVEL_SELECT_MENU);
+
   const handleOpenSettings = (): void => openMenu(SETTINGS_MENU);
 
   return (
     <div className="main-menu">
-      <Button className="main-menu__button" onClick={handlePlay}>Play</Button>
+      {(!window.saveState?.touched || !window.saveState?.completedLevels?.length) && (
+        <Button className="main-menu__button" onClick={handlePlay}>Play</Button>
+      )}
+      {window.saveState?.touched && window.saveState?.completedLevels?.length > 0 && (
+        <Button className="main-menu__button" onClick={handleOpenSelectLevel}>Select Level</Button>
+      )}
       <Button className="main-menu__button" onClick={handleOpenSettings}>Settings</Button>
     </div>
   );

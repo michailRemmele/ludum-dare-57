@@ -27,6 +27,7 @@ module.exports = {
     'react/prop-types': 0,
     'react/require-default-props': 0,
     'react/state-in-constructor': 0,
+    'no-nested-ternary': 0,
   },
   overrides: [
     {
