@@ -17,6 +17,7 @@ export const GameOver = 'GameOver';
 
 export const UpdateShoalIndex = 'UpdateShoalIndex';
 export const FishDied = 'FishDied';
+export const UnlockWeapon = 'UnlockWeapon';
 
 export type MovementEvent = ActorEvent<{
   angle?: number
@@ -54,6 +55,7 @@ declare module 'dacha' {
 
     [UpdateShoalIndex]: UpdateShoalIndexEvent
     [FishDied]: ActorEvent
+    [UnlockWeapon]: ActorEvent
   }
 
   export interface SceneEventMap {

@@ -21,6 +21,7 @@ import * as EventType from '../../events';
 interface ShooterScriptOptions extends ScriptOptions {
   burstTimeout: number
   burstAmount: number
+  isWeaponLocked: boolean
 }
 
 export class ShooterScript extends Script {
@@ -28,6 +29,7 @@ export class ShooterScript extends Script {
 
   private burstTimeout: number;
   private burstAmount: number;
+  private isWeaponLocked: boolean;
 
   private burstBulletsLeft: number;
   private burstCooldown: number;
@@ -41,6 +43,7 @@ export class ShooterScript extends Script {
 
     this.burstTimeout = options.burstTimeout;
     this.burstAmount = options.burstAmount;
+    this.isWeaponLocked = options.isWeaponLocked;
 
     this.burstBulletsLeft = options.burstAmount;
     this.burstCooldown = 0;
@@ -48,11 +51,13 @@ export class ShooterScript extends Script {
     this.enemyDetector = this.actor.children.find((child) => child.getComponent(EnemyDetector))!;
 
     this.actor.addEventListener(EventType.Attack, this.handleAttack);
+    this.actor.addEventListener(EventType.UnlockWeapon, this.handleUnlockWeapon);
     this.enemyDetector.addEventListener(CollisionStay, this.handleCollisionEnemyDetector);
   }
 
   destroy(): void {
     this.actor.removeEventListener(EventType.Attack, this.handleAttack);
+    this.actor.removeEventListener(EventType.UnlockWeapon, this.handleUnlockWeapon);
     this.enemyDetector.removeEventListener(CollisionStay, this.handleCollisionEnemyDetector);
   }
 
@@ -65,7 +70,14 @@ export class ShooterScript extends Script {
     }
   };
 
+  private handleUnlockWeapon = (): void => {
+    this.isWeaponLocked = false;
+  };
+
   private handleCollisionEnemyDetector = (event: CollisionStayEvent): void => {
+    if (this.isWeaponLocked) {
+      return;
+    }
     if (this.burstCooldown > 0) {
       return;
     }

@@ -456,7 +456,7 @@
         },
         {
           "id": "a067ab21-5153-4130-b1b9-a8c9c4424c3c",
-          "name": "Main Camera",
+          "name": "MainCamera",
           "components": [
             {
               "name": "Transform",
@@ -1088,6 +1088,20 @@
               "name": "Team",
               "config": {
                 "index": 1
+              }
+            },
+            {
+              "name": "ScriptBundle",
+              "config": {
+                "scripts": [
+                  {
+                    "id": "b0cc67e3-e60a-4a0c-acd4-6c638cbd348e",
+                    "name": "FishScript",
+                    "options": {
+                      "shoalIndex": 0
+                    }
+                  }
+                ]
               }
             }
           ],
@@ -2197,6 +2211,102 @@
               "children": []
             }
           ]
+        },
+        {
+          "id": "d4428fe5-924f-4165-8ffe-2a386437f3de",
+          "templateId": "be5c4362-0b70-457a-8c0d-b29eb8b6a0d8",
+          "name": "Floating Track",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1768,
+                "offsetY": 24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "fd3293c7-8f69-4edb-a612-89e34d705bfb",
+                "amount": 1,
+                "frequency": 0,
+                "patrolDistance": 32
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "d551a0cc-d8f6-4141-95e9-ae5a3bc1870b",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -288,
+                    "offsetY": -24,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6d3fb845-3fdc-4e4f-9010-8f22f94e7648",
+          "templateId": "be5c4362-0b70-457a-8c0d-b29eb8b6a0d8",
+          "name": "Floating Track 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1768,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "fd3293c7-8f69-4edb-a612-89e34d705bfb",
+                "amount": 1,
+                "frequency": 1000,
+                "patrolDistance": 32
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "0cbc8852-52a1-41c0-9cd9-84afcd74434c",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -288,
+                    "offsetY": 8,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -2424,7 +2534,8 @@
         {
           "name": "Health",
           "config": {
-            "points": 3
+            "points": 3,
+            "immortal": true
           }
         },
         {
@@ -2578,7 +2689,9 @@
               {
                 "id": "c1b59fbb-0eab-452f-8f1c-700b6ab5972c",
                 "name": "FishScript",
-                "options": {}
+                "options": {
+                  "shoalIndex": -1
+                }
               }
             ]
           }
@@ -6087,6 +6200,445 @@
                 "opacity": 1
               }
             }
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "be5c4362-0b70-457a-8c0d-b29eb8b6a0d8",
+      "name": "Floating Track",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "ScriptBundle",
+          "config": {
+            "scripts": [
+              {
+                "id": "df352dda-d999-4fc6-8dcd-c5a1e0a08b3f",
+                "name": "FloatingTrackScript",
+                "options": {
+                  "patrolDistance": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations-3",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#fffb31",
+                "opacity": 1
+              }
+            }
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "fd3293c7-8f69-4edb-a612-89e34d705bfb",
+      "name": "Jellyfish",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#4a7eff",
+                "opacity": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+            "states": [
+              {
+                "id": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+                "name": "State",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.material.options.color",
+                          "type": "string",
+                          "value": "#4A7EFF"
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "7e61ce55-12e8-482f-b30c-713acd1958e6",
+                    "state": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "38e9ef6d-2acd-4227-849d-769bd1798130",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "8ac1f94a-9c20-4ae5-9a64-83422b3ab6a0",
+                    "state": "296d9ecc-ee64-4e46-bc17-eb4c08ff90ad",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "38e9ef6d-2acd-4227-849d-769bd1798130",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Damage"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "296d9ecc-ee64-4e46-bc17-eb4c08ff90ad",
+                "name": "Damage",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.material.options.color",
+                          "type": "string",
+                          "value": "#FFFFFF"
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": [
+                  {
+                    "id": "f7bfe0c4-327b-44ce-9104-0079c43b9faf",
+                    "state": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "ca7e783a-5dff-47b8-95b7-3561fd803b4e",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "1c656a66-bd06-458f-a385-b362e8c2ec5c",
+                    "state": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+                    "time": 1,
+                    "conditions": []
+                  }
+                ]
+              },
+              {
+                "id": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                "name": "Kill",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.material.options.color",
+                          "type": "string",
+                          "value": "#000000"
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Team",
+          "config": {
+            "index": 2
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 3
+          }
+        },
+        {
+          "name": "ColliderContainer",
+          "config": {
+            "type": "circleCollider",
+            "collider": {
+              "centerX": 0,
+              "centerY": 0,
+              "radius": 8
+            }
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "static",
+            "mass": 1,
+            "useGravity": false,
+            "isPermeable": false,
+            "ghost": false,
+            "drag": 0
+          }
+        },
+        {
+          "name": "Weapon",
+          "config": {
+            "type": "range",
+            "cooldown": 500,
+            "properties": {
+              "damage": 1,
+              "range": 192,
+              "projectileSpeed": 50,
+              "projectileRadius": 4,
+              "projectileModel": "3b7b36d9-520b-4fbe-ad9f-e9c8b8a342fb"
+            }
+          }
+        },
+        {
+          "name": "ScriptBundle",
+          "config": {
+            "scripts": [
+              {
+                "id": "d38fbd09-e12a-4e4a-bf14-6fd008d9301e",
+                "name": "ShooterScript",
+                "options": {
+                  "burstTimeout": 2000,
+                  "burstAmount": 8,
+                  "isWeaponLocked": true
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "ViewDirection",
+          "config": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "name": "Movement",
+          "config": {
+            "speed": 15
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "634666ba-179b-4cd8-b13a-97dc7fcf2431",
+          "name": "HitBox",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ColliderContainer",
+              "config": {
+                "type": "circleCollider",
+                "collider": {
+                  "centerX": 0,
+                  "centerY": 0,
+                  "radius": 8
+                }
+              }
+            },
+            {
+              "name": "HitBox",
+              "config": {}
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "2e37fcef-7a7e-40a8-93e4-c939a9a89273",
+          "name": "EnemyDetector",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ColliderContainer",
+              "config": {
+                "type": "circleCollider",
+                "collider": {
+                  "centerX": 0,
+                  "centerY": 0,
+                  "radius": 208
+                }
+              }
+            },
+            {
+              "name": "EnemyDetector",
+              "config": {}
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "3b7b36d9-520b-4fbe-ad9f-e9c8b8a342fb",
+      "name": "Electricity Discharge",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 8,
+            "height": 8,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#00f8f8",
+                "opacity": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "ColliderContainer",
+          "config": {
+            "type": "circleCollider",
+            "collider": {
+              "centerX": 0,
+              "centerY": 0,
+              "radius": 0
+            }
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "dynamic",
+            "mass": 1,
+            "useGravity": false,
+            "isPermeable": false,
+            "ghost": true,
+            "drag": 0
           }
         }
       ],

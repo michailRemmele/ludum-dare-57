@@ -12,9 +12,15 @@ export const shooterScript: WidgetPartSchema = {
       title: 'Burst Amount',
       type: 'number',
     },
+    {
+      name: 'isWeaponLocked',
+      title: 'Is Weapon Locked',
+      type: 'boolean',
+    },
   ],
   getInitialState: () => ({
     burstTimeout: 0,
     burstAmount: 0,
+    isWeaponLocked: false,
   }),
 };

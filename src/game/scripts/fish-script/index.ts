@@ -32,6 +32,10 @@ import type {
 
 const IMMORTAL_DURATION = 500;
 
+interface FishScriptOptions extends ScriptOptions {
+  shoalIndex: number
+}
+
 export class FishScript extends Script {
   private actor: Actor;
   private scene: Scene;
@@ -44,7 +48,7 @@ export class FishScript extends Script {
 
   private immortalDuration: number;
 
-  constructor(options: ScriptOptions) {
+  constructor(options: FishScriptOptions) {
     super();
 
     this.actor = options.actor;
@@ -53,7 +57,7 @@ export class FishScript extends Script {
     this.enemyDetector = this.actor.children.find((child) => child.getComponent(EnemyDetector))!;
     this.player = this.scene.getEntityByName(PLAYER_ACTOR_NAME)!;
 
-    this.shoalIndex = -1;
+    this.shoalIndex = options.shoalIndex;
     this.shouldCatchUp = false;
 
     this.immortalDuration = 0;

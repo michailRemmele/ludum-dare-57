@@ -22,11 +22,17 @@ export const track: WidgetSchema = {
       title: 'Frequency',
       type: 'number',
     },
+    {
+      name: 'patrolDistance',
+      title: 'Patrol Distance',
+      type: 'number',
+    },
   ],
   view: TrackWidget as FC,
   getInitialState: () => ({
     mob: '',
     amount: 0,
     frequency: 1000,
+    patrolDistance: 0,
   }),
 };

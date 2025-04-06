@@ -5,3 +5,4 @@ export { trackScript } from './track-script';
 export { thornsScript } from './thorns-script';
 export { shooterScript } from './shooter-script';
 export { staticTrackScript } from './static-track-script';
+export { floatingTrackScript } from './floating-track-script';

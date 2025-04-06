@@ -78,6 +78,7 @@ export class PlayerScript extends Script {
 
     if (health && team?.index === 3) {
       team.index = 1;
+      health.immortal = false;
       actor.dispatchEvent(EventType.UpdateShoalIndex, { index: this.shoalSize });
       this.shoalSize += 1;
       this.shoalActors.push(actor);

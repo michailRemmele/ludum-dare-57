@@ -16,11 +16,9 @@ import type { CollisionStayEvent, CollisionEnterEvent } from 'dacha/events';
 
 import * as EventType from '../../events';
 import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
-import { CAMERA_SPEED } from '../../../consts/game';
+import { CAMERA_SPEED, VIEWPORT_SIZE } from '../../../consts/game';
 import type { BoxCollider } from '../../../types/collider';
 import { Health, Team, HitBox } from '../../components';
-
-const VIEWPORT_SIZE = 192;
 
 const BORDER_DAMAGE = 1;
 
@@ -115,7 +113,7 @@ export class CameraScript extends Script {
       return;
     }
 
-    parent.dispatchEvent(EventType.Damage, { value: Infinity });
+    parent.dispatchEvent(EventType.Kill);
   };
 
   private handleCollisionStay = (event: CollisionStayEvent): void => {
@@ -134,7 +132,7 @@ export class CameraScript extends Script {
     const team = actor.getComponent(Team);
 
     if (health && team?.index === 1) {
-      actor.dispatchEvent(EventType.Damage, { value: Infinity });
+      actor.dispatchEvent(EventType.Kill);
     }
   };
 
