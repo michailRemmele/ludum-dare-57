@@ -53,7 +53,7 @@ export class FishScript extends Script {
     this.enemyDetector = this.actor.children.find((child) => child.getComponent(EnemyDetector))!;
     this.player = this.scene.getEntityByName(PLAYER_ACTOR_NAME)!;
 
-    this.shoalIndex = 0;
+    this.shoalIndex = -1;
     this.shouldCatchUp = false;
 
     this.immortalDuration = 0;
@@ -114,6 +114,10 @@ export class FishScript extends Script {
   };
 
   private handleKill = (): void => {
+    if (this.shoalIndex === -1) {
+      return;
+    }
+
     this.actor.dispatchEvent(EventType.FishDied);
   };
 
@@ -183,7 +187,7 @@ export class FishScript extends Script {
     this.shouldCatchUp = distance > 2;
 
     if (this.shouldCatchUp) {
-      movement.speed = movement.maxSpeed * 1.5;
+      movement.speed = movement.maxSpeed * 1.25;
       this.actor.dispatchEvent(EventType.Movement, { angle });
     } else {
       movement.speed = movement.maxSpeed;

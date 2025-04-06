@@ -1,10 +1,10 @@
 import type {
-  Actor,
   Scene,
   ScriptOptions,
   UpdateOptions,
 } from 'dacha';
 import {
+  Actor,
   Script,
   Camera,
   Transform,
@@ -18,7 +18,7 @@ import * as EventType from '../../events';
 import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
 import { CAMERA_SPEED } from '../../../consts/game';
 import type { BoxCollider } from '../../../types/collider';
-import { Health, Team } from '../../components';
+import { Health, Team, HitBox } from '../../components';
 
 const VIEWPORT_SIZE = 192;
 
@@ -29,6 +29,7 @@ const RIGHT_BORDER_NAME = 'RightBorder';
 const TOP_BORDER_NAME = 'TopBorder';
 const BOTTOM_BORDER_NAME = 'BottomBorder';
 const DEAD_ZONE = 'DeadZone';
+const ULTIMATE_DEAD_ZONE = 'UltimateDeadZone';
 
 export class CameraScript extends Script {
   private actor: Actor;
@@ -38,6 +39,8 @@ export class CameraScript extends Script {
   private rightBorder: Actor;
   private topBorder: Actor;
   private bottomBorder: Actor;
+
+  private ultimateDeadZone: Actor;
 
   private player: Actor;
 
@@ -54,6 +57,8 @@ export class CameraScript extends Script {
     this.topBorder = this.scene.getEntityByName(TOP_BORDER_NAME)!;
     this.bottomBorder = this.scene.getEntityByName(BOTTOM_BORDER_NAME)!;
 
+    this.ultimateDeadZone = this.leftBorder.getEntityByName(ULTIMATE_DEAD_ZONE)!;
+
     this.player = this.scene.getEntityByName(PLAYER_ACTOR_NAME)!;
 
     this.isGameOver = false;
@@ -67,6 +72,11 @@ export class CameraScript extends Script {
       const deadZone = actor.getEntityByName(DEAD_ZONE);
       deadZone?.addEventListener(CollisionEnter, this.handleCollisionEnterDeadZone);
     });
+
+    this.ultimateDeadZone.addEventListener(
+      CollisionEnter,
+      this.handleCollisionEnterUltimateDeadZone,
+    );
 
     this.scene.addEventListener(EventType.GameOver, this.handleGameOver);
   }
@@ -82,11 +92,30 @@ export class CameraScript extends Script {
       deadZone?.removeEventListener(CollisionEnter, this.handleCollisionEnterDeadZone);
     });
 
+    this.ultimateDeadZone.removeEventListener(
+      CollisionEnter,
+      this.handleCollisionEnterUltimateDeadZone,
+    );
+
     this.scene.removeEventListener(EventType.GameOver, this.handleGameOver);
   }
 
   private handleGameOver = (): void => {
     this.isGameOver = true;
+  };
+
+  private handleCollisionEnterUltimateDeadZone = (event: CollisionEnterEvent): void => {
+    const { actor } = event;
+
+    const hitBox = actor.getComponent(HitBox);
+    const parent = actor.parent instanceof Actor ? actor.parent : undefined;
+    const health = parent?.getComponent(Health);
+
+    if (!parent || !hitBox || !health) {
+      return;
+    }
+
+    parent.dispatchEvent(EventType.Damage, { value: Infinity });
   };
 
   private handleCollisionStay = (event: CollisionStayEvent): void => {
