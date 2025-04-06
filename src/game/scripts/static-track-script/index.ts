@@ -3,10 +3,12 @@ import type {
   ActorSpawner,
   Scene,
   ScriptOptions,
+  ActorEvent,
 } from 'dacha';
 import {
   Script,
   Transform,
+  Camera,
 } from 'dacha';
 import { CollisionEnter } from 'dacha/events';
 import type { CollisionEnterEvent } from 'dacha/events';
@@ -17,17 +19,27 @@ import {
   Track,
   TrackActivator,
 } from '../../components';
+import * as EventType from '../../events';
+import { MAIN_CAMERA_NAME } from '../../../consts/actors';
+import { VIEWPORT_SIZE } from '../../../consts/game';
+
+const ATTACK_BORDER_OFFSET = 8;
 
 export class StaticTrackScript extends Script {
   private actor: Actor;
   private scene: Scene;
   private actorSpawner: ActorSpawner;
 
+  private mainCamera: Actor;
+
   private trackActivator: Actor;
+
+  private mob: Actor | undefined;
 
   private mobId: string;
   private mobsLeft: number;
   private isSpawnStarted: boolean;
+  private isWeaponUnlocked: boolean;
 
   constructor(options: ScriptOptions) {
     super();
@@ -36,14 +48,18 @@ export class StaticTrackScript extends Script {
     this.scene = options.scene;
     this.actorSpawner = options.actorSpawner;
 
+    this.mainCamera = this.scene.getEntityByName(MAIN_CAMERA_NAME)!;
+
     const track = this.actor.getComponent(Track);
     this.trackActivator = this.actor.children.find((child) => child.getComponent(TrackActivator))!;
 
     this.mobId = track.mob;
     this.mobsLeft = 1;
     this.isSpawnStarted = false;
+    this.isWeaponUnlocked = false;
 
     this.trackActivator.addEventListener(CollisionEnter, this.handleCollisionEnterTrackActivator);
+    this.scene.addEventListener(EventType.Kill, this.handleMobKill);
   }
 
   destroy(): void {
@@ -51,7 +67,14 @@ export class StaticTrackScript extends Script {
       CollisionEnter,
       this.handleCollisionEnterTrackActivator,
     );
+    this.scene.removeEventListener(EventType.Kill, this.handleMobKill);
   }
+
+  private handleMobKill = (event: ActorEvent): void => {
+    if (this.mob && event.target.id === this.mob.id) {
+      this.mob = undefined;
+    }
+  };
 
   private handleCollisionEnterTrackActivator = (event: CollisionEnterEvent): void => {
     const { actor } = event;
@@ -80,8 +103,30 @@ export class StaticTrackScript extends Script {
     mobTransform.offsetY = spawnerTransform.offsetY;
 
     this.scene.appendChild(mob);
+    this.mob = mob;
 
     this.mobsLeft -= 1;
+  }
+
+  private updateWeaponUnlock(): void {
+    if (!this.mob || this.isWeaponUnlocked) {
+      return;
+    }
+
+    const mobTransform = this.mob.getComponent(Transform);
+
+    const cameraTransform = this.mainCamera.getComponent(Transform);
+    const camera = this.mainCamera.getComponent(Camera);
+    const zoom = Math.ceil(camera.windowSizeY / VIEWPORT_SIZE);
+
+    const windowSizeX = camera.windowSizeX / zoom;
+
+    const distance = Math.abs(cameraTransform.offsetX - mobTransform.offsetX);
+
+    if (distance < (windowSizeX / 2 - ATTACK_BORDER_OFFSET)) {
+      this.mob.dispatchEvent(EventType.UnlockWeapon);
+      this.isWeaponUnlocked = true;
+    }
   }
 
   update(): void {
@@ -90,6 +135,7 @@ export class StaticTrackScript extends Script {
     }
 
     this.updateSpawn();
+    this.updateWeaponUnlock();
   }
 }
 

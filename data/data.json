@@ -2013,7 +2013,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1768,
+                "offsetX": 1592,
                 "offsetY": 24,
                 "offsetZ": 0,
                 "rotation": 0,
@@ -2061,7 +2061,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1768,
+                "offsetX": 1592,
                 "offsetY": -8,
                 "offsetZ": 0,
                 "rotation": 0,
@@ -6636,7 +6636,7 @@
             "cooldown": 350,
             "properties": {
               "damage": 1.5,
-              "range": 192,
+              "range": 224,
               "projectileSpeed": 50,
               "projectileRadius": 4,
               "projectileModel": "0288d542-2944-4f63-b4c1-fecdf38daff8"
@@ -6652,7 +6652,8 @@
                 "name": "ShooterScript",
                 "options": {
                   "burstTimeout": 2500,
-                  "burstAmount": 5
+                  "burstAmount": 5,
+                  "isWeaponLocked": true
                 }
               }
             ]
@@ -7108,7 +7109,7 @@
             "cooldown": 500,
             "properties": {
               "damage": 1,
-              "range": 192,
+              "range": 224,
               "projectileSpeed": 50,
               "projectileRadius": 4,
               "projectileModel": "3b7b36d9-520b-4fbe-ad9f-e9c8b8a342fb"
