@@ -19,6 +19,8 @@ export const UpdateShoalIndex = 'UpdateShoalIndex';
 export const FishDied = 'FishDied';
 export const UnlockWeapon = 'UnlockWeapon';
 
+export const IncreaseScorePoints = 'IncreaseScorePoints';
+
 export type MovementEvent = ActorEvent<{
   angle?: number
   x?: number
@@ -41,6 +43,11 @@ export type SendAnalyticsEvent = SceneEvent<{
 export type GameOverEvent = SceneEvent<{
   isWin: boolean
   levelIndex: number
+  score: number
+}>;
+
+export type IncreaseScorePointsEvent = SceneEvent<{
+  points: number
 }>;
 
 declare module 'dacha' {
@@ -63,5 +70,6 @@ declare module 'dacha' {
     [ResetSaveState]: SceneEvent
     [SendAnalytics]: SendAnalyticsEvent
     [GameOver]: GameOverEvent
+    [IncreaseScorePoints]: IncreaseScorePointsEvent
   }
 }

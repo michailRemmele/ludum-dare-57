@@ -17,7 +17,9 @@ import type {
 
 import * as EventType from '../../events';
 import type { DamageEvent } from '../../events';
-import { ViewDirection, Health } from '../../components';
+import {
+  ViewDirection, Health, Team, ScorePoints,
+} from '../../components';
 import { Constructor } from '../../../types/utils';
 
 type ComponentConstructor = Constructor<Component> & { componentName: string };
@@ -54,8 +56,9 @@ export class Reaper extends System {
   }
 
   handleDamage = (event: DamageEvent): void => {
-    const { target, value } = event;
+    const { target, value, actor } = event;
 
+    const scorePoints = target.getComponent(ScorePoints);
     const health = target.getComponent(Health);
     if (!health || health.immortal) {
       return;
@@ -68,6 +71,12 @@ export class Reaper extends System {
     if (health.points <= 0) {
       health.points = 0;
       target.dispatchEvent(EventType.Kill);
+
+      if (scorePoints && actor && actor.getComponent(Team)?.index === 1) {
+        this.scene.dispatchEvent(EventType.IncreaseScorePoints, {
+          points: scorePoints.amount,
+        });
+      }
     }
   };
 

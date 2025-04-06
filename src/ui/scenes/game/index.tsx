@@ -9,7 +9,7 @@ import { LoadScene } from 'dacha/events';
 import * as EventType from '../../../game/events';
 import { EngineContext } from '../../providers';
 import {
-  FpsMeter,
+  // FpsMeter,
   Button,
 } from '../../components';
 import { GAME_ID, MAIN_MENU_ID } from '../../../consts/scenes';
@@ -19,6 +19,7 @@ import type { GameOverEvent } from '../../../game/events';
 
 import {
   MoveControl,
+  ScoreBar,
 } from './components';
 import './style.css';
 
@@ -85,8 +86,9 @@ export const Game: FC = () => {
     <div className="game">
       <header className="game__header">
         <div className="header__left" />
+        <ScoreBar />
       </header>
-      {process.env.NODE_ENV === 'development' && <FpsMeter />}
+      {/* {process.env.NODE_ENV === 'development' && <FpsMeter />} */}
 
       {isTouchDevice() && (
         <MoveControl className="game__move-control" />

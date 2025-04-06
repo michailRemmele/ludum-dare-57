@@ -11,3 +11,5 @@ export { TrackActivator } from './track-activator';
 export { TrackSegment } from './track-segment';
 export { Track } from './track';
 export { LevelInfo } from './level-info';
+export { ScorePoints } from './score-points';
+export { Score } from './score';

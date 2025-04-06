@@ -1,13 +1,13 @@
 import { Component } from 'dacha';
 
-interface TeamConfig {
+interface LevelInfoConfig {
   index: number
 }
 
 export class LevelInfo extends Component {
   index: number;
 
-  constructor(config: TeamConfig) {
+  constructor(config: LevelInfoConfig) {
     super();
 
     const { index } = config;

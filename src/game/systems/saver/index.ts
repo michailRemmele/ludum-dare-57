@@ -62,6 +62,7 @@ export class Saver extends System {
 
     const completedLevel: CompletedLevel = {
       id: LEVELS[event.levelIndex].id,
+      highestScore: event.score,
     };
 
     const oldCompletedLevel = window.saveState!.completedLevels.find(
@@ -70,6 +71,11 @@ export class Saver extends System {
 
     if (!oldCompletedLevel) {
       window.saveState!.completedLevels.push(completedLevel);
+    } else {
+      oldCompletedLevel.highestScore = Math.max(
+        completedLevel.highestScore,
+        oldCompletedLevel.highestScore ?? 0,
+      );
     }
 
     this.save();

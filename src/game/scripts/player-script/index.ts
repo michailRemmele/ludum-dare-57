@@ -26,7 +26,7 @@ import {
 import { CAMERA_SPEED } from '../../../consts/game';
 import { INITIAL_FISH, MAIN_CAMERA_NAME } from '../../../consts/actors';
 import {
-  Team, Health, Movement, Shoal, LevelInfo,
+  Team, Health, Movement, Shoal, LevelInfo, Score,
 } from '../../components';
 import * as EventType from '../../events';
 import type { GameOverEvent } from '../../events';
@@ -153,7 +153,12 @@ export class PlayerScript extends Script {
 
     if (this.shoalSize <= 0) {
       const levelInfo = this.mainCamera.getComponent(LevelInfo);
-      this.scene.dispatchEvent(EventType.GameOver, { isWin: false, levelIndex: levelInfo.index });
+      const score = this.mainCamera.getComponent(Score);
+      this.scene.dispatchEvent(EventType.GameOver, {
+        isWin: false,
+        levelIndex: levelInfo.index,
+        score: score.value,
+      });
     }
   }
 }

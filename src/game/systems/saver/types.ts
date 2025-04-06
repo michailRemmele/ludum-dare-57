@@ -1,5 +1,6 @@
 export interface CompletedLevel {
   id: string
+  highestScore: number
 }
 
 export type SaveState = {

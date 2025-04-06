@@ -1,0 +1,32 @@
+.score-bar {
+  font-size: 36px;
+  font-weight: 700;
+
+  color: white;
+}
+
+.score-bar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-bar__icon {
+  width: 64px;
+  image-rendering: pixelated;
+}
+
+.score-bar__value {
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .score-bar {
+    font-size: 32px;
+  }
+
+  .score-bar__icon {
+    width: 56px;
+    image-rendering: pixelated;
+  }
+}

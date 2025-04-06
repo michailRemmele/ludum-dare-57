@@ -493,6 +493,12 @@
               "config": {
                 "index": 0
               }
+            },
+            {
+              "name": "Score",
+              "config": {
+                "value": 0
+              }
             }
           ],
           "children": [
@@ -2568,6 +2574,12 @@
               "name": "LevelInfo",
               "config": {
                 "index": 1
+              }
+            },
+            {
+              "name": "Score",
+              "config": {
+                "value": 0
               }
             }
           ],
@@ -6034,6 +6046,12 @@
           "config": {
             "speed": 60
           }
+        },
+        {
+          "name": "ScorePoints",
+          "config": {
+            "amount": 100
+          }
         }
       ],
       "children": [
@@ -6490,6 +6508,12 @@
             "ghost": false,
             "drag": 0
           }
+        },
+        {
+          "name": "ScorePoints",
+          "config": {
+            "amount": 250
+          }
         }
       ],
       "children": [
@@ -6835,6 +6859,12 @@
           "config": {
             "x": 0,
             "y": 0
+          }
+        },
+        {
+          "name": "ScorePoints",
+          "config": {
+            "amount": 500
           }
         }
       ],
@@ -7330,6 +7360,12 @@
           "name": "Movement",
           "config": {
             "speed": 15
+          }
+        },
+        {
+          "name": "ScorePoints",
+          "config": {
+            "amount": 400
           }
         }
       ],

@@ -15,6 +15,7 @@ import { CollisionStay, CollisionEnter } from 'dacha/events';
 import type { CollisionStayEvent, CollisionEnterEvent } from 'dacha/events';
 
 import * as EventType from '../../events';
+import type { IncreaseScorePointsEvent } from '../../events';
 import { CAMERA_SPEED, VIEWPORT_SIZE } from '../../../consts/game';
 import { FINISH_ZONE_NAME } from '../../../consts/templates';
 import type { BoxCollider } from '../../../types/collider';
@@ -23,6 +24,7 @@ import {
   Team,
   HitBox,
   LevelInfo,
+  Score,
 } from '../../components';
 
 const BORDER_DAMAGE = 1;
@@ -83,6 +85,7 @@ export class CameraScript extends Script {
     );
 
     this.scene.addEventListener(EventType.GameOver, this.handleGameOver);
+    this.scene.addEventListener(EventType.IncreaseScorePoints, this.handleIncreaseScorePoints);
   }
 
   destroy(): void {
@@ -102,7 +105,14 @@ export class CameraScript extends Script {
     );
 
     this.scene.removeEventListener(EventType.GameOver, this.handleGameOver);
+    this.scene.removeEventListener(EventType.IncreaseScorePoints, this.handleIncreaseScorePoints);
   }
+
+  private handleIncreaseScorePoints = (event: IncreaseScorePointsEvent): void => {
+    const score = this.actor.getComponent(Score);
+
+    score.value += event.points;
+  };
 
   private handleGameOver = (): void => {
     this.isGameOver = true;
@@ -199,11 +209,16 @@ export class CameraScript extends Script {
     const finishZoneTransform = this.finishZone.getComponent(Transform);
     const cameraTransform = this.actor.getComponent(Transform);
     const levelInfo = this.actor.getComponent(LevelInfo);
+    const score = this.actor.getComponent(Score);
 
     const distance = Math.abs(cameraTransform.offsetX - finishZoneTransform.offsetX);
 
     if (distance < FINISH_ZONE_DISTANCE_THRESHOLD) {
-      this.scene.dispatchEvent(EventType.GameOver, { isWin: true, levelIndex: levelInfo.index });
+      this.scene.dispatchEvent(EventType.GameOver, {
+        isWin: true,
+        levelIndex: levelInfo.index,
+        score: score.value,
+      });
     }
   }
 
