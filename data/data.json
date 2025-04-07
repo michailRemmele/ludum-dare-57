@@ -510,7 +510,7 @@
                       "options": {
                         "blending": "normal",
                         "color": "#ff0000",
-                        "opacity": 1
+                        "opacity": 0
                       }
                     }
                   }
@@ -679,7 +679,7 @@
                       "options": {
                         "blending": "normal",
                         "color": "#ff0000",
-                        "opacity": 1
+                        "opacity": 0
                       }
                     }
                   }
@@ -820,7 +820,7 @@
                       "options": {
                         "blending": "normal",
                         "color": "#ff0000",
-                        "opacity": 1
+                        "opacity": 0
                       }
                     }
                   }
@@ -933,7 +933,7 @@
                       "options": {
                         "blending": "normal",
                         "color": "#ff0000",
-                        "opacity": 1
+                        "opacity": 0
                       }
                     }
                   }
@@ -1345,7 +1345,7 @@
                 {
                   "name": "Transform",
                   "config": {
-                    "offsetX": -208,
+                    "offsetX": -192,
                     "offsetY": -104,
                     "offsetZ": 0,
                     "rotation": 0,
@@ -1641,7 +1641,7 @@
                 {
                   "name": "Transform",
                   "config": {
-                    "offsetX": -208,
+                    "offsetX": -160,
                     "offsetY": 104,
                     "offsetZ": 0,
                     "rotation": 0,
@@ -1966,7 +1966,7 @@
                 {
                   "name": "Transform",
                   "config": {
-                    "offsetX": -320,
+                    "offsetX": -272,
                     "offsetY": -24,
                     "offsetZ": 0,
                     "rotation": 0,
@@ -2043,7 +2043,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": 1592,
-                "offsetY": -8,
+                "offsetY": -24,
                 "offsetZ": 0,
                 "rotation": 0,
                 "scaleX": 1,
@@ -2070,7 +2070,7 @@
                   "name": "Transform",
                   "config": {
                     "offsetX": -288,
-                    "offsetY": 8,
+                    "offsetY": 24,
                     "offsetZ": 0,
                     "rotation": 0,
                     "scaleX": 1,
@@ -2532,6 +2532,837 @@
             }
           ],
           "children": []
+        },
+        {
+          "id": "ad354566-2557-4d89-af52-9a982ef7ad5a",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "Static Track 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 984,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "e8ebf6b1-e9c4-43ac-b64d-76745da1bf1a",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": -40,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "c436a1d4-e841-41d6-9b02-fd7c42ff9400",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "b200b4e5-59f1-4679-a507-d8235123a33a",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1816,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+                "amount": 6,
+                "frequency": 750
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "9553fa3c-d06d-428b-9dc8-c298132eb034",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -192,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "1d2741b3-9eea-4a59-9bc5-8c6d96681f9a",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "08797533-118a-4c34-9808-7c51d51fe8de",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -32,
+                    "offsetY": 96,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 1,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "b8791796-b3ae-47dd-8ce0-a0976cb3efa5",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment 3",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -80,
+                    "offsetY": 96,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 2,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7b745668-8b56-4a6d-b43b-c8cd43febae5",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "StaticTrack 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1864,
+                "offsetY": -40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "64686972-7fc9-4b90-a6bd-27a127d51dc5",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": 40,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "3d3444d1-c8b0-4364-8509-daa00eac0d44",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "f8dcb99f-8970-42aa-a669-a2ca6fbd15f7",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 9",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2040,
+                "offsetY": 104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "1c2a53f5-cf88-4071-be04-917edef5a008",
+                "amount": 2,
+                "frequency": 1500
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "5d4a989c-06a0-42c8-9c55-290b75e19431",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -176,
+                    "offsetY": -104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "7e01614a-7e41-4e17-92b4-95f6946f5265",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -16,
+                    "offsetY": -48,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "dba01170-f8ac-44e0-b26c-6fa2367aee6e",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -64,
+                    "offsetY": -96,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 1,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "d51dfbb6-2bad-491b-928c-c1e26ec537b5",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 10",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2232,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "1c2a53f5-cf88-4071-be04-917edef5a008",
+                "amount": 2,
+                "frequency": 1500
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "10b6c659-4e35-495f-bf82-11b5877a80f5",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -192,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "e0bc5ea3-ef16-4a98-8a40-55685bbbd003",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -16,
+                    "offsetY": 48,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "1664a9ba-d332-43b9-b1aa-fb3a5408646b",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": 96,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 1,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5440a714-21bd-4103-9bf2-676747977f33",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 11",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2520,
+                "offsetY": 104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+                "amount": 6,
+                "frequency": 750
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "b1fd2bd3-28f3-49d5-8272-8b7630c445ea",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -192,
+                    "offsetY": -104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "2372fd4f-e099-441a-822e-c5e0b710d8d0",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -64,
+                    "offsetY": -80,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "13e12c6c-03c8-4496-91d3-ce58e22698b3",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 12",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2552,
+                "offsetY": 104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+                "amount": 6,
+                "frequency": 750
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "4722be82-e499-4c8e-8d6c-4e24ba37cbd9",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -208,
+                    "offsetY": -104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "71cfd3d6-b756-4f32-a4c0-a7f180d120c5",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -64,
+                    "offsetY": -80,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6c530f9e-9599-434d-953e-34c490bb7052",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "StaticTrack 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2728,
+                "offsetY": -56,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "e0e50b55-8af1-40f9-9a2c-af5b60d0ca7b",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": 56,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "2a876e7e-8aed-4f51-bc69-a1c24716761d",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "164aa68d-f171-4eed-897d-329ad5cc21f2",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "StaticTrack 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2728,
+                "offsetY": 24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "02245010-1224-402e-880b-c38bdab5b786",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": -24,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "29d9eb6c-4af2-4092-ab2e-706a2544a705",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "30f3d143-c712-4c89-8de6-fdb25c8ebc87",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 13",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2968,
+                "offsetY": 104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "118bb4cd-2c21-4bb2-8f17-678e345a088a",
+                "amount": 3,
+                "frequency": 1000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "67a0f4f7-9535-40fc-98c4-fa8f2fddd2b7",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -208,
+                    "offsetY": -104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "1a34514a-4439-4cf8-ab57-43442889bf33",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": -64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "02eb58ac-6e96-408f-81cb-ba36d513ecdd",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 14",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2904,
+                "offsetY": 104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "118bb4cd-2c21-4bb2-8f17-678e345a088a",
+                "amount": 3,
+                "frequency": 1000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "8d524111-38d5-44b1-a719-7f0d95a47473",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -208,
+                    "offsetY": -104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "24847d52-07c4-4d26-8d7d-8587dd4d9dc4",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": -64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -7234,7 +8065,7 @@
               "options": {
                 "blending": "normal",
                 "color": "#61430b",
-                "opacity": 0
+                "opacity": 1
               }
             }
           }
@@ -7346,7 +8177,7 @@
               "options": {
                 "blending": "normal",
                 "color": "#de6e6e",
-                "opacity": 0
+                "opacity": 0.5
               }
             }
           }
@@ -8588,7 +9419,7 @@
               "options": {
                 "blending": "normal",
                 "color": "#e7ff05",
-                "opacity": 0
+                "opacity": 1
               }
             }
           }
@@ -8690,8 +9521,8 @@
               "type": "basic",
               "options": {
                 "blending": "normal",
-                "color": "#fffb31",
-                "opacity": 0
+                "color": "#e600ff",
+                "opacity": 1
               }
             }
           }
@@ -9735,6 +10566,692 @@
         }
       ],
       "children": []
+    },
+    {
+      "id": "1c2a53f5-cf88-4071-be04-917edef5a008",
+      "name": "Fast Jellyfish",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "sprites/jellyfish.png",
+            "width": 24,
+            "height": 48,
+            "slice": 10,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#ffffff",
+                "opacity": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+            "states": [
+              {
+                "id": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+                "name": "Idle",
+                "type": "group",
+                "speed": 0.6,
+                "transitions": [
+                  {
+                    "id": "7e61ce55-12e8-482f-b30c-713acd1958e6",
+                    "state": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "38e9ef6d-2acd-4227-849d-769bd1798130",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "8ac1f94a-9c20-4ae5-9a64-83422b3ab6a0",
+                    "state": "296d9ecc-ee64-4e46-bc17-eb4c08ff90ad",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "38e9ef6d-2acd-4227-849d-769bd1798130",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Damage"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "2e135cfb-3ee5-485a-8fd1-daad0449dded",
+                    "state": "d00385b0-68c7-4c0c-aa66-1166f45845aa",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "38e9ef6d-2acd-4227-849d-769bd1798130",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Attack"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "substates": [
+                  {
+                    "id": "fa5e0358-ec1b-4dd0-be04-c44d80c3c055",
+                    "name": "Left",
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "9ba0d72c-d955-4907-8e3d-292c54011129",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 0
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "id": "48093044-b8ca-4a71-a754-2e9841166f93",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 1
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "id": "71a549d6-b4d9-4b47-ab6f-ddf28c6a5805",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 2
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "id": "c2113c9f-f46e-4354-89bf-223bc24c76af",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 3
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": true
+                    },
+                    "x": -1
+                  },
+                  {
+                    "id": "98569c36-75c2-42db-b597-74bc3adb22d7",
+                    "name": "Right",
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "9ba0d72c-d955-4907-8e3d-292c54011129",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 0
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        },
+                        {
+                          "id": "48093044-b8ca-4a71-a754-2e9841166f93",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 1
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        },
+                        {
+                          "id": "71a549d6-b4d9-4b47-ab6f-ddf28c6a5805",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 2
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        },
+                        {
+                          "id": "c2113c9f-f46e-4354-89bf-223bc24c76af",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 3
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": true
+                    },
+                    "x": 1
+                  }
+                ],
+                "pickMode": "1D",
+                "pickProps": {
+                  "x": "components.ViewDirection.x"
+                }
+              },
+              {
+                "id": "296d9ecc-ee64-4e46-bc17-eb4c08ff90ad",
+                "name": "Damage",
+                "type": "group",
+                "speed": 1,
+                "transitions": [
+                  {
+                    "id": "f7bfe0c4-327b-44ce-9104-0079c43b9faf",
+                    "state": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "ca7e783a-5dff-47b8-95b7-3561fd803b4e",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "635a611f-320c-410e-ba36-3184fcd69e43",
+                    "state": "d00385b0-68c7-4c0c-aa66-1166f45845aa",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "ca7e783a-5dff-47b8-95b7-3561fd803b4e",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Attack"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "423db09c-ad23-41c6-9dd3-30298bb87f45",
+                    "state": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+                    "time": 1,
+                    "conditions": []
+                  }
+                ],
+                "substates": [
+                  {
+                    "id": "a939efba-57f8-4f44-bce9-eeb1e89500b6",
+                    "name": "Left",
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "9ba0d72c-d955-4907-8e3d-292c54011129",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 6
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": true
+                    },
+                    "x": -1
+                  },
+                  {
+                    "id": "96185896-095b-404b-aa49-169879f3de6c",
+                    "name": "Right",
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "9ba0d72c-d955-4907-8e3d-292c54011129",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 6
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": true
+                    },
+                    "x": 1
+                  }
+                ],
+                "pickMode": "1D",
+                "pickProps": {
+                  "x": "components.ViewDirection.x"
+                }
+              },
+              {
+                "id": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                "name": "Kill",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 7
+                        }
+                      ]
+                    },
+                    {
+                      "id": "159997af-f4d3-497f-aac5-32ffb4873819",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 8
+                        }
+                      ]
+                    },
+                    {
+                      "id": "9fab8786-41bb-4994-b3db-d2be72c9045a",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 9
+                        }
+                      ]
+                    },
+                    {
+                      "id": "cdffd609-94ca-42ee-9cff-044b9ab4425b",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": []
+              },
+              {
+                "id": "d00385b0-68c7-4c0c-aa66-1166f45845aa",
+                "name": "Attack",
+                "type": "group",
+                "speed": 1,
+                "transitions": [
+                  {
+                    "id": "f7bfe0c4-327b-44ce-9104-0079c43b9faf",
+                    "state": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "ca7e783a-5dff-47b8-95b7-3561fd803b4e",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "b28dbda9-0382-4e47-b799-8937da4ff3fb",
+                    "state": "296d9ecc-ee64-4e46-bc17-eb4c08ff90ad",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "ca7e783a-5dff-47b8-95b7-3561fd803b4e",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Damage"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "103cf841-96c5-46cd-bd0d-88e066526e91",
+                    "state": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+                    "time": 1,
+                    "conditions": []
+                  }
+                ],
+                "substates": [
+                  {
+                    "id": "1b4be5c4-9f69-4270-bb34-c4b97f74d744",
+                    "name": "Left",
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "9ba0d72c-d955-4907-8e3d-292c54011129",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 4
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "id": "7e87016f-98fd-462e-baf7-d76651bd63fd",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 5
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": true
+                    },
+                    "x": -1
+                  },
+                  {
+                    "id": "a80b74dd-3b16-40b5-aa13-0ec21f2c2204",
+                    "name": "Right",
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "9ba0d72c-d955-4907-8e3d-292c54011129",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 4
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        },
+                        {
+                          "id": "22351d8f-b220-481f-805a-d04f69fdf98d",
+                          "fields": [
+                            {
+                              "id": "a7180d4a-837a-4e60-b866-b0ca85aa8915",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 5
+                            },
+                            {
+                              "id": "4cb949db-3eb1-4a47-9f85-5c2bfc657726",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": true
+                    },
+                    "x": 1
+                  }
+                ],
+                "pickMode": "1D",
+                "pickProps": {
+                  "x": "components.ViewDirection.x"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Team",
+          "config": {
+            "index": 2
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 3
+          }
+        },
+        {
+          "name": "Weapon",
+          "config": {
+            "type": "range",
+            "cooldown": 500,
+            "properties": {
+              "damage": 1,
+              "range": 160,
+              "projectileSpeed": 60,
+              "projectileRadius": 4,
+              "projectileModel": "3b7b36d9-520b-4fbe-ad9f-e9c8b8a342fb"
+            }
+          }
+        },
+        {
+          "name": "ScriptBundle",
+          "config": {
+            "scripts": [
+              {
+                "id": "d38fbd09-e12a-4e4a-bf14-6fd008d9301e",
+                "name": "ShooterScript",
+                "options": {
+                  "burstTimeout": 2000,
+                  "burstAmount": 3,
+                  "isWeaponLocked": true
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "ViewDirection",
+          "config": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "name": "Movement",
+          "config": {
+            "speed": 25
+          }
+        },
+        {
+          "name": "ScorePoints",
+          "config": {
+            "amount": 400
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "eb84c4ef-c413-407c-bca0-99749bf878a9",
+          "name": "HitBox",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ColliderContainer",
+              "config": {
+                "type": "circleCollider",
+                "collider": {
+                  "centerX": 0,
+                  "centerY": 0,
+                  "radius": 8
+                }
+              }
+            },
+            {
+              "name": "HitBox",
+              "config": {}
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "61e1f00a-9ef5-46bb-9b7e-c5f8a99a9ccd",
+          "name": "EnemyDetector",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "ColliderContainer",
+              "config": {
+                "type": "circleCollider",
+                "collider": {
+                  "centerX": 0,
+                  "centerY": 0,
+                  "radius": 160
+                }
+              }
+            },
+            {
+              "name": "EnemyDetector",
+              "config": {}
+            }
+          ],
+          "children": []
+        }
+      ]
     }
   ],
   "loaders": [],

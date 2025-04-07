@@ -20,6 +20,7 @@ import {
   Track,
   TrackActivator,
   TrackSegment,
+  Weapon,
 } from '../../components';
 import * as EventType from '../../events';
 
@@ -35,6 +36,7 @@ export class TrackScript extends Script {
   private mobs: Actor[];
 
   private mobDestinations: Record<string, number>;
+  private mobWeaponsState: Record<string, boolean>;
 
   private spawnFrequency: number;
   private mobId: string;
@@ -63,6 +65,7 @@ export class TrackScript extends Script {
 
     this.mobs = [];
     this.mobDestinations = {};
+    this.mobWeaponsState = {};
 
     this.mobId = track.mob;
     this.spawnFrequency = track.frequency;
@@ -72,7 +75,7 @@ export class TrackScript extends Script {
     this.spawnCooldown = 0;
 
     this.trackActivator.addEventListener(CollisionEnter, this.handleCollisionEnterTrackActivator);
-    this.actor.addEventListener(EventType.Kill, this.handleMobKill);
+    this.scene.addEventListener(EventType.Kill, this.handleMobKill);
   }
 
   destroy(): void {
@@ -80,7 +83,7 @@ export class TrackScript extends Script {
       CollisionEnter,
       this.handleCollisionEnterTrackActivator,
     );
-    this.actor.removeEventListener(EventType.Kill, this.handleMobKill);
+    this.scene.removeEventListener(EventType.Kill, this.handleMobKill);
   }
 
   private handleCollisionEnterTrackActivator = (event: CollisionEnterEvent): void => {
@@ -99,8 +102,13 @@ export class TrackScript extends Script {
   private handleMobKill = (event: ActorEvent): void => {
     const { target } = event;
 
+    if (!this.mobs.length) {
+      return;
+    }
+
     this.mobs = this.mobs.filter((mob) => mob.id !== target.id);
     delete this.mobDestinations[target.id];
+    delete this.mobWeaponsState[target.id];
   };
 
   private updateSpawn(deltaTime: number): void {
@@ -183,13 +191,25 @@ export class TrackScript extends Script {
     });
   }
 
+  private updateWeaponUnlock(): void {
+    this.mobs.forEach((mob) => {
+      if (!mob.getComponent(Weapon) || this.mobWeaponsState[mob.id]) {
+        return;
+      }
+
+      mob.dispatchEvent(EventType.UnlockWeapon);
+      this.mobWeaponsState[mob.id] = true;
+    });
+  }
+
   update(options: UpdateOptions): void {
     if (!this.isSpawnStarted) {
       return;
     }
 
-    this.updateSpawn(options.deltaTime);
+    this.updateWeaponUnlock();
     this.updateTrackMovement();
+    this.updateSpawn(options.deltaTime);
   }
 }
 
