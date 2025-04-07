@@ -25,7 +25,7 @@ import { Constructor } from '../../../types/utils';
 type ComponentConstructor = Constructor<Component> & { componentName: string };
 
 const GRAVEYARD_CLEAN_FREQUENCY = 1000;
-const GRAVEYARD_ENTRIES_LIFETIME = 4000;
+const GRAVEYARD_ENTRIES_LIFETIME = 10_000;
 const ALLOWED_COMPONENTS = new Set<ComponentConstructor>([
   ViewDirection, Transform, Sprite, Light, Animatable, Camera,
 ]);

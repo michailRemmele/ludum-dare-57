@@ -179,8 +179,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": -88,
-                "offsetY": -8,
+                "offsetX": 0,
+                "offsetY": 0,
                 "offsetZ": 0,
                 "rotation": 0,
                 "scaleX": 1,
@@ -413,106 +413,6 @@
               ]
             }
           ]
-        },
-        {
-          "id": "806620c5-1cab-4568-9745-17308c7415dd",
-          "name": "Decoration 3",
-          "components": [
-            {
-              "name": "Sprite",
-              "config": {
-                "src": "",
-                "width": 32,
-                "height": 32,
-                "slice": 1,
-                "rotation": 0,
-                "sortCenter": [
-                  0,
-                  0
-                ],
-                "flipX": false,
-                "flipY": false,
-                "sortingLayer": "foreground",
-                "fit": "stretch",
-                "material": {
-                  "type": "basic",
-                  "options": {
-                    "blending": "normal",
-                    "color": "#c726b5",
-                    "opacity": 1
-                  }
-                }
-              }
-            },
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 128,
-                "offsetY": 80,
-                "offsetZ": 0,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            },
-            {
-              "name": "Parallax",
-              "config": {
-                "distance": -0.2
-              }
-            }
-          ],
-          "children": []
-        },
-        {
-          "id": "a1ab9617-aec6-4766-a0ec-8a80c6eb87df",
-          "name": "Decoration 4",
-          "components": [
-            {
-              "name": "Sprite",
-              "config": {
-                "src": "",
-                "width": 32,
-                "height": 32,
-                "slice": 1,
-                "rotation": 0,
-                "sortCenter": [
-                  0,
-                  0
-                ],
-                "flipX": false,
-                "flipY": false,
-                "sortingLayer": "foreground",
-                "fit": "stretch",
-                "material": {
-                  "type": "basic",
-                  "options": {
-                    "blending": "normal",
-                    "color": "#c726b5",
-                    "opacity": 1
-                  }
-                }
-              }
-            },
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 512,
-                "offsetY": 80,
-                "offsetZ": 0,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            },
-            {
-              "name": "Parallax",
-              "config": {
-                "distance": -0.2
-              }
-            }
-          ],
-          "children": []
         },
         {
           "id": "a067ab21-5153-4130-b1b9-a8c9c4424c3c",
@@ -1108,8 +1008,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": -88,
-                "offsetY": -8,
+                "offsetX": 0,
+                "offsetY": 0,
                 "offsetZ": 0,
                 "rotation": 0,
                 "scaleX": 1,
@@ -1149,6 +1049,13 @@
               "id": "ad63e543-d338-47ef-9273-23869734fbfe",
               "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
               "name": "Template",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "061b7e94-11a3-4174-899f-d310fc704a26",
+              "templateId": "a66512c3-2c5b-4631-8c1b-9515d670d494",
+              "name": "Bubble",
               "components": [],
               "children": []
             }
@@ -2212,6 +2119,419 @@
             }
           ],
           "children": []
+        },
+        {
+          "id": "57a3ead7-bf0b-4094-b2c6-c37a87b83cfb",
+          "name": "Background-2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1616,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "sprites/background.png",
+                "width": 3840,
+                "height": 192,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "background-2",
+                "fit": "repeat",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "Parallax",
+              "config": {
+                "distance": 0.8
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "f44aa19f-de78-4b2d-a2d4-3878e6160d1a",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -1760,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "c2b97070-410b-4dfe-b687-95ff4bf9450a",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -1840,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "5f0994d6-2f78-45fc-9f43-fe42ef789c5d",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 3",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 768,
+                    "offsetY": 80,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "47e8cb99-f7d7-4ac1-a992-57f26cd23c9e",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 4",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 832,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "6e3f0a21-1106-4b54-bcd9-4ff2a0c7ab85",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 5",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1616,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "1b6bab12-db3b-4fc2-925c-5d93e6f316f9",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 6",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1552,
+                    "offsetY": 80,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "f3943094-0c2e-4e64-b111-abb8bbd0923d",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 7",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1680,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "2eca7968-52a2-42de-ad2a-143d9294da36",
+          "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+          "name": "Seaweed",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 144,
+                "offsetY": 64,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "415ca199-d45b-4399-b6d0-43cc84bcff4d",
+          "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+          "name": "Seaweed 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 480,
+                "offsetY": 64,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "70ff6db9-40e9-4020-93c5-2075996c6291",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1136,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "a8303e34-5181-4133-aee0-8290a31f3598",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1616,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "e4a6035a-e891-42fa-b503-8407e5be2005",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 3",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 2288,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "2bf51ae4-5b5d-451a-b081-0dafcc5e292c",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 4",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 2224,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "60366543-ef69-42d5-b0cc-8815bc4b86ab",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 5",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1200,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "9a96c5ba-3b1f-4c39-a522-85c8472488eb",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 6",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 64,
+                    "offsetY": 16,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "d2cfbff0-18d5-4d12-a560-1f8421641173",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 7",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -64,
+                    "offsetY": 32,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "e8f19564-e8d1-49a1-bbeb-ccfb08247cf8",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 8",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 400,
+                    "offsetY": 16,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "c1a054bf-ea88-4e25-8fe2-772fd6e03566",
+          "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+          "name": "Seaweed 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 944,
+                "offsetY": 64,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "9d2c0773-51bc-4f28-8a0f-bb6bb219c786",
+          "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+          "name": "Seaweed 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1296,
+                "offsetY": 64,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
         }
       ]
     },
@@ -2227,7 +2547,7 @@
               "name": "AudioSource",
               "config": {
                 "src": "audio/menu-music.mp3",
-                "volume": 1,
+                "volume": 0,
                 "looped": true,
                 "autoplay": true,
                 "group": "music"
@@ -3074,6 +3394,13 @@
             {
               "id": "fb18e277-6b85-40ea-b852-b4514b8496e1",
               "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
+              "name": "Template",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "4f941562-7aca-426f-bc5a-b12933714147",
+              "templateId": "a66512c3-2c5b-4631-8c1b-9515d670d494",
               "name": "Template",
               "components": [],
               "children": []
@@ -4026,6 +4353,141 @@
             {
               "name": "EnemyDetector",
               "config": {}
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "a66512c3-2c5b-4631-8c1b-9515d670d494",
+          "name": "Bubble",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "sprites/piranha-sphere.png",
+                "width": 24,
+                "height": 24,
+                "slice": 3,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "foreground",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "Animatable",
+              "config": {
+                "initialState": "de2be1f8-a1e2-40f0-803d-79dafce03ea5",
+                "states": [
+                  {
+                    "id": "de2be1f8-a1e2-40f0-803d-79dafce03ea5",
+                    "name": "Idle",
+                    "type": "individual",
+                    "speed": 1,
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "bc12791a-270d-4d03-bbb5-c99b330e0898",
+                          "fields": [
+                            {
+                              "id": "fb9899b8-0e37-4122-ae68-62e9013db60e",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": false
+                    },
+                    "transitions": [
+                      {
+                        "id": "8d9b0014-2f7f-403b-b6ef-344c8f41f25b",
+                        "state": "0802e2de-abe2-4390-98cd-a4061af65658",
+                        "time": 0,
+                        "conditions": [
+                          {
+                            "id": "494cafed-371a-4f0d-bd12-a767cbd94239",
+                            "type": "event",
+                            "props": {
+                              "eventType": "Kill"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "0802e2de-abe2-4390-98cd-a4061af65658",
+                    "name": "Kill",
+                    "type": "individual",
+                    "speed": 2,
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "bc12791a-270d-4d03-bbb5-c99b330e0898",
+                          "fields": [
+                            {
+                              "id": "fb9899b8-0e37-4122-ae68-62e9013db60e",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        {
+                          "id": "f0cadfb6-2d8b-42ee-8128-ed2b151cfc7a",
+                          "fields": [
+                            {
+                              "id": "fb9899b8-0e37-4122-ae68-62e9013db60e",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 2
+                            }
+                          ]
+                        },
+                        {
+                          "id": "5d92b4ff-fe21-4235-9728-1e66326bf63f",
+                          "fields": [
+                            {
+                              "id": "fb9899b8-0e37-4122-ae68-62e9013db60e",
+                              "name": "components.Sprite.disabled",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": false
+                    },
+                    "transitions": []
+                  }
+                ]
+              }
             }
           ],
           "children": []
@@ -6925,7 +7387,7 @@
             ],
             "flipX": false,
             "flipY": false,
-            "sortingLayer": "background-2",
+            "sortingLayer": "background-3",
             "fit": "stretch",
             "material": {
               "type": "basic",
@@ -7771,7 +8233,7 @@
             "cooldown": 350,
             "properties": {
               "damage": 1.5,
-              "range": 224,
+              "range": 240,
               "projectileSpeed": 50,
               "projectileRadius": 4,
               "projectileModel": "0288d542-2944-4f63-b4c1-fecdf38daff8"
@@ -7864,7 +8326,7 @@
                 "collider": {
                   "centerX": 0,
                   "centerY": 0,
-                  "radius": 208
+                  "radius": 224
                 }
               }
             },
@@ -8811,7 +9273,7 @@
             "cooldown": 500,
             "properties": {
               "damage": 1,
-              "range": 224,
+              "range": 480,
               "projectileSpeed": 50,
               "projectileRadius": 4,
               "projectileModel": "3b7b36d9-520b-4fbe-ad9f-e9c8b8a342fb"
@@ -8910,7 +9372,7 @@
                 "collider": {
                   "centerX": 0,
                   "centerY": 0,
-                  "radius": 208
+                  "radius": 480
                 }
               }
             },
@@ -9142,8 +9604,8 @@
         {
           "name": "Sprite",
           "config": {
-            "src": "",
-            "width": 32,
+            "src": "sprites/finish.png",
+            "width": 64,
             "height": 192,
             "slice": 1,
             "rotation": 0,
@@ -9153,14 +9615,14 @@
             ],
             "flipX": false,
             "flipY": false,
-            "sortingLayer": "background-3",
-            "fit": "stretch",
+            "sortingLayer": "decorations-3",
+            "fit": "repeat",
             "material": {
               "type": "basic",
               "options": {
                 "blending": "normal",
-                "color": "#d9ffb5",
-                "opacity": 1
+                "color": "#ffffff",
+                "opacity": 0.75
               }
             }
           }
@@ -9216,6 +9678,56 @@
               "options": {
                 "blending": "normal",
                 "color": "#d11ea9",
+                "opacity": 1
+              }
+            }
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+      "name": "Seaweed",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Parallax",
+          "config": {
+            "distance": -0.2
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "sprites/sea-weed.png",
+            "width": 64,
+            "height": 64,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "foreground",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#fff",
                 "opacity": 1
               }
             }

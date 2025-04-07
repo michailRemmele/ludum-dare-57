@@ -168,9 +168,9 @@ export class FloatingTrackScript extends Script {
       return;
     }
 
-    this.updateSpawn();
     this.updateStandingPosition();
     this.updateTrackMovement(options.deltaTime);
+    this.updateSpawn();
   }
 }
 

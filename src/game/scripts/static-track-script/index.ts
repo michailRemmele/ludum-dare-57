@@ -134,8 +134,8 @@ export class StaticTrackScript extends Script {
       return;
     }
 
-    this.updateSpawn();
     this.updateWeaponUnlock();
+    this.updateSpawn();
   }
 }
 

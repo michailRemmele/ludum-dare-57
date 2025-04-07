@@ -13,6 +13,7 @@ import { CollisionStay } from 'dacha/events';
 import type { CollisionStayEvent } from 'dacha/events';
 
 import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
+import { BUBBLE_ID } from '../../../consts/templates';
 import { CAMERA_SPEED } from '../../../consts/game';
 import {
   Team,
@@ -61,6 +62,11 @@ export class FishScript extends Script {
 
     this.shoalIndex = team.index === 1 ? 0 : -1;
     this.shouldCatchUp = false;
+
+    if (team.index === 1) {
+      const bubble = this.actor.children.find((child) => child.templateId === BUBBLE_ID);
+      bubble?.remove();
+    }
 
     this.immortalDuration = 0;
 

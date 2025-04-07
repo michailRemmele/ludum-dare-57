@@ -10,14 +10,17 @@ export const MainMenu: FC = () => {
 
   return (
     <div className="menu">
-      <img
-        src="./images/logo.png"
-        alt="Ludum Dare Template"
-        className="menu__logo"
-      />
-      {menuState === MAIN_MENU && <Main openMenu={setMenuState} />}
-      {menuState === LEVEL_SELECT_MENU && <LevelSelect openMenu={setMenuState} />}
-      {menuState === SETTINGS_MENU && <Settings openMenu={setMenuState} />}
+      <div className="menu__background" />
+      <div className="menu__body">
+        <img
+          src="./images/logo.png"
+          alt="Piranha Frenzy"
+          className="menu__logo"
+        />
+        {menuState === MAIN_MENU && <Main openMenu={setMenuState} />}
+        {menuState === LEVEL_SELECT_MENU && <LevelSelect openMenu={setMenuState} />}
+        {menuState === SETTINGS_MENU && <Settings openMenu={setMenuState} />}
+      </div>
     </div>
   );
 };

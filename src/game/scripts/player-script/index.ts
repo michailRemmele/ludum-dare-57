@@ -22,6 +22,7 @@ import {
   SHOAL_6_ID,
   SHOAL_7_ID,
   SHOAL_8_ID,
+  BUBBLE_ID,
 } from '../../../consts/templates';
 import { CAMERA_SPEED } from '../../../consts/game';
 import { INITIAL_FISH, MAIN_CAMERA_NAME } from '../../../consts/actors';
@@ -103,11 +104,13 @@ export class PlayerScript extends Script {
     const parent = actor.parent instanceof Actor ? actor.parent : undefined;
     const health = parent?.getComponent(Health);
     const team = parent?.getComponent(Team);
+    const bubble = parent?.children.find((child) => child.templateId === BUBBLE_ID);
 
     if (parent && health && hitBox && team?.index === 3) {
       team.index = 1;
       health.immortal = false;
       hitBox.disabled = false;
+      bubble?.dispatchEvent(EventType.Kill);
       this.shoalSize += 1;
       this.shoalActors.push(parent);
       this.updateShoal();
