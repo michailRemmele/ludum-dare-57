@@ -4,7 +4,7 @@ import { LoadScene } from 'dacha/events';
 
 import { Button } from '../../../../components';
 import { EngineContext } from '../../../../providers';
-import { GAME_ID } from '../../../../../consts/scenes';
+import { GAME_ID, LOADER_ID } from '../../../../../consts/scenes';
 import { SETTINGS_MENU, LEVEL_SELECT_MENU } from '../../consts';
 
 import './style.css';
@@ -20,7 +20,7 @@ export const Main: FC<MainProps> = ({ openMenu }) => {
     scene.dispatchEvent(LoadScene, {
       sceneId: GAME_ID,
       clean: true,
-      loaderId: null,
+      loaderId: LOADER_ID,
       levelId: null,
     });
   };

@@ -1,0 +1,13 @@
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+}
+
+.loader__title {
+  font-size: 48px;
+
+  color: white;
+}

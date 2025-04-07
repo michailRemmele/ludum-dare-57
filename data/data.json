@@ -11254,7 +11254,21 @@
       ]
     }
   ],
-  "loaders": [],
+  "loaders": [
+    {
+      "id": "ddc23683-2528-4061-a938-32783198d623",
+      "name": "Loader",
+      "systems": [
+        {
+          "name": "UiBridge",
+          "options": {
+            "filterComponents": []
+          }
+        }
+      ],
+      "levelId": null
+    }
+  ],
   "globalOptions": [
     {
       "name": "sortingLayers",

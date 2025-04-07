@@ -12,7 +12,7 @@ import {
   // FpsMeter,
   Button,
 } from '../../components';
-import { GAME_ID, MAIN_MENU_ID } from '../../../consts/scenes';
+import { GAME_ID, MAIN_MENU_ID, LOADER_ID } from '../../../consts/scenes';
 import { LEVELS } from '../../../consts/game';
 import { isTouchDevice } from '../../../utils/is-touch-device';
 import type { GameOverEvent } from '../../../game/events';
@@ -35,7 +35,7 @@ export const Game: FC = () => {
     scene.dispatchEvent(LoadScene, {
       sceneId: GAME_ID,
       levelId: LEVELS[levelIndex].id,
-      loaderId: null,
+      loaderId: LOADER_ID,
       unloadCurrent: true,
       clean: true,
     });
@@ -45,7 +45,7 @@ export const Game: FC = () => {
     scene.dispatchEvent(LoadScene, {
       sceneId: GAME_ID,
       levelId: LEVELS[levelIndex + 1].id,
-      loaderId: null,
+      loaderId: LOADER_ID,
       unloadCurrent: true,
       clean: true,
     });
@@ -55,7 +55,7 @@ export const Game: FC = () => {
     scene.dispatchEvent(LoadScene, {
       sceneId: MAIN_MENU_ID,
       clean: true,
-      loaderId: null,
+      loaderId: LOADER_ID,
       levelId: null,
     });
   };

@@ -5,7 +5,7 @@ import { LoadScene } from 'dacha/events';
 import { Button } from '../../../../components';
 import { EngineContext } from '../../../../providers';
 import { LEVELS } from '../../../../../consts/game';
-import { GAME_ID } from '../../../../../consts/scenes';
+import { GAME_ID, LOADER_ID } from '../../../../../consts/scenes';
 import { MAIN_MENU } from '../../consts';
 
 import './style.css';
@@ -47,7 +47,7 @@ export const LevelSelect: FC<LevelSelectProps> = ({ openMenu }) => {
       sceneId: GAME_ID,
       levelId,
       clean: true,
-      loaderId: null,
+      loaderId: LOADER_ID,
     });
   };
 
