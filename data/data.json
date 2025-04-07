@@ -2787,7 +2787,7 @@
               "config": {
                 "mob": "1c2a53f5-cf88-4071-be04-917edef5a008",
                 "amount": 2,
-                "frequency": 1500
+                "frequency": 3000
               }
             }
           ],
@@ -2886,7 +2886,7 @@
               "config": {
                 "mob": "1c2a53f5-cf88-4071-be04-917edef5a008",
                 "amount": 2,
-                "frequency": 1500
+                "frequency": 3000
               }
             }
           ],
@@ -10119,7 +10119,7 @@
                 "id": "d38fbd09-e12a-4e4a-bf14-6fd008d9301e",
                 "name": "ShooterScript",
                 "options": {
-                  "burstTimeout": 2000,
+                  "burstTimeout": 3000,
                   "burstAmount": 8,
                   "isWeaponLocked": true
                 }
@@ -11138,10 +11138,10 @@
           "name": "Weapon",
           "config": {
             "type": "range",
-            "cooldown": 500,
+            "cooldown": 350,
             "properties": {
               "damage": 1,
-              "range": 160,
+              "range": 240,
               "projectileSpeed": 60,
               "projectileRadius": 4,
               "projectileModel": "3b7b36d9-520b-4fbe-ad9f-e9c8b8a342fb"
