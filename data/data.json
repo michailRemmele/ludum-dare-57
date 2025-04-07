@@ -3076,7 +3076,7 @@
               "options": {
                 "blending": "normal",
                 "color": "#fff",
-                "opacity": 1
+                "opacity": 0
               }
             }
           }
@@ -6212,7 +6212,7 @@
     },
     {
       "id": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
-      "name": "Enemy",
+      "name": "Nemo",
       "components": [
         {
           "name": "Transform",
@@ -6228,10 +6228,10 @@
         {
           "name": "Sprite",
           "config": {
-            "src": "",
-            "width": 16,
-            "height": 16,
-            "slice": 1,
+            "src": "sprites/nemo.png",
+            "width": 20,
+            "height": 20,
+            "slice": 8,
             "rotation": 0,
             "sortCenter": [
               0,
@@ -6245,7 +6245,7 @@
               "type": "basic",
               "options": {
                 "blending": "normal",
-                "color": "#dc0505",
+                "color": "#ffffff",
                 "opacity": 1
               }
             }
@@ -6259,24 +6259,8 @@
               {
                 "id": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
                 "name": "State",
-                "type": "individual",
-                "speed": 1,
-                "timeline": {
-                  "frames": [
-                    {
-                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
-                      "fields": [
-                        {
-                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
-                          "name": "components.Sprite.material.options.color",
-                          "type": "string",
-                          "value": "#DC0505"
-                        }
-                      ]
-                    }
-                  ],
-                  "looped": true
-                },
+                "type": "group",
+                "speed": 0.75,
                 "transitions": [
                   {
                     "id": "7e61ce55-12e8-482f-b30c-713acd1958e6",
@@ -6306,29 +6290,175 @@
                       }
                     ]
                   }
-                ]
+                ],
+                "substates": [
+                  {
+                    "id": "27442f48-7d54-4072-a5ce-9857e3cf7213",
+                    "name": "Left",
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "9b72917d-507e-49c7-830c-f6649d05356d",
+                          "fields": [
+                            {
+                              "id": "b41eeaba-d5d7-4e10-a53a-7061cb603d6a",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 0
+                            },
+                            {
+                              "id": "dd2a4f33-b334-48fd-aabb-2e0647deeb8c",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "id": "c44fccdf-394f-4b95-86f5-074c52cf416e",
+                          "fields": [
+                            {
+                              "id": "b41eeaba-d5d7-4e10-a53a-7061cb603d6a",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 1
+                            },
+                            {
+                              "id": "dd2a4f33-b334-48fd-aabb-2e0647deeb8c",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "id": "ca3c7e95-6153-4607-a48e-1e4f6380c46f",
+                          "fields": [
+                            {
+                              "id": "b41eeaba-d5d7-4e10-a53a-7061cb603d6a",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 2
+                            },
+                            {
+                              "id": "dd2a4f33-b334-48fd-aabb-2e0647deeb8c",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        },
+                        {
+                          "id": "c4a4569d-477a-41ac-82f6-0b0561191d6d",
+                          "fields": [
+                            {
+                              "id": "b41eeaba-d5d7-4e10-a53a-7061cb603d6a",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 3
+                            },
+                            {
+                              "id": "dd2a4f33-b334-48fd-aabb-2e0647deeb8c",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": true
+                    },
+                    "x": -1
+                  },
+                  {
+                    "id": "6b24cb9d-12ac-4f64-9b3a-d6cd7652d659",
+                    "name": "Right",
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "9b72917d-507e-49c7-830c-f6649d05356d",
+                          "fields": [
+                            {
+                              "id": "b41eeaba-d5d7-4e10-a53a-7061cb603d6a",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 0
+                            },
+                            {
+                              "id": "dd2a4f33-b334-48fd-aabb-2e0647deeb8c",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        },
+                        {
+                          "id": "c44fccdf-394f-4b95-86f5-074c52cf416e",
+                          "fields": [
+                            {
+                              "id": "b41eeaba-d5d7-4e10-a53a-7061cb603d6a",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 1
+                            },
+                            {
+                              "id": "dd2a4f33-b334-48fd-aabb-2e0647deeb8c",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        },
+                        {
+                          "id": "ca3c7e95-6153-4607-a48e-1e4f6380c46f",
+                          "fields": [
+                            {
+                              "id": "b41eeaba-d5d7-4e10-a53a-7061cb603d6a",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 2
+                            },
+                            {
+                              "id": "dd2a4f33-b334-48fd-aabb-2e0647deeb8c",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        },
+                        {
+                          "id": "c4a4569d-477a-41ac-82f6-0b0561191d6d",
+                          "fields": [
+                            {
+                              "id": "b41eeaba-d5d7-4e10-a53a-7061cb603d6a",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 3
+                            },
+                            {
+                              "id": "dd2a4f33-b334-48fd-aabb-2e0647deeb8c",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": true
+                    },
+                    "x": 1
+                  }
+                ],
+                "pickMode": "1D",
+                "pickProps": {
+                  "x": "components.ViewDirection.x"
+                }
               },
               {
                 "id": "296d9ecc-ee64-4e46-bc17-eb4c08ff90ad",
                 "name": "Damage",
-                "type": "individual",
+                "type": "group",
                 "speed": 1,
-                "timeline": {
-                  "frames": [
-                    {
-                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
-                      "fields": [
-                        {
-                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
-                          "name": "components.Sprite.material.options.color",
-                          "type": "string",
-                          "value": "#FFFFFF"
-                        }
-                      ]
-                    }
-                  ],
-                  "looped": false
-                },
                 "transitions": [
                   {
                     "id": "f7bfe0c4-327b-44ce-9104-0079c43b9faf",
@@ -6350,7 +6480,67 @@
                     "time": 1,
                     "conditions": []
                   }
-                ]
+                ],
+                "substates": [
+                  {
+                    "id": "f3a83075-d017-41d7-b009-bff96f255dfb",
+                    "name": "Left",
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "9b72917d-507e-49c7-830c-f6649d05356d",
+                          "fields": [
+                            {
+                              "id": "b41eeaba-d5d7-4e10-a53a-7061cb603d6a",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 4
+                            },
+                            {
+                              "id": "dd2a4f33-b334-48fd-aabb-2e0647deeb8c",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": true
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": true
+                    },
+                    "x": -1
+                  },
+                  {
+                    "id": "d8005747-6515-4627-9128-5bcbc36ab0d4",
+                    "name": "Right",
+                    "timeline": {
+                      "frames": [
+                        {
+                          "id": "9b72917d-507e-49c7-830c-f6649d05356d",
+                          "fields": [
+                            {
+                              "id": "b41eeaba-d5d7-4e10-a53a-7061cb603d6a",
+                              "name": "components.Sprite.currentFrame",
+                              "type": "number",
+                              "value": 4
+                            },
+                            {
+                              "id": "dd2a4f33-b334-48fd-aabb-2e0647deeb8c",
+                              "name": "components.Sprite.flipX",
+                              "type": "boolean",
+                              "value": false
+                            }
+                          ]
+                        }
+                      ],
+                      "looped": true
+                    },
+                    "x": 1
+                  }
+                ],
+                "pickMode": "1D",
+                "pickProps": {
+                  "x": "components.ViewDirection.x"
+                }
               },
               {
                 "id": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
@@ -6364,9 +6554,42 @@
                       "fields": [
                         {
                           "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
-                          "name": "components.Sprite.material.options.color",
-                          "type": "string",
-                          "value": "#000000"
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 5
+                        }
+                      ]
+                    },
+                    {
+                      "id": "fd46293b-aa50-4baf-a370-a5e50ba3937e",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 6
+                        }
+                      ]
+                    },
+                    {
+                      "id": "9f7833d6-983e-4440-aec3-6aabad6c5d48",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 7
+                        }
+                      ]
+                    },
+                    {
+                      "id": "19acaeb2-797c-4569-8213-f9042be410be",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.disabled",
+                          "type": "boolean",
+                          "value": true
                         }
                       ]
                     }
