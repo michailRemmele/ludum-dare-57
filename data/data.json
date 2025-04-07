@@ -3390,11 +3390,11 @@
       ]
     },
     {
-      "id": "1ac2343d-ea06-4089-8293-20aebd5a880c",
+      "id": "d54ad4b9-ee82-454d-aef5-0ff26dbf825e",
       "name": "Level 2",
       "actors": [
         {
-          "id": "ece5c0b3-2616-43cf-84f7-530386e2ecb5",
+          "id": "17ca309c-9f6e-4a94-95bb-af7c0dbd3506",
           "name": "Background",
           "components": [
             {
@@ -3417,7 +3417,7 @@
                   "type": "basic",
                   "options": {
                     "blending": "normal",
-                    "color": "#0b194b",
+                    "color": "#622461",
                     "opacity": 1
                   }
                 }
@@ -3438,14 +3438,14 @@
           "children": []
         },
         {
-          "id": "6615014e-8d97-4703-ace4-f39061b64b69",
+          "id": "e6ae7a47-3063-4a94-b523-e58e32dbb7c8",
           "name": "Player",
           "components": [
             {
               "name": "Transform",
               "config": {
-                "offsetX": -88,
-                "offsetY": -8,
+                "offsetX": 0,
+                "offsetY": 0,
                 "offsetZ": 0,
                 "rotation": 0,
                 "scaleX": 1,
@@ -3553,6 +3553,66 @@
                         "value": 90
                       }
                     ]
+                  },
+                  {
+                    "id": "65b51160-b22e-472b-ba86-2d3faea5001e",
+                    "key": "ArrowUp",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "Movement",
+                    "attrs": [
+                      {
+                        "id": "d2af6492-8e3f-4eda-8956-3de3a3dcd8c1",
+                        "name": "angle",
+                        "type": "number",
+                        "value": 270
+                      }
+                    ]
+                  },
+                  {
+                    "id": "573b9d6e-c069-4057-ae39-7866d1d2f694",
+                    "key": "ArrowLeft",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "Movement",
+                    "attrs": [
+                      {
+                        "id": "b7045505-c98b-4e04-ae96-f5c24e468407",
+                        "name": "angle",
+                        "type": "number",
+                        "value": 180
+                      }
+                    ]
+                  },
+                  {
+                    "id": "09a18bc5-0606-4a1b-be70-252f78dfd693",
+                    "key": "ArrowDown",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "Movement",
+                    "attrs": [
+                      {
+                        "id": "6096205d-919e-4414-9370-ac8b927a0cd3",
+                        "name": "angle",
+                        "type": "number",
+                        "value": 90
+                      }
+                    ]
+                  },
+                  {
+                    "id": "50fff5b3-71a0-4096-8f47-5e6e76a61337",
+                    "key": "ArrowRight",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "Movement",
+                    "attrs": [
+                      {
+                        "id": "75088882-9482-43bb-a403-c3de16b3f99d",
+                        "name": "angle",
+                        "type": "number",
+                        "value": 0
+                      }
+                    ]
                   }
                 ]
               }
@@ -3591,7 +3651,7 @@
           ],
           "children": [
             {
-              "id": "440f063a-98df-4d61-ba73-ffb01f63117f",
+              "id": "ef99bbe8-2473-4c15-9301-9e69297b225e",
               "templateId": "e0825b41-44d8-4df9-bae2-b1ab5b0c2e05",
               "name": "Shoal 1",
               "components": [
@@ -3609,7 +3669,7 @@
               ],
               "children": [
                 {
-                  "id": "a4f510cf-bff2-4cd7-9a7a-ac6d08193300",
+                  "id": "c2de46dc-59c5-45ce-84ac-a880c0ae3836",
                   "templateId": "0e4783bb-f971-462b-bbc5-f7aac384f3af",
                   "name": "ShoalUnit",
                   "components": [],
@@ -3620,7 +3680,7 @@
           ]
         },
         {
-          "id": "5d6dad04-285a-4d93-9998-451e20411715",
+          "id": "f24c6dbb-bd3e-4706-a002-750099aacf1d",
           "name": "MainCamera",
           "components": [
             {
@@ -3668,7 +3728,7 @@
           ],
           "children": [
             {
-              "id": "a75319b4-948f-4f13-b15a-f565e8ddafad",
+              "id": "0a279cab-44e7-470d-868b-39723e276855",
               "name": "LeftBorder",
               "components": [
                 {
@@ -3715,7 +3775,7 @@
                       "options": {
                         "blending": "normal",
                         "color": "#ff0000",
-                        "opacity": 1
+                        "opacity": 0
                       }
                     }
                   }
@@ -3723,7 +3783,7 @@
               ],
               "children": [
                 {
-                  "id": "c10085f7-d0bc-42ef-8c6f-849c07cc7f6c",
+                  "id": "e90cce36-655a-499e-879d-d849413ac659",
                   "name": "DeadZone",
                   "components": [
                     {
@@ -3779,7 +3839,7 @@
                   "children": []
                 },
                 {
-                  "id": "b98ed9a4-f9b1-4294-8dc2-f9269b603132",
+                  "id": "b7c943de-c380-4abe-8dcf-1417b43ed7c5",
                   "name": "UltimateDeadZone",
                   "components": [
                     {
@@ -3837,7 +3897,7 @@
               ]
             },
             {
-              "id": "be628a1e-d5de-428e-a0c2-86802a38bf5b",
+              "id": "ece8aa7b-49d3-4345-a477-07da3eea3d62",
               "name": "RightBorder",
               "components": [
                 {
@@ -3884,7 +3944,7 @@
                       "options": {
                         "blending": "normal",
                         "color": "#ff0000",
-                        "opacity": 1
+                        "opacity": 0
                       }
                     }
                   }
@@ -3892,7 +3952,7 @@
               ],
               "children": [
                 {
-                  "id": "7cd0c731-7ba3-4b55-82e3-c5ac8f30ec1a",
+                  "id": "3f05bddb-a26b-4c8b-9080-cf9347d47c7e",
                   "name": "DeadZone",
                   "components": [
                     {
@@ -3946,11 +4006,39 @@
                     }
                   ],
                   "children": []
+                },
+                {
+                  "id": "8ef16f6d-ec83-4ee3-be33-5619e169a30d",
+                  "templateId": "18064374-1dca-4d09-8fff-0eb229bec12c",
+                  "name": "Bonus Track",
+                  "components": [
+                    {
+                      "name": "Transform",
+                      "config": {
+                        "offsetX": 8,
+                        "offsetY": 40,
+                        "offsetZ": 0,
+                        "rotation": 0,
+                        "scaleX": 1,
+                        "scaleY": 1
+                      }
+                    },
+                    {
+                      "name": "Track",
+                      "config": {
+                        "mob": "ac95931c-57d4-49fc-9498-700ec0fe0638",
+                        "amount": 0,
+                        "frequency": 0,
+                        "patrolDistance": 8
+                      }
+                    }
+                  ],
+                  "children": []
                 }
               ]
             },
             {
-              "id": "fbbc3aa4-20ea-493e-b3f9-9a7e3564c2cc",
+              "id": "24d7b7c4-00ad-41bd-afaa-55caebf528fe",
               "name": "TopBorder",
               "components": [
                 {
@@ -3997,7 +4085,7 @@
                       "options": {
                         "blending": "normal",
                         "color": "#ff0000",
-                        "opacity": 1
+                        "opacity": 0
                       }
                     }
                   }
@@ -4005,7 +4093,7 @@
               ],
               "children": [
                 {
-                  "id": "9a5d8fa9-b649-4cee-8fe0-02056d6a2f1d",
+                  "id": "674faf12-3557-4ea6-b108-9891618331f3",
                   "name": "DeadZone",
                   "components": [
                     {
@@ -4063,7 +4151,7 @@
               ]
             },
             {
-              "id": "0e952afe-be66-4973-8b5b-daef56adee4a",
+              "id": "15735e75-732e-403d-9617-7c35685d904e",
               "name": "BottomBorder",
               "components": [
                 {
@@ -4110,7 +4198,7 @@
                       "options": {
                         "blending": "normal",
                         "color": "#ff0000",
-                        "opacity": 1
+                        "opacity": 0
                       }
                     }
                   }
@@ -4118,7 +4206,7 @@
               ],
               "children": [
                 {
-                  "id": "7aab5201-2f21-4333-bc66-e5f8fea9eb7d",
+                  "id": "96d3a816-b671-468e-b8fe-b1faeaeec645",
                   "name": "DeadZone",
                   "components": [
                     {
@@ -4178,15 +4266,15 @@
           ]
         },
         {
-          "id": "f69e89b4-5021-4e5a-a7d2-b63a089f4ef6",
+          "id": "0e5b2687-4ea7-4d12-8a89-f0125294eac6",
           "templateId": "ac95931c-57d4-49fc-9498-700ec0fe0638",
           "name": "Initial Fish",
           "components": [
             {
               "name": "Transform",
               "config": {
-                "offsetX": -88,
-                "offsetY": -8,
+                "offsetX": 0,
+                "offsetY": 0,
                 "offsetZ": 0,
                 "rotation": 0,
                 "scaleX": 1,
@@ -4216,22 +4304,420 @@
           ],
           "children": [
             {
-              "id": "e57ce763-c3b5-4b2a-a7db-5d0ebf44ce34",
+              "id": "6f9cbce6-bdba-4570-aa9c-1976935709de",
               "templateId": "a8d8ae1f-2eb2-418b-9aa9-fc1d2de930f5",
               "name": "HitBox",
               "components": [],
               "children": []
             },
             {
-              "id": "fb18e277-6b85-40ea-b852-b4514b8496e1",
+              "id": "516f8331-8bb8-4d32-95ec-5da2adb0eb9d",
               "templateId": "742e59ef-3cfe-4a40-9d9c-58fe4fe3fc70",
               "name": "Template",
               "components": [],
               "children": []
             },
             {
-              "id": "4f941562-7aca-426f-bc5a-b12933714147",
+              "id": "0047733c-39e1-4a45-85be-bd818fb45e29",
               "templateId": "a66512c3-2c5b-4631-8c1b-9515d670d494",
+              "name": "Bubble",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "81162d05-5639-465f-8354-f7021dd48573",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 280,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+                "amount": 4,
+                "frequency": 1000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "c47b79c4-4473-47cb-b65c-4dc7e0b3644c",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -176,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "b7870f27-78ac-46b2-bc0a-08502a239ee6",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -32,
+                    "offsetY": 48,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "14c7e647-b0ba-4d80-99f0-a4091aafaa54",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 344,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+                "amount": 4,
+                "frequency": 1000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "53bf6540-ff9a-47ef-9871-a2bce7b60130",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -192,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "b6f6bcef-5225-4d78-8060-f90c80fd87b8",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -32,
+                    "offsetY": 48,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "f3fa4ce9-6c6d-4070-afbd-88a867d91c8d",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 824,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+                "amount": 6,
+                "frequency": 750
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "dcca6f49-7b46-4154-b4c1-e06795742a8b",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -192,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "33e5cac0-29a2-4d08-b6e6-15bff13c2203",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "878a8dad-58dd-47f7-b814-e903d54b5821",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -32,
+                    "offsetY": 128,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 1,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "329d4de7-e14c-4f88-adaf-bc995c5a92a9",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment 3",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -80,
+                    "offsetY": 128,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 2,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7f043081-ee74-4210-ad72-08b5aef315fb",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1240,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "118bb4cd-2c21-4bb2-8f17-678e345a088a",
+                "amount": 3,
+                "frequency": 1000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "7d928e72-e658-4a5e-8001-d8b05b805227",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -208,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "92552d88-8da0-4450-8724-92c70ece7833",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "fa3f393c-9589-42ed-b171-d9d2e7ab12ac",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "Static Track",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 616,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "bcd596b8-8b5f-4d12-9c80-877b6a492fbe",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": 8,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "dda0a19a-f647-4628-8ec5-bfac4076df74",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
               "name": "Template",
               "components": [],
               "children": []
@@ -4239,8 +4725,1238 @@
           ]
         },
         {
-          "id": "fd75c5dc-d5fa-48d6-8d74-d76ea174692a",
-          "templateId": "2ba87de6-ba9e-40ab-884f-d55b25f17c27",
+          "id": "82c3704a-5bb2-4d6a-a136-a3ece4bf308a",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "Static Track 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1400,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "d9849ca1-0d79-4c3e-9a66-8c0977454177",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -272,
+                    "offsetY": 8,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "4ae4efdf-cf14-4e4e-95a5-846f6ea5baaf",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "92f1d7f5-e961-450f-a7d1-79fa33dd920f",
+          "templateId": "be5c4362-0b70-457a-8c0d-b29eb8b6a0d8",
+          "name": "Floating Track",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1576,
+                "offsetY": 8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "fd3293c7-8f69-4edb-a612-89e34d705bfb",
+                "amount": 1,
+                "frequency": 0,
+                "patrolDistance": 32
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "0501a79a-1800-4e2c-a315-7ac4cd1a1072",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -288,
+                    "offsetY": -8,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0c9c124a-c89a-48b9-9597-6a7c90d6ea0f",
+          "name": "Background-2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1616,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "sprites/background-2.png",
+                "width": 3840,
+                "height": 192,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "background-2",
+                "fit": "repeat",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "Parallax",
+              "config": {
+                "distance": 0.8
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "52661404-8e2f-41f8-86da-62610fe32520",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -1760,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "7b164812-4f8a-4681-8cb8-d3c01c0571aa",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -1840,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "74107102-0fe1-4520-ab6b-d568f529ec04",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 3",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 768,
+                    "offsetY": 80,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "c5fa325b-250c-457a-8cae-b926c8a0fcfd",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 4",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 832,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "0b7b767a-4ff4-4da1-8f0f-52b700dcb763",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 5",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1616,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "a3351aa9-6422-46fd-9253-7736534953ce",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 6",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1552,
+                    "offsetY": 80,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "92260403-7e20-4b0c-b55a-4f3c519d6150",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 7",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1680,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "872b19d2-30b0-4031-8cf1-a1f3991416da",
+          "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+          "name": "Seaweed",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 144,
+                "offsetY": 64,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c4881695-c544-45b8-8967-83e557af4088",
+          "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+          "name": "Seaweed 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 480,
+                "offsetY": 64,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "cfa80c3e-1c5b-41f8-84ec-4211abb8bb4a",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1136,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "39e3a649-3baf-4939-8a20-59bbe7719fef",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1616,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "cbb9fb4a-bb77-4c01-a406-04a01aa7ea32",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 3",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 2288,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "b5fef22f-e315-4c5e-8f89-a18e1aed74b7",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 4",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 2224,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "79a20b65-d70c-4f5c-932d-820cfc0805a9",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 5",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 1200,
+                    "offsetY": 0,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "371b0395-51e9-42b7-954e-68af3e21bd83",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 6",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 64,
+                    "offsetY": 16,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "5f207e25-1b9a-4095-9f81-a9489c7d27f9",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 7",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -64,
+                    "offsetY": 32,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "62f36347-591f-43e0-ab4e-a6c91090d2d9",
+              "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+              "name": "Seaweed 8",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 400,
+                    "offsetY": 16,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7080cc4a-c13c-4f2b-9a16-d987e5f8705b",
+          "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+          "name": "Seaweed 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 944,
+                "offsetY": 64,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "9989883c-4de6-40cb-bfe9-059a50ce9c42",
+          "templateId": "e98cad80-bc66-43cb-810a-045a2175f9fa",
+          "name": "Seaweed 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1296,
+                "offsetY": 64,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "22bef50a-8847-4c48-ac31-627ff692325d",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "Static Track 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 984,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "978b173b-73f3-4267-a189-6d4710236b91",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": -40,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "894b16a7-f6c1-4100-852e-1e87f23f07f2",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "d77d80dd-b622-4a07-8d32-83412911cfcb",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1816,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+                "amount": 6,
+                "frequency": 750
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "f98510d4-d060-4f3b-8798-311f4e443a8c",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -160,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "a0a17e47-5194-47fb-868a-22f31c0f1144",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": 32,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "b7b00c32-d528-4059-8d46-480a71b922b6",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "StaticTrack 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1928,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "cb36fe1c-6d32-448a-99cb-fe2347e3b85b",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": -40,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "efa66a11-48e0-4167-abfa-57144371dd6c",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "81e253cd-97f3-48b7-8949-b09fac898525",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 9",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2504,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "1c2a53f5-cf88-4071-be04-917edef5a008",
+                "amount": 2,
+                "frequency": 3000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "4173d0de-1b0a-4f58-ad1a-2c67aacbc450",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -176,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "0d2c04d9-c2ed-4cfc-9e82-91b6fe61673c",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -16,
+                    "offsetY": 48,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "27d065ac-66c8-42fc-8485-a8916683a1ac",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": 96,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 1,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "4391f86b-7f67-46fa-950e-a73daa6b91ac",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 10",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2440,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "1c2a53f5-cf88-4071-be04-917edef5a008",
+                "amount": 2,
+                "frequency": 3000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "bc520c09-104a-4e83-9cc5-42568417a623",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -192,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "2abd6639-3501-438d-a2cc-69764da4fec8",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -16,
+                    "offsetY": 48,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "20be5b50-2277-490c-aa31-dc375d456fdc",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": 96,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 1,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "b912a82f-cdb9-4d78-aa14-c0ac92cc4a14",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 13",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2984,
+                "offsetY": 104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "118bb4cd-2c21-4bb2-8f17-678e345a088a",
+                "amount": 3,
+                "frequency": 1000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "4c07402c-3d07-47d3-8d1e-b9dcc62baee2",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -176,
+                    "offsetY": -104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "00d2da42-1cc3-4b81-aa10-9c3e30fec037",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": -64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "cd631961-aef6-4021-ae46-d054418d0e99",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 14",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2920,
+                "offsetY": 104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "118bb4cd-2c21-4bb2-8f17-678e345a088a",
+                "amount": 3,
+                "frequency": 1000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "93c13c76-3edf-4af2-8c34-95a820f00363",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -176,
+                    "offsetY": -104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "4642ea57-54b7-4330-80c5-447d618bde58",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": -64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "03b59d07-a3e4-4565-b262-727caa3e72fe",
+          "templateId": "0d29de48-5442-406d-b2f0-29490787b1f2",
+          "name": "Pillar 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1700,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "6b071c55-5589-409b-a0fc-098879463c55",
+          "templateId": "0d29de48-5442-406d-b2f0-29490787b1f2",
+          "name": "Pillar 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1956,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "508dca0d-5997-4aec-ba3f-744594da460c",
+          "templateId": "0d29de48-5442-406d-b2f0-29490787b1f2",
+          "name": "Pillar 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -60,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "fbd4b02e-89b8-4fa1-8ef4-d793ece61c35",
+          "templateId": "0d29de48-5442-406d-b2f0-29490787b1f2",
+          "name": "Pillar 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 228,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "682c8300-19bd-4a28-850c-0cf7557d849e",
+          "templateId": "0d29de48-5442-406d-b2f0-29490787b1f2",
+          "name": "Pillar 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 452,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "a75c1c0c-0845-402b-abec-430ddae56ef1",
+          "templateId": "0d29de48-5442-406d-b2f0-29490787b1f2",
+          "name": "Pillar 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 756,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "13f73c83-fba6-48bb-ac1e-d75f0e785008",
+          "templateId": "0d29de48-5442-406d-b2f0-29490787b1f2",
+          "name": "Pillar 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1108,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "0bcbcd00-acdb-4e4d-b93e-c03b163ba328",
+          "templateId": "0d29de48-5442-406d-b2f0-29490787b1f2",
+          "name": "Pillar 9",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1412,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3c0acec1-909f-46ad-a5d9-c1250ee64640",
+          "templateId": "0d29de48-5442-406d-b2f0-29490787b1f2",
+          "name": "Pillar 10",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2484,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "0b8e4244-392a-4a86-97ed-30971b12568d",
+          "templateId": "0d29de48-5442-406d-b2f0-29490787b1f2",
+          "name": "Pillar 11",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2900,
+                "offsetY": 0,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "8bf93be5-a9d4-4c86-945c-388862a0fb4e",
+          "templateId": "00a2f2bf-53f2-4251-8588-6b719d0e6013",
           "name": "FinishZone",
           "components": [
             {
@@ -4256,6 +5972,843 @@
             }
           ],
           "children": []
+        },
+        {
+          "id": "befc368d-c3be-4e62-b517-8a244f7a4b77",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 15",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 520,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "118bb4cd-2c21-4bb2-8f17-678e345a088a",
+                "amount": 3,
+                "frequency": 1000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "dd5cb223-05d2-44f6-a406-de3b7345db87",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -160,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "fb0b1fea-4f28-4bca-95bd-10ce8513221d",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7e6dba63-183b-4c6d-ae4f-c1afa29bcb9c",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 16",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 792,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+                "amount": 6,
+                "frequency": 750
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "49748557-4392-4dc6-b58d-e4dbf567fc81",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -192,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "e90bdb3e-72ca-4aaa-b95e-11aef8168cec",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "c9c9eb44-4dca-4bba-9994-2674cca7dc3c",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -32,
+                    "offsetY": 112,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 1,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "d99eaa81-3ea2-4da6-92a8-4aea4eaccd03",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment 3",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -80,
+                    "offsetY": 112,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 2,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "8693c40b-d74e-4cd7-82cf-e22fce04bc24",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "StaticTrack 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 984,
+                "offsetY": -40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "6a2b64aa-a8c1-40de-803f-777fd7ed0df2",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": 40,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "4143e2cc-999d-467d-89d5-594058557469",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "4146ce84-66cd-4dfd-81b4-1ff47036c3c2",
+          "templateId": "be5c4362-0b70-457a-8c0d-b29eb8b6a0d8",
+          "name": "FloatingTrack 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1288,
+                "offsetY": -24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "fd3293c7-8f69-4edb-a612-89e34d705bfb",
+                "amount": 1,
+                "frequency": 1000,
+                "patrolDistance": 32
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "1f7a1392-8bad-4db4-b043-58991fa4739d",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -288,
+                    "offsetY": 24,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "22225dc0-2006-4410-97a2-7b2de4315f05",
+          "templateId": "be5c4362-0b70-457a-8c0d-b29eb8b6a0d8",
+          "name": "FloatingTrack 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1576,
+                "offsetY": -24,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "fd3293c7-8f69-4edb-a612-89e34d705bfb",
+                "amount": 1,
+                "frequency": 1000,
+                "patrolDistance": 32
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "ba1acbda-e108-4b2d-a806-77f779b6afc6",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -288,
+                    "offsetY": 24,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "54e35c5d-e805-402f-bd7b-cb4849063d9c",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 17",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1848,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "4fff7eb1-d500-46eb-90a7-b4e93b84dd5c",
+                "amount": 6,
+                "frequency": 750
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "e8a4c885-a03d-4019-a1ac-c09dc501d797",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -160,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "31131d36-3fca-4b60-8ff2-d569ad6acc31",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": 32,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "12a71eb5-31a9-40d7-844d-b1d0cd303d37",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "StaticTrack 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1928,
+                "offsetY": -56,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "0c4f41d3-351c-4bd2-84e1-236becd61a6a",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": 56,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "01827fcb-af97-4b5a-aba9-70f4cbe3fd7e",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bd6c4687-db83-4a55-90c2-b54ba716704f",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "StaticTrack 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2040,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "6fea2dc9-5c67-49bc-a08f-5fc187ae5244",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": 8,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "7e6f1a48-4945-4e8c-9524-f125cd220d14",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "575655f3-47c1-4ea7-bc60-fcf19bd1e086",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "StaticTrack 9",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2152,
+                "offsetY": -56,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "6531dc00-e2b9-4abc-8b3e-d0237f5e8a83",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": 56,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "22c91ffb-e3f7-4b3f-bda8-30fdc7e56b66",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "50dae0f7-6873-46d1-990e-b6f60b0fa95a",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "StaticTrack 10",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2152,
+                "offsetY": 40,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "a451817c-5237-42ff-9d22-bbbec6a39d9b",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": -40,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "ffc9ac1a-191a-4057-9b30-65cff8b97e72",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7289b281-991e-4de0-911f-a6cca5d52256",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 18",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2744,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "118bb4cd-2c21-4bb2-8f17-678e345a088a",
+                "amount": 3,
+                "frequency": 1000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "25dd41e7-7d61-4a28-a7d3-045c94d4281d",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -176,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "4e971f59-5cf4-4444-bcbd-e69a99cccf30",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "50d9c5ae-8b71-4b5b-8f13-d419c0e8b04f",
+          "templateId": "a2ad9f71-3b01-45e4-92e7-a4694a898d02",
+          "name": "Track 19",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2808,
+                "offsetY": -104,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "118bb4cd-2c21-4bb2-8f17-678e345a088a",
+                "amount": 3,
+                "frequency": 1000
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "4e22ce74-8de9-429a-9781-c63c005da519",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -176,
+                    "offsetY": 104,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "eeda01af-7d67-4a25-9af0-c9371e130587",
+              "templateId": "f2aa7758-2cdb-4904-9b9a-e7f775ccb87e",
+              "name": "TrackSegment",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -48,
+                    "offsetY": 64,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "TrackSegment",
+                  "config": {
+                    "index": 0,
+                    "isInitial": false
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "c788523f-d3eb-467a-8405-38afe0b12659",
+          "templateId": "c2c7fc8b-7e35-402e-bfa3-51f7a8ea0d09",
+          "name": "StaticTrack 11",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2952,
+                "offsetY": -8,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Track",
+              "config": {
+                "mob": "2f0474e2-2218-4933-9616-e8fe8bb7f3a4",
+                "amount": 1,
+                "frequency": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "0abe25cf-4597-4f42-997f-70c0a3142063",
+              "templateId": "294b1b2d-4aa5-45a7-a231-cd9cb1fe3044",
+              "name": "Track Activator",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -320,
+                    "offsetY": 8,
+                    "offsetZ": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "9924955f-b156-4820-8f15-45f74b36b297",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
         }
       ]
     }
@@ -8065,7 +10618,7 @@
               "options": {
                 "blending": "normal",
                 "color": "#61430b",
-                "opacity": 1
+                "opacity": 0
               }
             }
           }
@@ -8121,7 +10674,7 @@
               "options": {
                 "blending": "normal",
                 "color": "#751010",
-                "opacity": 1
+                "opacity": 0
               }
             }
           }
@@ -8177,7 +10730,7 @@
               "options": {
                 "blending": "normal",
                 "color": "#de6e6e",
-                "opacity": 0.5
+                "opacity": 0
               }
             }
           }
@@ -9419,7 +11972,7 @@
               "options": {
                 "blending": "normal",
                 "color": "#e7ff05",
-                "opacity": 1
+                "opacity": 0
               }
             }
           }
@@ -9522,7 +12075,7 @@
               "options": {
                 "blending": "normal",
                 "color": "#e600ff",
-                "opacity": 1
+                "opacity": 0
               }
             }
           }
@@ -10120,7 +12673,7 @@
                 "name": "ShooterScript",
                 "options": {
                   "burstTimeout": 3000,
-                  "burstAmount": 8,
+                  "burstAmount": 6,
                   "isWeaponLocked": true
                 }
               }
@@ -11252,6 +13805,100 @@
           "children": []
         }
       ]
+    },
+    {
+      "id": "0d29de48-5442-406d-b2f0-29490787b1f2",
+      "name": "Pillar 2",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "sprites/pillar-2.png",
+            "width": 72,
+            "height": 192,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "background-3",
+            "fit": "stretch",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#ffffff",
+                "opacity": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "Parallax",
+          "config": {
+            "distance": 0.3
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "00a2f2bf-53f2-4251-8588-6b719d0e6013",
+      "name": "FinishZone 2",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "offsetZ": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "sprites/finish-2.png",
+            "width": 64,
+            "height": 192,
+            "slice": 1,
+            "rotation": 0,
+            "sortCenter": [
+              0,
+              0
+            ],
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations-3",
+            "fit": "repeat",
+            "material": {
+              "type": "basic",
+              "options": {
+                "blending": "normal",
+                "color": "#ffffff",
+                "opacity": 0.75
+              }
+            }
+          }
+        }
+      ],
+      "children": []
     }
   ],
   "loaders": [

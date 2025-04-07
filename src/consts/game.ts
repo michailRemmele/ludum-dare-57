@@ -4,7 +4,7 @@ export const LEVEL_UP_BASE_STEP = 500;
 export const MAX_LEVEL = 8;
 
 export const LEVEL_1_ID = '386f8e5f-df15-4732-815c-6f2eefbd43df';
-export const LEVEL_2_ID = '1ac2343d-ea06-4089-8293-20aebd5a880c';
+export const LEVEL_2_ID = 'd54ad4b9-ee82-454d-aef5-0ff26dbf825e';
 
 export const LEVELS = [
   {
