@@ -73,6 +73,7 @@ export class FishScript extends Script {
     this.actor.addEventListener(EventType.UpdateShoalIndex, this.handleUpdateShoalIndex);
     this.actor.addEventListener(EventType.Kill, this.handleKill);
     this.actor.addEventListener(EventType.Damage, this.handleDamage);
+    this.actor.addEventListener(EventType.DamageDone, this.handleDamageDone);
 
     this.player.addEventListener(EventType.Movement, this.handlePlayerMovement);
 
@@ -83,6 +84,7 @@ export class FishScript extends Script {
     this.actor.removeEventListener(EventType.UpdateShoalIndex, this.handleUpdateShoalIndex);
     this.actor.removeEventListener(EventType.Kill, this.handleKill);
     this.actor.removeEventListener(EventType.Damage, this.handleDamage);
+    this.actor.removeEventListener(EventType.DamageDone, this.handleDamageDone);
 
     this.player.removeEventListener(EventType.Movement, this.handlePlayerMovement);
 
@@ -96,6 +98,10 @@ export class FishScript extends Script {
     }
 
     this.immortalDuration = IMMORTAL_DURATION;
+  };
+
+  private handleDamageDone = (): void => {
+    this.actor.dispatchEvent(EventType.FishDamaged);
   };
 
   private handleCollisionEnemyDetector = (event: CollisionStayEvent): void => {
@@ -123,6 +129,7 @@ export class FishScript extends Script {
       x: transform.offsetX,
       y: transform.offsetY,
     });
+    this.actor.dispatchEvent(EventType.FishBite);
   };
 
   private handleUpdateShoalIndex = (event: UpdateShoalIndexEvent): void => {

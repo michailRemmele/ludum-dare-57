@@ -114,6 +114,7 @@ export class PlayerScript extends Script {
       this.shoalSize += 1;
       this.shoalActors.push(parent);
       this.updateShoal();
+      parent.dispatchEvent(EventType.NewFishJoin);
     }
   };
 

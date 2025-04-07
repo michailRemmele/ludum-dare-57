@@ -23,7 +23,7 @@
           "options": {}
         }
       ],
-      "levelId": "50764cc4-e52b-4fe3-9cd6-5d9eaf67d503"
+      "levelId": null
     },
     {
       "id": "cd85bb20-d3c0-42e1-840b-d5dc5f09daef",
@@ -3363,29 +3363,100 @@
               "children": []
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "50764cc4-e52b-4fe3-9cd6-5d9eaf67d503",
-      "name": "MainMenu",
-      "actors": [
+        },
         {
-          "id": "f8bfbc69-901f-4ebb-abdf-186f90b64e0a",
-          "name": "Sound",
+          "id": "40a9fbc2-e40d-4c11-93d0-b6c3927a4d3a",
+          "templateId": "8a0bacb4-3d15-4b65-ba57-6e1547c15f8c",
+          "name": "AudioManager",
           "components": [
             {
-              "name": "AudioSource",
+              "name": "ScriptBundle",
               "config": {
-                "src": "audio/menu-music.mp3",
-                "volume": 0,
-                "looped": true,
-                "autoplay": true,
-                "group": "music"
+                "scripts": [
+                  {
+                    "id": "c737e7b1-f02c-4a59-a606-677113d7f142",
+                    "name": "AudioManagerScript",
+                    "options": {
+                      "levelUp": "e4a967fb-913e-48ea-b695-09a54a91c049",
+                      "powerUp": "2dc5fd28-80ad-4f08-8aa8-0eb1398becec",
+                      "fishDamage": "bb9f7116-b8e1-4fa2-b5e0-8903dbc096c0",
+                      "enemyShoot": "152434b5-0d57-4fdd-a62e-1854126c2b11",
+                      "fishBite": "3c6f3d60-0a0f-4986-81d8-842c0c707550",
+                      "fishDeath": "09fcfe2e-d9b4-49ac-88aa-e4d4c009d976",
+                      "lose": "f373419f-f021-4e7a-bca2-504a218abcc6",
+                      "win": "c2fdfe45-e430-402b-a80d-42d031b224c9",
+                      "backgroundMusic": "8f9ae14b-f611-4bc2-8b5b-de28688176ca"
+                    }
+                  }
+                ]
               }
             }
           ],
-          "children": []
+          "children": [
+            {
+              "id": "8f9ae14b-f611-4bc2-8b5b-de28688176ca",
+              "templateId": "ccfc4c80-00b7-4823-94bf-f3922147b612",
+              "name": "Background Music",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "e4a967fb-913e-48ea-b695-09a54a91c049",
+              "templateId": "784b129b-11ea-40f2-83d5-5d89a3bcdb09",
+              "name": "Level Up",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "2dc5fd28-80ad-4f08-8aa8-0eb1398becec",
+              "templateId": "79b537be-cb53-4b21-9107-bb4dd1e3f420",
+              "name": "Power Up",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "bb9f7116-b8e1-4fa2-b5e0-8903dbc096c0",
+              "templateId": "77ba2a9b-a61a-4025-9efa-70534a0bef3e",
+              "name": "Fish Damage",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "152434b5-0d57-4fdd-a62e-1854126c2b11",
+              "templateId": "f03df657-db0c-4550-bf1a-fd5515aca21b",
+              "name": "Enemy Shoot",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "3c6f3d60-0a0f-4986-81d8-842c0c707550",
+              "templateId": "43b89e1e-5b58-4d93-8ff4-30370881a384",
+              "name": "Fish Bite",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "09fcfe2e-d9b4-49ac-88aa-e4d4c009d976",
+              "templateId": "f8a83397-74e1-4f6b-ac11-f966543d86a7",
+              "name": "Fish Death",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "c2fdfe45-e430-402b-a80d-42d031b224c9",
+              "templateId": "f983a003-4276-4b37-a5f4-44543aaef13d",
+              "name": "Win",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "f373419f-f021-4e7a-bca2-504a218abcc6",
+              "templateId": "9fa86739-33e2-4043-a193-951abb9a2681",
+              "name": "Lose",
+              "components": [],
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -6805,6 +6876,100 @@
               "id": "9924955f-b156-4820-8f15-45f74b36b297",
               "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
               "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5be383d9-6b33-4152-bfd6-9707c17a5d9f",
+          "templateId": "8a0bacb4-3d15-4b65-ba57-6e1547c15f8c",
+          "name": "AudioManager",
+          "components": [
+            {
+              "name": "ScriptBundle",
+              "config": {
+                "scripts": [
+                  {
+                    "id": "a10f63e3-a7da-4a9c-ada7-42e203b18d7d",
+                    "name": "AudioManagerScript",
+                    "options": {
+                      "backgroundMusic": "322f5c5a-07b0-4b69-9845-e97c6b8c41fa",
+                      "levelUp": "09c7cd39-1ac4-4d58-ac67-295af497ba44",
+                      "powerUp": "5beb4271-03ae-4fe0-aec0-4fb3f2ce1088",
+                      "fishDamage": "2cacb389-06a6-4e21-b281-a87a09b872f1",
+                      "fishDeath": "c3acfd72-b475-4598-8b2a-ed7554496e2a",
+                      "fishBite": "7c20f5f1-8d84-489b-a622-e3b40ef48672",
+                      "enemyShoot": "f1e4fef8-5376-4f12-8620-4fd142fc0e32",
+                      "win": "ef57de3a-8b18-4ed3-80a4-bf898db0264e",
+                      "lose": "4f9397c6-8952-4b73-8d0b-71e9733b70f2"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "322f5c5a-07b0-4b69-9845-e97c6b8c41fa",
+              "templateId": "ccfc4c80-00b7-4823-94bf-f3922147b612",
+              "name": "Background Music",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "09c7cd39-1ac4-4d58-ac67-295af497ba44",
+              "templateId": "784b129b-11ea-40f2-83d5-5d89a3bcdb09",
+              "name": "Level Up",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "5beb4271-03ae-4fe0-aec0-4fb3f2ce1088",
+              "templateId": "79b537be-cb53-4b21-9107-bb4dd1e3f420",
+              "name": "Power Up",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "2cacb389-06a6-4e21-b281-a87a09b872f1",
+              "templateId": "77ba2a9b-a61a-4025-9efa-70534a0bef3e",
+              "name": "Fish Damage",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "f1e4fef8-5376-4f12-8620-4fd142fc0e32",
+              "templateId": "f03df657-db0c-4550-bf1a-fd5515aca21b",
+              "name": "Enemy Shoot",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "7c20f5f1-8d84-489b-a622-e3b40ef48672",
+              "templateId": "43b89e1e-5b58-4d93-8ff4-30370881a384",
+              "name": "Fish Bite",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "c3acfd72-b475-4598-8b2a-ed7554496e2a",
+              "templateId": "f8a83397-74e1-4f6b-ac11-f966543d86a7",
+              "name": "Fish Death",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "ef57de3a-8b18-4ed3-80a4-bf898db0264e",
+              "templateId": "f983a003-4276-4b37-a5f4-44543aaef13d",
+              "name": "Win",
+              "components": [],
+              "children": []
+            },
+            {
+              "id": "4f9397c6-8952-4b73-8d0b-71e9733b70f2",
+              "templateId": "9fa86739-33e2-4043-a193-951abb9a2681",
+              "name": "Lose",
               "components": [],
               "children": []
             }
@@ -13899,6 +14064,166 @@
         }
       ],
       "children": []
+    },
+    {
+      "id": "8a0bacb4-3d15-4b65-ba57-6e1547c15f8c",
+      "name": "AudioManager",
+      "components": [],
+      "children": [
+        {
+          "id": "ccfc4c80-00b7-4823-94bf-f3922147b612",
+          "name": "Background Music",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/background.mp3",
+                "volume": 0.5,
+                "looped": true,
+                "autoplay": true,
+                "group": "music"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "784b129b-11ea-40f2-83d5-5d89a3bcdb09",
+          "name": "Level Up",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/levelup.wav",
+                "volume": 0.5,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "79b537be-cb53-4b21-9107-bb4dd1e3f420",
+          "name": "Power Up",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/powerup.wav",
+                "volume": 0.5,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "77ba2a9b-a61a-4025-9efa-70534a0bef3e",
+          "name": "Fish Damage",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/damage.wav",
+                "volume": 0.5,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "f03df657-db0c-4550-bf1a-fd5515aca21b",
+          "name": "Enemy Shoot",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/shoot.wav",
+                "volume": 0.5,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "43b89e1e-5b58-4d93-8ff4-30370881a384",
+          "name": "Fish Bite",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/bite.wav",
+                "volume": 0.4,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "f8a83397-74e1-4f6b-ac11-f966543d86a7",
+          "name": "Fish Death",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/death.wav",
+                "volume": 0.5,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "f983a003-4276-4b37-a5f4-44543aaef13d",
+          "name": "Win",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/win.mp3",
+                "volume": 0.5,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "9fa86739-33e2-4043-a193-951abb9a2681",
+          "name": "Lose",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/lose.mp3",
+                "volume": 0.5,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
     }
   ],
   "loaders": [

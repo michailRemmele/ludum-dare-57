@@ -63,6 +63,7 @@ export class ShooterScript extends Script {
 
   private handleAttack = (): void => {
     this.burstBulletsLeft -= 1;
+    this.actor.dispatchEvent(EventType.EnemyShoot);
 
     if (this.burstBulletsLeft === 0) {
       this.burstCooldown = this.burstTimeout;

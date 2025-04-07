@@ -16,8 +16,12 @@ export const SendAnalytics = 'SendAnalytics';
 export const GameOver = 'GameOver';
 
 export const UpdateShoalIndex = 'UpdateShoalIndex';
+export const NewFishJoin = 'NewFishJoin';
 export const FishDied = 'FishDied';
+export const FishDamaged = 'FishDamaged';
 export const UnlockWeapon = 'UnlockWeapon';
+export const EnemyShoot = 'EnemyShoot';
+export const FishBite = 'FishBite';
 
 export const IncreaseScorePoints = 'IncreaseScorePoints';
 export const LevelUp = 'LevelUp';
@@ -69,8 +73,12 @@ declare module 'dacha' {
     [Kill]: ActorEvent
 
     [UpdateShoalIndex]: UpdateShoalIndexEvent
+    [NewFishJoin]: ActorEvent
     [FishDied]: ActorEvent
+    [FishDamaged]: ActorEvent
+    [FishBite]: ActorEvent
     [UnlockWeapon]: ActorEvent
+    [EnemyShoot]: ActorEvent
   }
 
   export interface SceneEventMap {

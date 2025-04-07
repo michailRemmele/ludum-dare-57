@@ -11,6 +11,7 @@ import {
   StaticTrackScript,
   FloatingTrackScript,
   BonusTrackScript,
+  AudioManagerScript,
 } from '../../../src/game/scripts';
 
 import {
@@ -23,6 +24,7 @@ import {
   staticTrackScript,
   floatingTrackScript,
   bonusTrackScript,
+  audioManagerScript,
 } from './script-system';
 
 export const resourcesSchema = {
@@ -36,6 +38,7 @@ export const resourcesSchema = {
     [StaticTrackScript.scriptName]: staticTrackScript,
     [FloatingTrackScript.scriptName]: floatingTrackScript,
     [BonusTrackScript.scriptName]: bonusTrackScript,
+    [AudioManagerScript.scriptName]: audioManagerScript,
   },
   [EffectsSystem.systemName]: {},
 };
