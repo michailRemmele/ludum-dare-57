@@ -152,7 +152,7 @@
                   "type": "basic",
                   "options": {
                     "blending": "normal",
-                    "color": "#12266d",
+                    "color": "#00396d",
                     "opacity": 1
                   }
                 }
@@ -1955,6 +1955,13 @@
                 }
               ],
               "children": []
+            },
+            {
+              "id": "7e08db2f-ddad-4b96-ba67-f192a1fdb8a7",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
+              "children": []
             }
           ]
         },
@@ -2001,6 +2008,13 @@
                   }
                 }
               ],
+              "children": []
+            },
+            {
+              "id": "fc3d6136-bc5e-4601-92a3-8b94cfaa24ce",
+              "templateId": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+              "name": "Template",
+              "components": [],
               "children": []
             }
           ]
@@ -6824,7 +6838,7 @@
     },
     {
       "id": "f7975132-60eb-4732-a31e-b03166c3dfd8",
-      "name": "Decoration",
+      "name": "Pillar",
       "components": [
         {
           "name": "Transform",
@@ -6840,8 +6854,8 @@
         {
           "name": "Sprite",
           "config": {
-            "src": "",
-            "width": 32,
+            "src": "sprites/pillar.png",
+            "width": 72,
             "height": 192,
             "slice": 1,
             "rotation": 0,
@@ -6857,7 +6871,7 @@
               "type": "basic",
               "options": {
                 "blending": "normal",
-                "color": "#1ce6a5",
+                "color": "#ffffff",
                 "opacity": 1
               }
             }
@@ -7190,10 +7204,10 @@
         {
           "name": "Sprite",
           "config": {
-            "src": "",
-            "width": 16,
-            "height": 16,
-            "slice": 1,
+            "src": "sprites/sea-anemone.png",
+            "width": 24,
+            "height": 24,
+            "slice": 8,
             "rotation": 0,
             "sortCenter": [
               0,
@@ -7207,7 +7221,7 @@
               "type": "basic",
               "options": {
                 "blending": "normal",
-                "color": "#0cf0ff",
+                "color": "#ffffff",
                 "opacity": 1
               }
             }
@@ -7220,9 +7234,9 @@
             "states": [
               {
                 "id": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
-                "name": "State",
+                "name": "Idle",
                 "type": "individual",
-                "speed": 1,
+                "speed": 0.25,
                 "timeline": {
                   "frames": [
                     {
@@ -7230,9 +7244,20 @@
                       "fields": [
                         {
                           "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
-                          "name": "components.Sprite.material.options.color",
-                          "type": "string",
-                          "value": "#0CF0FF"
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    },
+                    {
+                      "id": "9aaae80b-ac72-4f52-8150-cb5df24a496c",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 1
                         }
                       ]
                     }
@@ -7267,6 +7292,20 @@
                         }
                       }
                     ]
+                  },
+                  {
+                    "id": "9b1f0c83-ab39-4e66-9fa1-d8d0056d3bc4",
+                    "state": "aaaa7bb5-41a3-43b0-a3dd-2bf576098f11",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "38e9ef6d-2acd-4227-849d-769bd1798130",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Attack"
+                        }
+                      }
+                    ]
                   }
                 ]
               },
@@ -7282,9 +7321,134 @@
                       "fields": [
                         {
                           "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
-                          "name": "components.Sprite.material.options.color",
-                          "type": "string",
-                          "value": "#FFFFFF"
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 4
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": [
+                  {
+                    "id": "f7bfe0c4-327b-44ce-9104-0079c43b9faf",
+                    "state": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "ca7e783a-5dff-47b8-95b7-3561fd803b4e",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "b7d615b7-7747-4489-860b-58dbb04f1273",
+                    "state": "aaaa7bb5-41a3-43b0-a3dd-2bf576098f11",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "ca7e783a-5dff-47b8-95b7-3561fd803b4e",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Attack"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "792c0134-e88d-4f92-a7aa-c5c3b8999934",
+                    "state": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
+                    "time": 1,
+                    "conditions": []
+                  }
+                ]
+              },
+              {
+                "id": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
+                "name": "Kill",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 5
+                        }
+                      ]
+                    },
+                    {
+                      "id": "3b80bd73-5e58-41c4-8da7-ddf3387a9f8b",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 6
+                        }
+                      ]
+                    },
+                    {
+                      "id": "42237ce3-d66f-43f9-adae-43492f26e8a7",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 7
+                        }
+                      ]
+                    },
+                    {
+                      "id": "a69aebbf-61ca-46f3-8318-bd577b0ae826",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": []
+              },
+              {
+                "id": "aaaa7bb5-41a3-43b0-a3dd-2bf576098f11",
+                "name": "Attack",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "b4857d92-4766-4958-9252-5cb74aeb15d5",
+                      "fields": [
+                        {
+                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 3
                         }
                       ]
                     }
@@ -7308,34 +7472,25 @@
                   },
                   {
                     "id": "1c656a66-bd06-458f-a385-b362e8c2ec5c",
+                    "state": "296d9ecc-ee64-4e46-bc17-eb4c08ff90ad",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "ccc0114c-0d97-4886-aa6f-abada79de2bb",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Damage"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "53c14c55-417c-4269-88a7-775a40b76411",
                     "state": "ba5519bb-3a14-4982-bfb9-cca86c0786ca",
                     "time": 1,
                     "conditions": []
                   }
                 ]
-              },
-              {
-                "id": "f41dc7dd-06ce-4cba-b9f9-5d0db8805ade",
-                "name": "Kill",
-                "type": "individual",
-                "speed": 1,
-                "timeline": {
-                  "frames": [
-                    {
-                      "id": "3910917e-675b-470e-bec7-067e94057aa9",
-                      "fields": [
-                        {
-                          "id": "dcf8855f-c9a6-439b-b901-0f20d6cb0d81",
-                          "name": "components.Sprite.material.options.color",
-                          "type": "string",
-                          "value": "#000000"
-                        }
-                      ]
-                    }
-                  ],
-                  "looped": false
-                },
-                "transitions": []
               }
             ]
           }
@@ -7483,10 +7638,10 @@
         {
           "name": "Sprite",
           "config": {
-            "src": "",
-            "width": 8,
-            "height": 8,
-            "slice": 1,
+            "src": "sprites/stinging-cell.png",
+            "width": 24,
+            "height": 24,
+            "slice": 7,
             "rotation": 0,
             "sortCenter": [
               0,
@@ -7500,7 +7655,7 @@
               "type": "basic",
               "options": {
                 "blending": "normal",
-                "color": "#00f80c",
+                "color": "#ffffff",
                 "opacity": 1
               }
             }
@@ -7526,6 +7681,141 @@
             "isPermeable": false,
             "ghost": true,
             "drag": 0
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "485c9807-b68e-4c99-8f87-35154f652d29",
+            "states": [
+              {
+                "id": "485c9807-b68e-4c99-8f87-35154f652d29",
+                "name": "Idle",
+                "type": "individual",
+                "speed": 0.75,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "f76237ab-673b-46b4-9f92-0c211f63bbb4",
+                      "fields": [
+                        {
+                          "id": "813248f4-ac9e-4549-9350-d809b4ed1372",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    },
+                    {
+                      "id": "2f5db262-967c-43aa-aef4-5448f4954551",
+                      "fields": [
+                        {
+                          "id": "813248f4-ac9e-4549-9350-d809b4ed1372",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "225fb60e-b4fb-4076-afa3-88ba3ad0d82c",
+                      "fields": [
+                        {
+                          "id": "813248f4-ac9e-4549-9350-d809b4ed1372",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "0633de91-7062-4280-b2b5-e18a2e72142c",
+                    "state": "6ba58eed-08e4-49e9-beef-cc1a38cae9a5",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "92e1b518-e8c5-4572-bb09-519eddb09aec",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "6ba58eed-08e4-49e9-beef-cc1a38cae9a5",
+                "name": "Kill",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "f76237ab-673b-46b4-9f92-0c211f63bbb4",
+                      "fields": [
+                        {
+                          "id": "813248f4-ac9e-4549-9350-d809b4ed1372",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 3
+                        }
+                      ]
+                    },
+                    {
+                      "id": "2f5db262-967c-43aa-aef4-5448f4954551",
+                      "fields": [
+                        {
+                          "id": "813248f4-ac9e-4549-9350-d809b4ed1372",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 4
+                        }
+                      ]
+                    },
+                    {
+                      "id": "225fb60e-b4fb-4076-afa3-88ba3ad0d82c",
+                      "fields": [
+                        {
+                          "id": "813248f4-ac9e-4549-9350-d809b4ed1372",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 5
+                        }
+                      ]
+                    },
+                    {
+                      "id": "cc23a553-e92e-4c68-b89f-46775c7412df",
+                      "fields": [
+                        {
+                          "id": "813248f4-ac9e-4549-9350-d809b4ed1372",
+                          "name": "components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 6
+                        }
+                      ]
+                    },
+                    {
+                      "id": "49bb9dd2-b34d-4316-9151-b608312acca2",
+                      "fields": [
+                        {
+                          "id": "813248f4-ac9e-4549-9350-d809b4ed1372",
+                          "name": "components.Sprite.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": []
+              }
+            ]
           }
         }
       ],
@@ -7578,14 +7868,59 @@
               "type": "basic",
               "options": {
                 "blending": "normal",
-                "color": "#3931ff",
-                "opacity": 1
+                "color": "#e7ff05",
+                "opacity": 0
               }
             }
           }
         }
       ],
-      "children": []
+      "children": [
+        {
+          "id": "2e22aae0-43b2-48cc-9957-7b2ada90f0ca",
+          "name": "Tower Placement",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 15,
+                "offsetZ": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "sprites/tower-placement.png",
+                "width": 32,
+                "height": 64,
+                "slice": 1,
+                "rotation": 0,
+                "sortCenter": [
+                  0,
+                  0
+                ],
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations",
+                "fit": "stretch",
+                "material": {
+                  "type": "basic",
+                  "options": {
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
     },
     {
       "id": "be5c4362-0b70-457a-8c0d-b29eb8b6a0d8",
