@@ -15,7 +15,7 @@ import { CollisionStay, CollisionEnter } from 'dacha/events';
 import type { CollisionStayEvent, CollisionEnterEvent } from 'dacha/events';
 
 import * as EventType from '../../events';
-import type { IncreaseScorePointsEvent } from '../../events';
+import type { IncreaseScorePointsEvent, GameOverEvent } from '../../events';
 import {
   CAMERA_SPEED,
   VIEWPORT_SIZE,
@@ -136,7 +136,18 @@ export class CameraScript extends Script {
     }
   };
 
-  private handleGameOver = (): void => {
+  private handleGameOver = (event: GameOverEvent): void => {
+    const { isWin, levelIndex, score } = event;
+
+    this.scene.dispatchEvent(EventType.SendAnalytics, {
+      name: 'game_over',
+      payload: {
+        isWin,
+        levelIndex,
+        score,
+      },
+    });
+
     this.isGameOver = true;
   };
 

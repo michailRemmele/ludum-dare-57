@@ -6,7 +6,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: 'Monocraft', sans-serif;
 
   width: 100vw;
@@ -17,11 +17,15 @@ body {
   user-select: none;
 
   background-color: black;
+
+  max-width: 2048px;
 }
 
 #root, #ui-root {
   width: 100%;
   height: 100%;
+
+  max-width: 2048px;
 }
 
 #root {
