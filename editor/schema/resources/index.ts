@@ -1,4 +1,4 @@
-import { ScriptSystem } from 'dacha';
+import { BehaviorSystem } from 'dacha';
 import { EffectsSystem } from 'dacha-game-systems';
 
 import {
@@ -12,6 +12,7 @@ import {
   FloatingTrackScript,
   BonusTrackScript,
   AudioManagerScript,
+  ControlStickScript,
 } from '../../../src/game/scripts';
 
 import {
@@ -25,20 +26,22 @@ import {
   floatingTrackScript,
   bonusTrackScript,
   audioManagerScript,
-} from './script-system';
+  controlStickScript,
+} from './behavior-system';
 
 export const resourcesSchema = {
-  [ScriptSystem.systemName]: {
-    [CameraScript.scriptName]: cameraScript,
-    [PlayerScript.scriptName]: playerScript,
-    [FishScript.scriptName]: fishScript,
-    [TrackScript.scriptName]: trackScript,
-    [ThornsScript.scriptName]: thornsScript,
-    [ShooterScript.scriptName]: shooterScript,
-    [StaticTrackScript.scriptName]: staticTrackScript,
-    [FloatingTrackScript.scriptName]: floatingTrackScript,
-    [BonusTrackScript.scriptName]: bonusTrackScript,
-    [AudioManagerScript.scriptName]: audioManagerScript,
+  [BehaviorSystem.systemName]: {
+    [CameraScript.behaviorName]: cameraScript,
+    [PlayerScript.behaviorName]: playerScript,
+    [FishScript.behaviorName]: fishScript,
+    [TrackScript.behaviorName]: trackScript,
+    [ThornsScript.behaviorName]: thornsScript,
+    [ShooterScript.behaviorName]: shooterScript,
+    [StaticTrackScript.behaviorName]: staticTrackScript,
+    [FloatingTrackScript.behaviorName]: floatingTrackScript,
+    [BonusTrackScript.behaviorName]: bonusTrackScript,
+    [AudioManagerScript.behaviorName]: audioManagerScript,
+    [ControlStickScript.behaviorName]: controlStickScript,
   },
   [EffectsSystem.systemName]: {},
 };

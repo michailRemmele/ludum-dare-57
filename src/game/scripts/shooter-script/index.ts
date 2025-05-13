@@ -1,10 +1,10 @@
 import type {
-  ScriptOptions,
+  BehaviorOptions,
   UpdateOptions,
 } from 'dacha';
 import {
   Actor,
-  Script,
+  Behavior,
   Transform,
 } from 'dacha';
 import { CollisionStay } from 'dacha/events';
@@ -18,13 +18,13 @@ import {
 } from '../../components';
 import * as EventType from '../../events';
 
-interface ShooterScriptOptions extends ScriptOptions {
+interface ShooterBehaviorOptions extends BehaviorOptions {
   burstTimeout: number
   burstAmount: number
   isWeaponLocked: boolean
 }
 
-export class ShooterScript extends Script {
+export class ShooterScript extends Behavior {
   private actor: Actor;
 
   private burstTimeout: number;
@@ -36,7 +36,7 @@ export class ShooterScript extends Script {
 
   private enemyDetector: Actor;
 
-  constructor(options: ShooterScriptOptions) {
+  constructor(options: ShooterBehaviorOptions) {
     super();
 
     this.actor = options.actor;
@@ -112,4 +112,4 @@ export class ShooterScript extends Script {
   }
 }
 
-ShooterScript.scriptName = 'ShooterScript';
+ShooterScript.behaviorName = 'ShooterScript';

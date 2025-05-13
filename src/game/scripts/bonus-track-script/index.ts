@@ -2,12 +2,12 @@ import type {
   Actor,
   ActorSpawner,
   Scene,
-  ScriptOptions,
+  BehaviorOptions,
   UpdateOptions,
   ActorEvent,
 } from 'dacha';
 import {
-  Script,
+  Behavior,
   Transform,
 } from 'dacha';
 
@@ -16,7 +16,6 @@ import {
 } from '../../components';
 import * as EventType from '../../events';
 import type { UpdateShoalIndexEvent } from '../../events';
-import { MAIN_CAMERA_NAME } from '../../../consts/actors';
 
 const PATROL_SPEED = 10;
 
@@ -24,12 +23,10 @@ interface MobState {
   direction: number
 }
 
-export class BonusTrackScript extends Script {
+export class BonusTrackScript extends Behavior {
   private actor: Actor;
   private scene: Scene;
   private actorSpawner: ActorSpawner;
-
-  private mainCamera: Actor;
 
   private mobs: Actor[];
 
@@ -39,14 +36,12 @@ export class BonusTrackScript extends Script {
   private mobId: string;
   private mobsLeft: number;
 
-  constructor(options: ScriptOptions) {
+  constructor(options: BehaviorOptions) {
     super();
 
     this.actor = options.actor;
     this.scene = options.scene;
     this.actorSpawner = options.actorSpawner;
-
-    this.mainCamera = this.scene.getEntityByName(MAIN_CAMERA_NAME)!;
 
     const track = this.actor.getComponent(Track);
 
@@ -134,4 +129,4 @@ export class BonusTrackScript extends Script {
   }
 }
 
-BonusTrackScript.scriptName = 'BonusTrackScript';
+BonusTrackScript.behaviorName = 'BonusTrackScript';

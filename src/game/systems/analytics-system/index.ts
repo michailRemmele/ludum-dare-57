@@ -1,29 +1,27 @@
 import {
-  System,
+  WorldSystem,
 } from 'dacha';
 import type {
-  SystemOptions,
-  Scene,
+  WorldSystemOptions,
+  World,
 } from 'dacha';
 
 import * as EventType from '../../events';
 import type { SendAnalyticsEvent } from '../../events';
 
-export class AnalyticsSystem extends System {
-  private scene: Scene;
+export class AnalyticsSystem extends WorldSystem {
+  private world: World;
 
-  constructor(options: SystemOptions) {
+  constructor(options: WorldSystemOptions) {
     super();
 
-    this.scene = options.scene;
+    this.world = options.world;
+
+    this.world.addEventListener(EventType.SendAnalytics, this.handleSendAnalytics);
   }
 
-  mount(): void {
-    this.scene.addEventListener(EventType.SendAnalytics, this.handleSendAnalytics);
-  }
-
-  unmount(): void {
-    this.scene.removeEventListener(EventType.SendAnalytics, this.handleSendAnalytics);
+  onWorldDestroy(): void {
+    this.world.removeEventListener(EventType.SendAnalytics, this.handleSendAnalytics);
   }
 
   private handleSendAnalytics = (event: SendAnalyticsEvent): void => {

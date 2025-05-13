@@ -1,11 +1,10 @@
 import { useContext, useMemo } from 'react';
 import type { FC } from 'react';
-import { LoadScene } from 'dacha/events';
+import { LoadScene, ExitScene } from 'dacha/events';
 
 import { Button } from '../../../../components';
 import { EngineContext } from '../../../../providers';
 import { LEVELS } from '../../../../../consts/game';
-import { GAME_ID, LOADER_ID } from '../../../../../consts/scenes';
 import { MAIN_MENU } from '../../consts';
 
 import './style.css';
@@ -22,7 +21,7 @@ interface LevelSelectProps {
 }
 
 export const LevelSelect: FC<LevelSelectProps> = ({ openMenu }) => {
-  const { scene } = useContext(EngineContext);
+  const { world } = useContext(EngineContext);
 
   const levels = useMemo<LevelInfo[]>(() => {
     const size = Math.min(
@@ -43,11 +42,9 @@ export const LevelSelect: FC<LevelSelectProps> = ({ openMenu }) => {
   }, []);
 
   const handlePlay = (levelId: string): void => {
-    scene.dispatchEvent(LoadScene, {
-      sceneId: GAME_ID,
-      levelId,
-      clean: true,
-      loaderId: LOADER_ID,
+    world.dispatchEvent(ExitScene, { autoDestroy: false });
+    world.dispatchEvent(LoadScene, {
+      id: levelId,
     });
   };
 

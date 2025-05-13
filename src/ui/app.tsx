@@ -1,7 +1,6 @@
 import { useContext, useEffect } from 'react';
 import type { FC } from 'react';
 
-import { MAIN_MENU_ID, GAME_ID, LOADER_ID } from '../consts/scenes';
 import { createLongPressFixHandler } from '../utils/long-press-fix';
 
 import { EngineContext } from './providers';
@@ -20,9 +19,9 @@ export const App: FC = () => {
 
   return (
     <>
-      {scene.id === MAIN_MENU_ID && <MainMenu />}
-      {scene.id === GAME_ID && <Game />}
-      {scene.id === LOADER_ID && <Loader />}
+      {scene?.name === 'Main Menu' && <MainMenu />}
+      {scene?.name?.startsWith('Level') && <Game />}
+      {!scene && <Loader />}
     </>
   );
 };

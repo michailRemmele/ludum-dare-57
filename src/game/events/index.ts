@@ -3,6 +3,8 @@ import type { Actor, ActorEvent, SceneEvent } from 'dacha';
 export const Movement = 'Movement';
 export const MovementJump = 'MovementJump';
 
+export const ControlStickInput = 'ControlStickInput';
+
 export const AttackInput = 'AttackInput';
 export const Attack = 'Attack';
 export const Damage = 'Damage';
@@ -39,6 +41,8 @@ export type DamageEvent = ActorEvent<{ value: number, actor?: Actor }>;
 export type UpdateShoalIndexEvent = ActorEvent<{
   index: number
 }>;
+
+export type ControlStickInputEvent = SceneEvent<{ x: number, y: number }>;
 
 export type SendAnalyticsEvent = SceneEvent<{
   name: string
@@ -82,6 +86,7 @@ declare module 'dacha' {
   }
 
   export interface SceneEventMap {
+    [ControlStickInput]: ControlStickInputEvent
     [ResetSaveState]: SceneEvent
     [SendAnalytics]: SendAnalyticsEvent
     [GameOver]: GameOverEvent

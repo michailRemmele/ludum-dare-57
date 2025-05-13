@@ -1,13 +1,13 @@
 import {
   ActorCollection,
   MathOps,
-  System,
+  SceneSystem,
   Transform,
 } from 'dacha';
 import type {
   Scene,
   ActorSpawner,
-  SystemOptions,
+  SceneSystemOptions,
   UpdateOptions,
 } from 'dacha';
 import { RemoveActor } from 'dacha/events';
@@ -21,7 +21,7 @@ import { SimpleFighter } from './fighters';
 import type { Fighter } from './fighters';
 import type { Attack } from './attacks';
 
-export class CombatSystem extends System {
+export class CombatSystem extends SceneSystem {
   private scene: Scene;
   private actorCollection: ActorCollection;
   private actorSpawner: ActorSpawner;
@@ -30,7 +30,7 @@ export class CombatSystem extends System {
   private activeAttacks: Array<Attack>;
   private events: Array<AttackEvent>;
 
-  constructor(options: SystemOptions) {
+  constructor(options: SceneSystemOptions) {
     super();
 
     this.scene = options.scene;
@@ -43,14 +43,12 @@ export class CombatSystem extends System {
     this.activeAttacks = [];
 
     this.events = [];
-  }
 
-  mount(): void {
     this.scene.addEventListener(EventType.AttackInput, this.handleAttack);
     this.actorCollection.addEventListener(RemoveActor, this.handleRemoveActor);
   }
 
-  unmount(): void {
+  onSceneDestroy(): void {
     this.scene.removeEventListener(EventType.AttackInput, this.handleAttack);
     this.actorCollection.removeEventListener(RemoveActor, this.handleRemoveActor);
   }

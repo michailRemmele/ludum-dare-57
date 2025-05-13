@@ -13,12 +13,16 @@ export const ScoreBar: FC = () => {
   const { scene } = useContext(EngineContext);
 
   const [value, setValue] = useState(() => {
-    const mainCamera = scene.getEntityByName(MAIN_CAMERA_NAME)!;
+    const mainCamera = scene?.findChildByName(MAIN_CAMERA_NAME);
     const score = mainCamera?.getComponent(Score);
     return score?.value ?? 0;
   });
 
   useEffect(() => {
+    if (!scene) {
+      return (): void => {};
+    }
+
     const handleIncreaseScorePoints = (event: IncreaseScorePointsEvent): void => {
       setValue((prev) => prev + event.points);
     };
@@ -28,7 +32,7 @@ export const ScoreBar: FC = () => {
     return (): void => {
       scene.removeEventListener(EventType.IncreaseScorePoints, handleIncreaseScorePoints);
     };
-  }, []);
+  }, [scene]);
 
   return (
     <div className="score-bar">

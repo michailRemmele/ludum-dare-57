@@ -31,7 +31,7 @@ interface FpsMeterProps {
 }
 
 export const FpsMeter: FC<FpsMeterProps> = ({ className }) => {
-  const { scene } = useContext(EngineContext);
+  const { world } = useContext(EngineContext);
 
   const chartRef = useRef<HTMLCanvasElement | null>(null);
   const chartCtxRef = useRef<CanvasRenderingContext2D | null>(null);
@@ -86,10 +86,10 @@ export const FpsMeter: FC<FpsMeterProps> = ({ className }) => {
       updateChart(currentFps);
     };
 
-    scene.addEventListener(GameStatsUpdate, handleGameStateUpdate);
+    world.addEventListener(GameStatsUpdate, handleGameStateUpdate);
 
-    return (): void => scene.removeEventListener(GameStatsUpdate, handleGameStateUpdate);
-  }, [scene]);
+    return (): void => world.removeEventListener(GameStatsUpdate, handleGameStateUpdate);
+  }, []);
 
   useEffect(() => {
     if (!chartRef.current) {

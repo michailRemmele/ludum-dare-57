@@ -2,11 +2,11 @@ import type {
   Actor,
   ActorSpawner,
   Scene,
-  ScriptOptions,
+  BehaviorOptions,
   UpdateOptions,
 } from 'dacha';
 import {
-  Script,
+  Behavior,
   Transform,
   Camera,
 } from 'dacha';
@@ -26,7 +26,7 @@ import { CAMERA_SPEED, VIEWPORT_SIZE } from '../../../consts/game';
 const FLOAT_BORDER_OFFSET = 32;
 const ATTACK_BORDER_OFFSET = 16;
 
-export class FloatingTrackScript extends Script {
+export class FloatingTrackScript extends Behavior {
   private actor: Actor;
   private scene: Scene;
   private actorSpawner: ActorSpawner;
@@ -46,14 +46,14 @@ export class FloatingTrackScript extends Script {
   private isSpawnStarted: boolean;
   private isWeaponUnlocked: boolean;
 
-  constructor(options: ScriptOptions) {
+  constructor(options: BehaviorOptions) {
     super();
 
     this.actor = options.actor;
     this.scene = options.scene;
     this.actorSpawner = options.actorSpawner;
 
-    this.mainCamera = this.scene.getEntityByName(MAIN_CAMERA_NAME)!;
+    this.mainCamera = this.scene.findChildByName(MAIN_CAMERA_NAME)!;
 
     const track = this.actor.getComponent(Track);
     this.trackActivator = this.actor.children.find((child) => child.getComponent(TrackActivator))!;
@@ -174,4 +174,4 @@ export class FloatingTrackScript extends Script {
   }
 }
 
-FloatingTrackScript.scriptName = 'FloatingTrackScript';
+FloatingTrackScript.behaviorName = 'FloatingTrackScript';

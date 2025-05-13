@@ -1,6 +1,6 @@
 import {
   Actor,
-  System,
+  SceneSystem,
   Transform,
   Sprite,
   Light,
@@ -8,7 +8,7 @@ import {
   Camera,
 } from 'dacha';
 import type {
-  SystemOptions,
+  SceneSystemOptions,
   Scene,
   UpdateOptions,
   Component,
@@ -30,27 +30,25 @@ const ALLOWED_COMPONENTS = new Set<ComponentConstructor>([
   ViewDirection, Transform, Sprite, Light, Animatable, Camera,
 ]);
 
-export class Reaper extends System {
+export class Reaper extends SceneSystem {
   private scene: Scene;
 
   private graveyard: Array<{ actor: Actor; lifetime: number }>;
   private timeCounter: number;
 
-  constructor(options: SystemOptions) {
+  constructor(options: SceneSystemOptions) {
     super();
 
     this.scene = options.scene;
 
     this.graveyard = [];
     this.timeCounter = 0;
-  }
 
-  mount(): void {
     this.scene.addEventListener(EventType.Kill, this.handleKill);
     this.scene.addEventListener(EventType.Damage, this.handleDamage);
   }
 
-  unmount(): void {
+  onSceneDestroy(): void {
     this.scene.removeEventListener(EventType.Kill, this.handleKill);
     this.scene.removeEventListener(EventType.Damage, this.handleDamage);
   }

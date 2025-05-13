@@ -1,13 +1,13 @@
 import { createRoot } from 'react-dom/client';
 import type { Root } from 'react-dom/client';
-import type { UiInitFnOptions } from 'dacha';
+import type { UIOptions } from 'dacha';
 
 import { EngineProvider } from './providers';
 import { App } from './app';
 
 let root: Root | undefined;
 
-export function onInit(options: UiInitFnOptions): void {
+export function onInit(options: UIOptions): void {
   const rootNode = document.getElementById('ui-root');
   if (!rootNode) {
     return;
@@ -15,7 +15,7 @@ export function onInit(options: UiInitFnOptions): void {
 
   root = createRoot(rootNode);
   root.render(
-    <EngineProvider context={options}>
+    <EngineProvider uiOptions={options}>
       <App />
     </EngineProvider>,
   );

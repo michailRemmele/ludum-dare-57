@@ -1,11 +1,11 @@
 import type {
   Scene,
-  ScriptOptions,
+  BehaviorOptions,
   UpdateOptions,
 } from 'dacha';
 import {
   Actor,
-  Script,
+  Behavior,
   Camera,
   Transform,
   Sprite,
@@ -42,7 +42,7 @@ const BOTTOM_BORDER_NAME = 'BottomBorder';
 const DEAD_ZONE = 'DeadZone';
 const ULTIMATE_DEAD_ZONE = 'UltimateDeadZone';
 
-export class CameraScript extends Script {
+export class CameraScript extends Behavior {
   private actor: Actor;
   private scene: Scene;
 
@@ -60,20 +60,20 @@ export class CameraScript extends Script {
 
   private isGameOver: boolean;
 
-  constructor(options: ScriptOptions) {
+  constructor(options: BehaviorOptions) {
     super();
 
     this.actor = options.actor;
     this.scene = options.scene;
 
-    this.leftBorder = this.scene.getEntityByName(LEFT_BORDER_NAME)!;
-    this.rightBorder = this.scene.getEntityByName(RIGHT_BORDER_NAME)!;
-    this.topBorder = this.scene.getEntityByName(TOP_BORDER_NAME)!;
-    this.bottomBorder = this.scene.getEntityByName(BOTTOM_BORDER_NAME)!;
+    this.leftBorder = this.scene.findChildByName(LEFT_BORDER_NAME)!;
+    this.rightBorder = this.scene.findChildByName(RIGHT_BORDER_NAME)!;
+    this.topBorder = this.scene.findChildByName(TOP_BORDER_NAME)!;
+    this.bottomBorder = this.scene.findChildByName(BOTTOM_BORDER_NAME)!;
 
-    this.ultimateDeadZone = this.leftBorder.getEntityByName(ULTIMATE_DEAD_ZONE)!;
+    this.ultimateDeadZone = this.leftBorder.findChildByName(ULTIMATE_DEAD_ZONE)!;
 
-    this.finishZone = this.scene.getEntityByName(FINISH_ZONE_NAME)!;
+    this.finishZone = this.scene.findChildByName(FINISH_ZONE_NAME)!;
 
     this.playerLevel = 1;
     this.nextLevelScore = LEVEL_UP_BASE_STEP;
@@ -86,7 +86,7 @@ export class CameraScript extends Script {
     this.bottomBorder.addEventListener(CollisionStay, this.handleCollisionStay);
 
     [this.leftBorder, this.rightBorder, this.topBorder, this.bottomBorder].forEach((actor) => {
-      const deadZone = actor.getEntityByName(DEAD_ZONE);
+      const deadZone = actor.findChildByName(DEAD_ZONE);
       deadZone?.addEventListener(CollisionEnter, this.handleCollisionEnterDeadZone);
     });
 
@@ -106,7 +106,7 @@ export class CameraScript extends Script {
     this.bottomBorder.removeEventListener(CollisionStay, this.handleCollisionStay);
 
     [this.leftBorder, this.rightBorder, this.topBorder, this.bottomBorder].forEach((actor) => {
-      const deadZone = actor.getEntityByName(DEAD_ZONE);
+      const deadZone = actor.findChildByName(DEAD_ZONE);
       deadZone?.removeEventListener(CollisionEnter, this.handleCollisionEnterDeadZone);
     });
 
@@ -268,4 +268,4 @@ export class CameraScript extends Script {
   }
 }
 
-CameraScript.scriptName = 'CameraScript';
+CameraScript.behaviorName = 'CameraScript';

@@ -1,9 +1,9 @@
 import {
-  System,
+  WorldSystem,
 } from 'dacha';
 import type {
-  Scene,
-  SystemOptions,
+  World,
+  WorldSystemOptions,
 } from 'dacha';
 import { SetAudioVolume } from 'dacha/events';
 
@@ -21,13 +21,13 @@ const INITIAL_SAVE_STATE: SaveState = {
   touched: false,
 };
 
-export class Saver extends System {
-  private scene: Scene;
+export class Saver extends WorldSystem {
+  private world: World;
 
-  constructor(options: SystemOptions) {
+  constructor(options: WorldSystemOptions) {
     super();
 
-    this.scene = options.scene;
+    this.world = options.world;
 
     let saveState: SaveState;
     try {
@@ -39,20 +39,18 @@ export class Saver extends System {
     }
 
     window.saveState = saveState;
+
+    this.world.dispatchEvent(SetAudioVolume, { group: 'master', value: getAudioVolume('master') });
+    this.world.dispatchEvent(SetAudioVolume, { group: 'music', value: getAudioVolume('music') });
+    this.world.dispatchEvent(SetAudioVolume, { group: 'effects', value: getAudioVolume('effects') });
+
+    this.world.addEventListener(EventType.GameOver, this.handleGameOver);
+    this.world.addEventListener(EventType.ResetSaveState, this.handleResetSaveState);
   }
 
-  mount(): void {
-    this.scene.dispatchEvent(SetAudioVolume, { group: 'master', value: getAudioVolume('master') });
-    this.scene.dispatchEvent(SetAudioVolume, { group: 'music', value: getAudioVolume('music') });
-    this.scene.dispatchEvent(SetAudioVolume, { group: 'effects', value: getAudioVolume('effects') });
-
-    this.scene.addEventListener(EventType.GameOver, this.handleGameOver);
-    this.scene.addEventListener(EventType.ResetSaveState, this.handleResetSaveState);
-  }
-
-  unmount(): void {
-    this.scene.removeEventListener(EventType.GameOver, this.handleGameOver);
-    this.scene.removeEventListener(EventType.ResetSaveState, this.handleResetSaveState);
+  onWorldDestroy(): void {
+    this.world.removeEventListener(EventType.GameOver, this.handleGameOver);
+    this.world.removeEventListener(EventType.ResetSaveState, this.handleResetSaveState);
   }
 
   private handleGameOver = (event: GameOverEvent): void => {

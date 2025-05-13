@@ -2,12 +2,12 @@ import type {
   Actor,
   ActorSpawner,
   Scene,
-  ScriptOptions,
+  BehaviorOptions,
   UpdateOptions,
   ActorEvent,
 } from 'dacha';
 import {
-  Script,
+  Behavior,
   Transform,
   MathOps,
 } from 'dacha';
@@ -26,7 +26,7 @@ import * as EventType from '../../events';
 
 const DESTINATION_THRESOLD = 4;
 
-export class TrackScript extends Script {
+export class TrackScript extends Behavior {
   private actor: Actor;
   private scene: Scene;
   private actorSpawner: ActorSpawner;
@@ -45,7 +45,7 @@ export class TrackScript extends Script {
   private isSpawnStarted: boolean;
   private spawnCooldown: number;
 
-  constructor(options: ScriptOptions) {
+  constructor(options: BehaviorOptions) {
     super();
 
     this.actor = options.actor;
@@ -213,4 +213,4 @@ export class TrackScript extends Script {
   }
 }
 
-TrackScript.scriptName = 'TrackScript';
+TrackScript.behaviorName = 'TrackScript';

@@ -7,10 +7,10 @@ import {
   KeyboardInputSystem,
   KeyboardControlSystem,
   PhysicsSystem,
-  ScriptSystem,
+  BehaviorSystem,
   Animator,
   SpriteRenderer,
-  UiBridge,
+  UIBridge,
   AudioSystem,
   GameStatsMeter,
 
@@ -19,7 +19,7 @@ import {
   KeyboardControl,
   RigidBody,
   ColliderContainer,
-  ScriptBundle,
+  Behaviors,
   Animatable,
   Sprite,
   Light,
@@ -53,9 +53,9 @@ const engine = new Engine({
     PhysicsSystem,
     Animator,
     SpriteRenderer,
-    UiBridge,
+    UIBridge,
     AudioSystem,
-    ScriptSystem,
+    BehaviorSystem,
     GameStatsMeter,
     ...(!touchDevice
       ? [
@@ -81,24 +81,21 @@ const engine = new Engine({
     Light,
     AudioSource,
     Transform,
-    ScriptBundle,
+    Behaviors,
     Parallax,
     Effect,
     ActiveEffects,
     ...Object.values(GameComponents),
   ],
   resources: {
-    [ScriptSystem.systemName]: [
+    [BehaviorSystem.systemName]: [
       ...Object.values(GameScripts),
     ],
-    [UiBridge.systemName]: {
+    [UIBridge.systemName]: {
       // comment: to avoid eslint issues with extensions
       // eslint-disable-next-line import/extensions
-      loadUiApp: () => import('./ui/index.tsx'),
+      loadUI: () => import('./ui/index.tsx'),
     },
-    [ScriptSystem.systemName]: [
-      ...Object.values(GameScripts),
-    ],
     [EffectsSystem.systemName]: effects,
   },
 });

@@ -1,11 +1,11 @@
 import type {
   Scene,
-  ScriptOptions,
+  BehaviorOptions,
   UpdateOptions,
 } from 'dacha';
 import {
   Actor,
-  Script,
+  Behavior,
   Transform,
   MathOps,
 } from 'dacha';
@@ -33,7 +33,7 @@ import type {
 
 const IMMORTAL_DURATION = 500;
 
-export class FishScript extends Script {
+export class FishScript extends Behavior {
   private actor: Actor;
   private scene: Scene;
 
@@ -45,14 +45,14 @@ export class FishScript extends Script {
 
   private immortalDuration: number;
 
-  constructor(options: ScriptOptions) {
+  constructor(options: BehaviorOptions) {
     super();
 
     this.actor = options.actor;
     this.scene = options.scene;
 
     this.enemyDetector = this.actor.children.find((child) => child.getComponent(EnemyDetector))!;
-    this.player = this.scene.getEntityByName(PLAYER_ACTOR_NAME)!;
+    this.player = this.scene.findChildByName(PLAYER_ACTOR_NAME)!;
 
     const team = this.actor.getComponent(Team);
     const hitBoxActor = this.actor.children.find((child) => child.getComponent(HitBox))!;
@@ -234,4 +234,4 @@ export class FishScript extends Script {
   }
 }
 
-FishScript.scriptName = 'FishScript';
+FishScript.behaviorName = 'FishScript';

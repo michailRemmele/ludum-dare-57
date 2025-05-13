@@ -1,15 +1,15 @@
 import type {
   Actor,
   Scene,
-  ScriptOptions,
+  BehaviorOptions,
 } from 'dacha';
-import { Script } from 'dacha';
+import { Behavior } from 'dacha';
 import { PlayAudio, StopAudio } from 'dacha/events';
 
 import * as EventType from '../../events';
 import type { GameOverEvent } from '../../events';
 
-interface AudioManagerScriptOptions extends ScriptOptions {
+interface AudioManagerBehaviorOptions extends BehaviorOptions {
   backgroundMusic: string
   levelUp: string
   powerUp: string
@@ -21,7 +21,7 @@ interface AudioManagerScriptOptions extends ScriptOptions {
   lose: string
 }
 
-export class AudioManagerScript extends Script {
+export class AudioManagerScript extends Behavior {
   private scene: Scene;
 
   private backgroundMusic: Actor;
@@ -34,20 +34,20 @@ export class AudioManagerScript extends Script {
   private win: Actor;
   private lose: Actor;
 
-  constructor(options: AudioManagerScriptOptions) {
+  constructor(options: AudioManagerBehaviorOptions) {
     super();
 
     this.scene = options.scene;
 
-    this.backgroundMusic = this.scene.getEntityById(options.backgroundMusic)!;
-    this.levelUp = this.scene.getEntityById(options.levelUp)!;
-    this.powerUp = this.scene.getEntityById(options.powerUp)!;
-    this.fishDamage = this.scene.getEntityById(options.fishDamage)!;
-    this.fishDeath = this.scene.getEntityById(options.fishDeath)!;
-    this.fishBite = this.scene.getEntityById(options.fishBite)!;
-    this.enemyShoot = this.scene.getEntityById(options.enemyShoot)!;
-    this.win = this.scene.getEntityById(options.win)!;
-    this.lose = this.scene.getEntityById(options.lose)!;
+    this.backgroundMusic = this.scene.findChildById(options.backgroundMusic)!;
+    this.levelUp = this.scene.findChildById(options.levelUp)!;
+    this.powerUp = this.scene.findChildById(options.powerUp)!;
+    this.fishDamage = this.scene.findChildById(options.fishDamage)!;
+    this.fishDeath = this.scene.findChildById(options.fishDeath)!;
+    this.fishBite = this.scene.findChildById(options.fishBite)!;
+    this.enemyShoot = this.scene.findChildById(options.enemyShoot)!;
+    this.win = this.scene.findChildById(options.win)!;
+    this.lose = this.scene.findChildById(options.lose)!;
 
     this.scene.addEventListener(EventType.LevelUp, this.handleLevelUp);
     this.scene.addEventListener(EventType.NewFishJoin, this.handlePowerUp);
@@ -102,4 +102,4 @@ export class AudioManagerScript extends Script {
   };
 }
 
-AudioManagerScript.scriptName = 'AudioManagerScript';
+AudioManagerScript.behaviorName = 'AudioManagerScript';

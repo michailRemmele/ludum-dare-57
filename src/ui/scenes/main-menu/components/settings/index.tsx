@@ -15,14 +15,14 @@ interface SettingsProps {
 }
 
 export const Settings: FC<SettingsProps> = ({ openMenu }) => {
-  const { scene } = useContext(EngineContext);
+  const { world } = useContext(EngineContext);
 
   const defaultMasterVolume = useMemo(() => getAudioVolume('master'), []);
   const defaultMusicVolume = useMemo(() => getAudioVolume('music'), []);
   const defaultEffectsVolume = useMemo(() => getAudioVolume('effects'), []);
 
   const handleVolumeChange = (name: string, value: number): void => {
-    scene.dispatchEvent(SetAudioVolume, { group: name, value });
+    world.dispatchEvent(SetAudioVolume, { group: name, value });
     saveAudioVolume(name, value);
   };
 
@@ -33,7 +33,7 @@ export const Settings: FC<SettingsProps> = ({ openMenu }) => {
   const handleBack = (): void => openMenu(MAIN_MENU);
 
   useEffect(() => {
-    scene.dispatchEvent(EventType.SendAnalytics, {
+    world.dispatchEvent(EventType.SendAnalytics, {
       name: 'screen_show',
       payload: {
         screenName: 'settings',

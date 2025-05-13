@@ -4,12 +4,12 @@ import {
   MathOps,
   VectorOps,
   Vector2,
-  System,
+  SceneSystem,
   Transform,
   RigidBody,
 } from 'dacha';
 import type {
-  SystemOptions,
+  SceneSystemOptions,
   UpdateOptions,
   ActorEvent,
 } from 'dacha';
@@ -25,11 +25,11 @@ const SPEED_DIVIDER = 0.4;
 const MIN_SPEED = 0.5;
 const MAX_SPEED = 1;
 
-export class MovementSystem extends System {
+export class MovementSystem extends SceneSystem {
   private scene: Scene;
   private actorCollection: ActorCollection;
 
-  constructor(options: SystemOptions) {
+  constructor(options: SceneSystemOptions) {
     super();
 
     this.scene = options.scene;
@@ -39,15 +39,13 @@ export class MovementSystem extends System {
         Transform,
       ],
     });
-  }
 
-  mount(): void {
     this.scene.addEventListener(CollisionEnter, this.handleCollisionEnter);
     this.scene.addEventListener(EventType.MovementJump, this.handleJump);
     this.scene.addEventListener(EventType.Movement, this.handleMovement);
   }
 
-  unmount(): void {
+  onSceneDestroy(): void {
     this.scene.removeEventListener(CollisionEnter, this.handleCollisionEnter);
     this.scene.removeEventListener(EventType.MovementJump, this.handleJump);
     this.scene.removeEventListener(EventType.Movement, this.handleMovement);

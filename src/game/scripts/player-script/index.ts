@@ -1,13 +1,13 @@
 import type {
   ActorSpawner,
   Scene,
-  ScriptOptions,
+  BehaviorOptions,
   ActorEvent,
   UpdateOptions,
 } from 'dacha';
 import {
   Actor,
-  Script,
+  Behavior,
   Transform,
 } from 'dacha';
 import { CollisionEnter } from 'dacha/events';
@@ -43,7 +43,7 @@ const SHOAL_ORDER = [
   SHOAL_8_ID,
 ];
 
-export class PlayerScript extends Script {
+export class PlayerScript extends Behavior {
   private actor: Actor;
   private scene: Scene;
   private actorSpawner: ActorSpawner;
@@ -54,19 +54,19 @@ export class PlayerScript extends Script {
   private isGameOver: boolean;
   private shoalActors: Actor[];
 
-  constructor(options: ScriptOptions) {
+  constructor(options: BehaviorOptions) {
     super();
 
     this.actor = options.actor;
     this.scene = options.scene;
     this.actorSpawner = options.actorSpawner;
 
-    this.mainCamera = this.scene.getEntityByName(MAIN_CAMERA_NAME)!;
+    this.mainCamera = this.scene.findChildByName(MAIN_CAMERA_NAME)!;
 
     this.shoalSize = 1;
     this.isGameOver = false;
 
-    const initialPiranha = this.scene.getEntityByName(INITIAL_FISH)!;
+    const initialPiranha = this.scene.findChildByName(INITIAL_FISH)!;
 
     this.shoalActors = [initialPiranha];
 
@@ -169,4 +169,4 @@ export class PlayerScript extends Script {
   }
 }
 
-PlayerScript.scriptName = 'PlayerScript';
+PlayerScript.behaviorName = 'PlayerScript';

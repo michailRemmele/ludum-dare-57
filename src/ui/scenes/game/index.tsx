@@ -4,7 +4,7 @@ import {
   useState,
 } from 'react';
 import type { FC } from 'react';
-import { LoadScene } from 'dacha/events';
+import { LoadScene, ExitScene, EnterScene } from 'dacha/events';
 
 import * as EventType from '../../../game/events';
 import { EngineContext } from '../../providers';
@@ -12,7 +12,7 @@ import {
   FpsMeter,
   Button,
 } from '../../components';
-import { GAME_ID, MAIN_MENU_ID, LOADER_ID } from '../../../consts/scenes';
+import { MAIN_MENU_ID } from '../../../consts/scenes';
 import { LEVELS } from '../../../consts/game';
 import { isTouchDevice } from '../../../utils/is-touch-device';
 import type { GameOverEvent } from '../../../game/events';
@@ -25,43 +25,34 @@ import {
 import './style.css';
 
 export const Game: FC = () => {
-  const { scene } = useContext(EngineContext);
+  const { world } = useContext(EngineContext);
 
   const [isGameOver, setIsGameOver] = useState(false);
   const [isWin, setIsWin] = useState(false);
   const [levelIndex, setLevelIndex] = useState(0);
 
   const handleRestart = (): void => {
-    scene.dispatchEvent(LoadScene, {
-      sceneId: GAME_ID,
-      levelId: LEVELS[levelIndex].id,
-      loaderId: LOADER_ID,
-      unloadCurrent: true,
-      clean: true,
+    world.dispatchEvent(ExitScene);
+    world.dispatchEvent(LoadScene, {
+      id: LEVELS[levelIndex].id,
     });
   };
 
   const handleContinue = (): void => {
-    scene.dispatchEvent(LoadScene, {
-      sceneId: GAME_ID,
-      levelId: LEVELS[levelIndex + 1].id,
-      loaderId: LOADER_ID,
-      unloadCurrent: true,
-      clean: true,
+    world.dispatchEvent(ExitScene);
+    world.dispatchEvent(LoadScene, {
+      id: LEVELS[levelIndex + 1].id,
     });
   };
 
   const handleMainMenu = (): void => {
-    scene.dispatchEvent(LoadScene, {
-      sceneId: MAIN_MENU_ID,
-      clean: true,
-      loaderId: LOADER_ID,
-      levelId: null,
+    world.dispatchEvent(EnterScene, {
+      id: MAIN_MENU_ID,
     });
   };
 
   useEffect(() => {
-    scene.dispatchEvent(EventType.SendAnalytics, {
+    world.dispatchEvent(EventType.SendAnalytics, {
       name: 'screen_show',
       payload: {
         screenName: 'game',
@@ -76,12 +67,12 @@ export const Game: FC = () => {
       setLevelIndex(event.levelIndex);
     };
 
-    scene.addEventListener(EventType.GameOver, handleGameOver);
+    world.addEventListener(EventType.GameOver, handleGameOver);
 
     return (): void => {
-      scene.removeEventListener(EventType.GameOver, handleGameOver);
+      world.removeEventListener(EventType.GameOver, handleGameOver);
     };
-  }, [scene]);
+  }, [world]);
 
   return (
     <div className="game">

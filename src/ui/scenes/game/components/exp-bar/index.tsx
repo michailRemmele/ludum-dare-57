@@ -18,6 +18,10 @@ export const ExpBar: FC = () => {
   const [playerLevel, setPlayerLevel] = useState(1);
 
   useEffect(() => {
+    if (!scene) {
+      return (): void => {};
+    }
+
     const handleIncreaseScorePoints = (event: IncreaseScorePointsEvent): void => {
       setPoints((prev) => prev + event.points);
     };
@@ -35,7 +39,7 @@ export const ExpBar: FC = () => {
       scene.removeEventListener(EventType.IncreaseScorePoints, handleIncreaseScorePoints);
       scene.removeEventListener(EventType.LevelUp, handleLevelUp);
     };
-  }, []);
+  }, [scene]);
 
   const fixedPoints = points - prevMaxPoints;
   const fixedMaxPoints = maxPoints - prevMaxPoints;

@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import type { FC } from 'react';
-import { LoadScene } from 'dacha/events';
+import { LoadScene, ExitScene } from 'dacha/events';
 
 import { Button } from '../../../../components';
 import { EngineContext } from '../../../../providers';
-import { GAME_ID, LOADER_ID } from '../../../../../consts/scenes';
+import { LEVEL_1_ID } from '../../../../../consts/scenes';
 import { SETTINGS_MENU, LEVEL_SELECT_MENU } from '../../consts';
 
 import './style.css';
@@ -14,14 +14,12 @@ interface MainProps {
 }
 
 export const Main: FC<MainProps> = ({ openMenu }) => {
-  const { scene } = useContext(EngineContext);
+  const { world } = useContext(EngineContext);
 
   const handlePlay = (): void => {
-    scene.dispatchEvent(LoadScene, {
-      sceneId: GAME_ID,
-      clean: true,
-      loaderId: LOADER_ID,
-      levelId: null,
+    world.dispatchEvent(ExitScene, { autoDestroy: false });
+    world.dispatchEvent(LoadScene, {
+      id: LEVEL_1_ID,
     });
   };
 

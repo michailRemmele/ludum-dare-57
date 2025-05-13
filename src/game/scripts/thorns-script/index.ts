@@ -1,9 +1,9 @@
 import type {
-  ScriptOptions,
+  BehaviorOptions,
 } from 'dacha';
 import {
   Actor,
-  Script,
+  Behavior,
 } from 'dacha';
 import { CollisionStay } from 'dacha/events';
 import type { CollisionStayEvent } from 'dacha/events';
@@ -14,16 +14,16 @@ import {
 } from '../../components';
 import * as EventType from '../../events';
 
-interface ThornsScriptOptions extends ScriptOptions {
+interface ThornsBehaviorOptions extends BehaviorOptions {
   damage: number
 }
 
-export class ThornsScript extends Script {
+export class ThornsScript extends Behavior {
   private actor: Actor;
 
   private damage: number;
 
-  constructor(options: ThornsScriptOptions) {
+  constructor(options: ThornsBehaviorOptions) {
     super();
 
     this.actor = options.actor;
@@ -52,4 +52,4 @@ export class ThornsScript extends Script {
   };
 }
 
-ThornsScript.scriptName = 'ThornsScript';
+ThornsScript.behaviorName = 'ThornsScript';

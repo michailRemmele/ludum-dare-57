@@ -8,3 +8,4 @@ export { StaticTrackScript } from './static-track-script';
 export { FloatingTrackScript } from './floating-track-script';
 export { BonusTrackScript } from './bonus-track-script';
 export { AudioManagerScript } from './audio-manager-script';
+export { ControlStickScript } from './control-stick-script';
