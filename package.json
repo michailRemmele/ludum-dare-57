@@ -12,8 +12,8 @@
     "antd": "5.5.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "dacha": "0.15.0",
-    "dacha-workbench": "0.0.25",
+    "dacha": "0.15.1",
+    "dacha-workbench": "0.0.26",
     "dacha-game-systems": "0.0.3"
   },
   "devDependencies": {
