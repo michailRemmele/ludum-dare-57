@@ -263,11 +263,6 @@
                     "id": "4496ed26-2493-41d9-8150-6e0a3b7e2211",
                     "name": "ControlStickBehavior",
                     "options": {}
-                  },
-                  {
-                    "id": "39e5ea11-9381-4825-93a6-17b3a542f884",
-                    "name": "TestBehavior",
-                    "options": {}
                   }
                 ]
               }
