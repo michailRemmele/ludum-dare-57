@@ -95,15 +95,13 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "boxCollider",
-                "collider": {
-                  "sizeX": 16,
-                  "sizeY": 16,
-                  "centerX": 0,
-                  "centerY": 0
-                }
+                "type": "box",
+                "sizeX": 16,
+                "sizeY": 16,
+                "centerX": 0,
+                "centerY": 0
               }
             },
             {
@@ -258,12 +256,17 @@
                 "list": [
                   {
                     "id": "5c82af27-7ffe-4b22-a26e-1b0e781413f9",
-                    "name": "PlayerScript",
+                    "name": "PlayerBehavior",
                     "options": {}
                   },
                   {
                     "id": "4496ed26-2493-41d9-8150-6e0a3b7e2211",
-                    "name": "ControlStickScript",
+                    "name": "ControlStickBehavior",
+                    "options": {}
+                  },
+                  {
+                    "id": "39e5ea11-9381-4825-93a6-17b3a542f884",
+                    "name": "TestBehavior",
                     "options": {}
                   }
                 ]
@@ -328,7 +331,7 @@
                 "list": [
                   {
                     "id": "f9e8e789-528c-41d7-b7cd-c11399f1c7a2",
-                    "name": "CameraScript",
+                    "name": "CameraBehavior",
                     "options": {}
                   }
                 ]
@@ -364,15 +367,13 @@
                   }
                 },
                 {
-                  "name": "ColliderContainer",
+                  "name": "Collider",
                   "config": {
-                    "type": "boxCollider",
-                    "collider": {
-                      "sizeX": 32,
-                      "sizeY": 160,
-                      "centerX": 0,
-                      "centerY": 0
-                    }
+                    "type": "box",
+                    "sizeX": 32,
+                    "sizeY": 160,
+                    "centerX": 0,
+                    "centerY": 0
                   }
                 },
                 {
@@ -419,15 +420,13 @@
                       }
                     },
                     {
-                      "name": "ColliderContainer",
+                      "name": "Collider",
                       "config": {
-                        "type": "boxCollider",
-                        "collider": {
-                          "sizeX": 16,
-                          "sizeY": 240,
-                          "centerX": 0,
-                          "centerY": 0
-                        }
+                        "type": "box",
+                        "sizeX": 16,
+                        "sizeY": 240,
+                        "centerX": 0,
+                        "centerY": 0
                       }
                     },
                     {
@@ -475,15 +474,13 @@
                       }
                     },
                     {
-                      "name": "ColliderContainer",
+                      "name": "Collider",
                       "config": {
-                        "type": "boxCollider",
-                        "collider": {
-                          "sizeX": 16,
-                          "sizeY": 480,
-                          "centerX": 0,
-                          "centerY": 0
-                        }
+                        "type": "box",
+                        "sizeX": 16,
+                        "sizeY": 480,
+                        "centerX": 0,
+                        "centerY": 0
                       }
                     },
                     {
@@ -533,15 +530,13 @@
                   }
                 },
                 {
-                  "name": "ColliderContainer",
+                  "name": "Collider",
                   "config": {
-                    "type": "boxCollider",
-                    "collider": {
-                      "sizeX": 32,
-                      "sizeY": 160,
-                      "centerX": 0,
-                      "centerY": 0
-                    }
+                    "type": "box",
+                    "sizeX": 32,
+                    "sizeY": 160,
+                    "centerX": 0,
+                    "centerY": 0
                   }
                 },
                 {
@@ -588,15 +583,13 @@
                       }
                     },
                     {
-                      "name": "ColliderContainer",
+                      "name": "Collider",
                       "config": {
-                        "type": "boxCollider",
-                        "collider": {
-                          "sizeX": 16,
-                          "sizeY": 240,
-                          "centerX": 0,
-                          "centerY": 0
-                        }
+                        "type": "box",
+                        "sizeX": 16,
+                        "sizeY": 240,
+                        "centerX": 0,
+                        "centerY": 0
                       }
                     },
                     {
@@ -674,15 +667,13 @@
                   }
                 },
                 {
-                  "name": "ColliderContainer",
+                  "name": "Collider",
                   "config": {
-                    "type": "boxCollider",
-                    "collider": {
-                      "sizeX": 160,
-                      "sizeY": 32,
-                      "centerX": 0,
-                      "centerY": 0
-                    }
+                    "type": "box",
+                    "sizeX": 160,
+                    "sizeY": 32,
+                    "centerX": 0,
+                    "centerY": 0
                   }
                 },
                 {
@@ -729,15 +720,13 @@
                       }
                     },
                     {
-                      "name": "ColliderContainer",
+                      "name": "Collider",
                       "config": {
-                        "type": "boxCollider",
-                        "collider": {
-                          "sizeX": 240,
-                          "sizeY": 16,
-                          "centerX": 0,
-                          "centerY": 0
-                        }
+                        "type": "box",
+                        "sizeX": 240,
+                        "sizeY": 16,
+                        "centerX": 0,
+                        "centerY": 0
                       }
                     },
                     {
@@ -787,15 +776,13 @@
                   }
                 },
                 {
-                  "name": "ColliderContainer",
+                  "name": "Collider",
                   "config": {
-                    "type": "boxCollider",
-                    "collider": {
-                      "sizeX": 160,
-                      "sizeY": 32,
-                      "centerX": 0,
-                      "centerY": 0
-                    }
+                    "type": "box",
+                    "sizeX": 160,
+                    "sizeY": 32,
+                    "centerX": 0,
+                    "centerY": 0
                   }
                 },
                 {
@@ -842,15 +829,13 @@
                       }
                     },
                     {
-                      "name": "ColliderContainer",
+                      "name": "Collider",
                       "config": {
-                        "type": "boxCollider",
-                        "collider": {
-                          "sizeX": 240,
-                          "sizeY": 16,
-                          "centerX": 0,
-                          "centerY": 0
-                        }
+                        "type": "box",
+                        "sizeX": 240,
+                        "sizeY": 16,
+                        "centerX": 0,
+                        "centerY": 0
                       }
                     },
                     {
@@ -914,7 +899,7 @@
                 "list": [
                   {
                     "id": "b0cc67e3-e60a-4a0c-acd4-6c638cbd348e",
-                    "name": "FishScript",
+                    "name": "FishBehavior",
                     "options": {
                       "shoalIndex": 0
                     }
@@ -3261,7 +3246,7 @@
                 "list": [
                   {
                     "id": "c737e7b1-f02c-4a59-a606-677113d7f142",
-                    "name": "AudioManagerScript",
+                    "name": "AudioManagerBehavior",
                     "options": {
                       "levelUp": "e4a967fb-913e-48ea-b695-09a54a91c049",
                       "powerUp": "2dc5fd28-80ad-4f08-8aa8-0eb1398becec",
@@ -3436,15 +3421,13 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "boxCollider",
-                "collider": {
-                  "sizeX": 16,
-                  "sizeY": 16,
-                  "centerX": 0,
-                  "centerY": 0
-                }
+                "type": "box",
+                "sizeX": 16,
+                "sizeY": 16,
+                "centerX": 0,
+                "centerY": 0
               }
             },
             {
@@ -3599,12 +3582,12 @@
                 "list": [
                   {
                     "id": "5c82af27-7ffe-4b22-a26e-1b0e781413f9",
-                    "name": "PlayerScript",
+                    "name": "PlayerBehavior",
                     "options": {}
                   },
                   {
                     "id": "be706f46-7d39-449b-80a1-753a026fda25",
-                    "name": "ControlStickScript",
+                    "name": "ControlStickBehavior",
                     "options": {}
                   }
                 ]
@@ -3669,7 +3652,7 @@
                 "list": [
                   {
                     "id": "f9e8e789-528c-41d7-b7cd-c11399f1c7a2",
-                    "name": "CameraScript",
+                    "name": "CameraBehavior",
                     "options": {}
                   }
                 ]
@@ -3705,15 +3688,13 @@
                   }
                 },
                 {
-                  "name": "ColliderContainer",
+                  "name": "Collider",
                   "config": {
-                    "type": "boxCollider",
-                    "collider": {
-                      "sizeX": 32,
-                      "sizeY": 160,
-                      "centerX": 0,
-                      "centerY": 0
-                    }
+                    "type": "box",
+                    "sizeX": 32,
+                    "sizeY": 160,
+                    "centerX": 0,
+                    "centerY": 0
                   }
                 },
                 {
@@ -3760,15 +3741,13 @@
                       }
                     },
                     {
-                      "name": "ColliderContainer",
+                      "name": "Collider",
                       "config": {
-                        "type": "boxCollider",
-                        "collider": {
-                          "sizeX": 16,
-                          "sizeY": 240,
-                          "centerX": 0,
-                          "centerY": 0
-                        }
+                        "type": "box",
+                        "sizeX": 16,
+                        "sizeY": 240,
+                        "centerX": 0,
+                        "centerY": 0
                       }
                     },
                     {
@@ -3816,15 +3795,13 @@
                       }
                     },
                     {
-                      "name": "ColliderContainer",
+                      "name": "Collider",
                       "config": {
-                        "type": "boxCollider",
-                        "collider": {
-                          "sizeX": 16,
-                          "sizeY": 480,
-                          "centerX": 0,
-                          "centerY": 0
-                        }
+                        "type": "box",
+                        "sizeX": 16,
+                        "sizeY": 480,
+                        "centerX": 0,
+                        "centerY": 0
                       }
                     },
                     {
@@ -3874,15 +3851,13 @@
                   }
                 },
                 {
-                  "name": "ColliderContainer",
+                  "name": "Collider",
                   "config": {
-                    "type": "boxCollider",
-                    "collider": {
-                      "sizeX": 32,
-                      "sizeY": 160,
-                      "centerX": 0,
-                      "centerY": 0
-                    }
+                    "type": "box",
+                    "sizeX": 32,
+                    "sizeY": 160,
+                    "centerX": 0,
+                    "centerY": 0
                   }
                 },
                 {
@@ -3929,15 +3904,13 @@
                       }
                     },
                     {
-                      "name": "ColliderContainer",
+                      "name": "Collider",
                       "config": {
-                        "type": "boxCollider",
-                        "collider": {
-                          "sizeX": 16,
-                          "sizeY": 240,
-                          "centerX": 0,
-                          "centerY": 0
-                        }
+                        "type": "box",
+                        "sizeX": 16,
+                        "sizeY": 240,
+                        "centerX": 0,
+                        "centerY": 0
                       }
                     },
                     {
@@ -4015,15 +3988,13 @@
                   }
                 },
                 {
-                  "name": "ColliderContainer",
+                  "name": "Collider",
                   "config": {
-                    "type": "boxCollider",
-                    "collider": {
-                      "sizeX": 160,
-                      "sizeY": 32,
-                      "centerX": 0,
-                      "centerY": 0
-                    }
+                    "type": "box",
+                    "sizeX": 160,
+                    "sizeY": 32,
+                    "centerX": 0,
+                    "centerY": 0
                   }
                 },
                 {
@@ -4070,15 +4041,13 @@
                       }
                     },
                     {
-                      "name": "ColliderContainer",
+                      "name": "Collider",
                       "config": {
-                        "type": "boxCollider",
-                        "collider": {
-                          "sizeX": 240,
-                          "sizeY": 16,
-                          "centerX": 0,
-                          "centerY": 0
-                        }
+                        "type": "box",
+                        "sizeX": 240,
+                        "sizeY": 16,
+                        "centerX": 0,
+                        "centerY": 0
                       }
                     },
                     {
@@ -4128,15 +4097,13 @@
                   }
                 },
                 {
-                  "name": "ColliderContainer",
+                  "name": "Collider",
                   "config": {
-                    "type": "boxCollider",
-                    "collider": {
-                      "sizeX": 160,
-                      "sizeY": 32,
-                      "centerX": 0,
-                      "centerY": 0
-                    }
+                    "type": "box",
+                    "sizeX": 160,
+                    "sizeY": 32,
+                    "centerX": 0,
+                    "centerY": 0
                   }
                 },
                 {
@@ -4183,15 +4150,13 @@
                       }
                     },
                     {
-                      "name": "ColliderContainer",
+                      "name": "Collider",
                       "config": {
-                        "type": "boxCollider",
-                        "collider": {
-                          "sizeX": 240,
-                          "sizeY": 16,
-                          "centerX": 0,
-                          "centerY": 0
-                        }
+                        "type": "box",
+                        "sizeX": 240,
+                        "sizeY": 16,
+                        "centerX": 0,
+                        "centerY": 0
                       }
                     },
                     {
@@ -4255,7 +4220,7 @@
                 "list": [
                   {
                     "id": "b0cc67e3-e60a-4a0c-acd4-6c638cbd348e",
-                    "name": "FishScript",
+                    "name": "FishBehavior",
                     "options": {
                       "shoalIndex": 0
                     }
@@ -6783,7 +6748,7 @@
                 "list": [
                   {
                     "id": "a10f63e3-a7da-4a9c-ada7-42e203b18d7d",
-                    "name": "AudioManagerScript",
+                    "name": "AudioManagerBehavior",
                     "options": {
                       "backgroundMusic": "322f5c5a-07b0-4b69-9845-e97c6b8c41fa",
                       "levelUp": "09c7cd39-1ac4-4d58-ac67-295af497ba44",
@@ -6885,7 +6850,7 @@
     {
       "name": "PhysicsSystem",
       "options": {
-        "gravitationalAcceleration": 600
+        "gravity": 600
       }
     },
     {
@@ -6976,14 +6941,12 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "circleCollider",
-            "collider": {
-              "centerX": 0,
-              "centerY": 0,
-              "radius": 0
-            }
+            "type": "circle",
+            "centerX": 0,
+            "centerY": 0,
+            "radius": 0
           }
         },
         {
@@ -7031,14 +6994,12 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "circleCollider",
-            "collider": {
-              "centerX": 0,
-              "centerY": 0,
-              "radius": 0
-            }
+            "type": "circle",
+            "centerX": 0,
+            "centerY": 0,
+            "radius": 0
           }
         },
         {
@@ -7129,14 +7090,12 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "circleCollider",
-            "collider": {
-              "centerX": 0,
-              "centerY": 0,
-              "radius": 8
-            }
+            "type": "circle",
+            "centerX": 0,
+            "centerY": 0,
+            "radius": 8
           }
         },
         {
@@ -7163,10 +7122,8 @@
           "config": {
             "type": "melee",
             "cooldown": 500,
-            "properties": {
-              "damage": 1,
-              "range": 10
-            }
+            "damage": 1,
+            "range": 10
           }
         },
         {
@@ -7802,7 +7759,7 @@
             "list": [
               {
                 "id": "c1b59fbb-0eab-452f-8f1c-700b6ab5972c",
-                "name": "FishScript",
+                "name": "FishBehavior",
                 "options": {
                   "shoalIndex": -1
                 }
@@ -7835,14 +7792,12 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "circleCollider",
-                "collider": {
-                  "centerX": 0,
-                  "centerY": 0,
-                  "radius": 8
-                }
+                "type": "circle",
+                "centerX": 0,
+                "centerY": 0,
+                "radius": 8
               }
             },
             {
@@ -7870,14 +7825,12 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "circleCollider",
-                "collider": {
-                  "centerX": 0,
-                  "centerY": 0,
-                  "radius": 8
-                }
+                "type": "circle",
+                "centerX": 0,
+                "centerY": 0,
+                "radius": 8
               }
             },
             {
@@ -8067,6 +8020,20 @@
                 "opacity": 0
               }
             }
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "76cada6a-289f-47fd-b3a3-131b3306a626",
+                "name": "ThornsBehavior",
+                "options": {
+                  "damage": 0
+                }
+              }
+            ]
           }
         }
       ],
@@ -8517,15 +8484,13 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "boxCollider",
-            "collider": {
-              "sizeX": 32,
-              "sizeY": 32,
-              "centerX": 0,
-              "centerY": 0
-            }
+            "type": "box",
+            "sizeX": 32,
+            "sizeY": 32,
+            "centerX": 0,
+            "centerY": 0
           }
         }
       ],
@@ -8778,15 +8743,13 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "boxCollider",
-            "collider": {
-              "sizeX": 32,
-              "sizeY": 32,
-              "centerX": 0,
-              "centerY": 0
-            }
+            "type": "box",
+            "sizeX": 32,
+            "sizeY": 32,
+            "centerX": 0,
+            "centerY": 0
           }
         }
       ],
@@ -9089,15 +9052,13 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "boxCollider",
-            "collider": {
-              "sizeX": 48,
-              "sizeY": 32,
-              "centerX": 0,
-              "centerY": 0
-            }
+            "type": "box",
+            "sizeX": 48,
+            "sizeY": 32,
+            "centerX": 0,
+            "centerY": 0
           }
         }
       ],
@@ -9450,15 +9411,13 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "boxCollider",
-            "collider": {
-              "sizeX": 48,
-              "sizeY": 32,
-              "centerX": 0,
-              "centerY": 0
-            }
+            "type": "box",
+            "sizeX": 48,
+            "sizeY": 32,
+            "centerX": 0,
+            "centerY": 0
           }
         }
       ],
@@ -9861,15 +9820,13 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "boxCollider",
-            "collider": {
-              "sizeX": 32,
-              "sizeY": 32,
-              "centerX": 0,
-              "centerY": 0
-            }
+            "type": "box",
+            "sizeX": 32,
+            "sizeY": 32,
+            "centerX": 0,
+            "centerY": 0
           }
         }
       ],
@@ -10709,14 +10666,12 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "circleCollider",
-                "collider": {
-                  "centerX": 0,
-                  "centerY": 0,
-                  "radius": 8
-                }
+                "type": "circle",
+                "centerX": 0,
+                "centerY": 0,
+                "radius": 8
               }
             },
             {
@@ -10793,7 +10748,7 @@
             "list": [
               {
                 "id": "df352dda-d999-4fc6-8dcd-c5a1e0a08b3f",
-                "name": "TrackScript",
+                "name": "TrackBehavior",
                 "options": {}
               }
             ]
@@ -10844,15 +10799,13 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "boxCollider",
-            "collider": {
-              "sizeX": 16,
-              "sizeY": 192,
-              "centerX": 0,
-              "centerY": 0
-            }
+            "type": "box",
+            "sizeX": 16,
+            "sizeY": 192,
+            "centerX": 0,
+            "centerY": 0
           }
         },
         {
@@ -11371,14 +11324,12 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "circleCollider",
-                "collider": {
-                  "centerX": 0,
-                  "centerY": 0,
-                  "radius": 8
-                }
+                "type": "circle",
+                "centerX": 0,
+                "centerY": 0,
+                "radius": 8
               }
             },
             {
@@ -11404,15 +11355,13 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "boxCollider",
-                "collider": {
-                  "sizeX": 16,
-                  "sizeY": 4,
-                  "centerX": -8,
-                  "centerY": 0
-                }
+                "type": "box",
+                "sizeX": 16,
+                "sizeY": 4,
+                "centerX": -8,
+                "centerY": 0
               }
             },
             {
@@ -11421,7 +11370,7 @@
                 "list": [
                   {
                     "id": "39bf6b94-c5c9-4952-ba8d-e2dab5455dd1",
-                    "name": "ThornsScript",
+                    "name": "ThornsBehavior",
                     "options": {
                       "damage": 1,
                       "cooldown": 500
@@ -11761,13 +11710,11 @@
           "config": {
             "type": "range",
             "cooldown": 350,
-            "properties": {
-              "damage": 1.5,
-              "range": 240,
-              "projectileSpeed": 50,
-              "projectileRadius": 4,
-              "projectileModel": "0288d542-2944-4f63-b4c1-fecdf38daff8"
-            }
+            "damage": 1.5,
+            "range": 240,
+            "projectileSpeed": 50,
+            "projectileRadius": 4,
+            "projectileModel": "0288d542-2944-4f63-b4c1-fecdf38daff8"
           }
         },
         {
@@ -11776,7 +11723,7 @@
             "list": [
               {
                 "id": "d38fbd09-e12a-4e4a-bf14-6fd008d9301e",
-                "name": "ShooterScript",
+                "name": "ShooterBehavior",
                 "options": {
                   "burstTimeout": 2500,
                   "burstAmount": 5,
@@ -11817,14 +11764,12 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "circleCollider",
-                "collider": {
-                  "centerX": 0,
-                  "centerY": 0,
-                  "radius": 8
-                }
+                "type": "circle",
+                "centerX": 0,
+                "centerY": 0,
+                "radius": 8
               }
             },
             {
@@ -11850,14 +11795,12 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "circleCollider",
-                "collider": {
-                  "centerX": 0,
-                  "centerY": 0,
-                  "radius": 224
-                }
+                "type": "circle",
+                "centerX": 0,
+                "centerY": 0,
+                "radius": 224
               }
             },
             {
@@ -11911,14 +11854,12 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "circleCollider",
-            "collider": {
-              "centerX": 0,
-              "centerY": 0,
-              "radius": 0
-            }
+            "type": "circle",
+            "centerX": 0,
+            "centerY": 0,
+            "radius": 0
           }
         },
         {
@@ -12091,7 +12032,7 @@
             "list": [
               {
                 "id": "df352dda-d999-4fc6-8dcd-c5a1e0a08b3f",
-                "name": "StaticTrackScript",
+                "name": "StaticTrackBehavior",
                 "options": {}
               }
             ]
@@ -12192,7 +12133,7 @@
             "list": [
               {
                 "id": "df352dda-d999-4fc6-8dcd-c5a1e0a08b3f",
-                "name": "FloatingTrackScript",
+                "name": "FloatingTrackBehavior",
                 "options": {
                   "patrolDistance": 0
                 }
@@ -12801,13 +12742,11 @@
           "config": {
             "type": "range",
             "cooldown": 500,
-            "properties": {
-              "damage": 1,
-              "range": 480,
-              "projectileSpeed": 50,
-              "projectileRadius": 4,
-              "projectileModel": "3b7b36d9-520b-4fbe-ad9f-e9c8b8a342fb"
-            }
+            "damage": 1,
+            "range": 480,
+            "projectileSpeed": 50,
+            "projectileRadius": 4,
+            "projectileModel": "3b7b36d9-520b-4fbe-ad9f-e9c8b8a342fb"
           }
         },
         {
@@ -12816,7 +12755,7 @@
             "list": [
               {
                 "id": "d38fbd09-e12a-4e4a-bf14-6fd008d9301e",
-                "name": "ShooterScript",
+                "name": "ShooterBehavior",
                 "options": {
                   "burstTimeout": 3000,
                   "burstAmount": 6,
@@ -12863,14 +12802,12 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "circleCollider",
-                "collider": {
-                  "centerX": 0,
-                  "centerY": 0,
-                  "radius": 8
-                }
+                "type": "circle",
+                "centerX": 0,
+                "centerY": 0,
+                "radius": 8
               }
             },
             {
@@ -12896,14 +12833,12 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "circleCollider",
-                "collider": {
-                  "centerX": 0,
-                  "centerY": 0,
-                  "radius": 480
-                }
+                "type": "circle",
+                "centerX": 0,
+                "centerY": 0,
+                "radius": 480
               }
             },
             {
@@ -12957,14 +12892,12 @@
           }
         },
         {
-          "name": "ColliderContainer",
+          "name": "Collider",
           "config": {
-            "type": "circleCollider",
-            "collider": {
-              "centerX": 0,
-              "centerY": 0,
-              "radius": 0
-            }
+            "type": "circle",
+            "centerX": 0,
+            "centerY": 0,
+            "radius": 0
           }
         },
         {
@@ -13181,7 +13114,7 @@
             "list": [
               {
                 "id": "df352dda-d999-4fc6-8dcd-c5a1e0a08b3f",
-                "name": "BonusTrackScript",
+                "name": "BonusTrackBehavior",
                 "options": {}
               }
             ]
@@ -13838,13 +13771,11 @@
           "config": {
             "type": "range",
             "cooldown": 350,
-            "properties": {
-              "damage": 1,
-              "range": 240,
-              "projectileSpeed": 60,
-              "projectileRadius": 4,
-              "projectileModel": "3b7b36d9-520b-4fbe-ad9f-e9c8b8a342fb"
-            }
+            "damage": 1,
+            "range": 240,
+            "projectileSpeed": 60,
+            "projectileRadius": 4,
+            "projectileModel": "3b7b36d9-520b-4fbe-ad9f-e9c8b8a342fb"
           }
         },
         {
@@ -13853,7 +13784,7 @@
             "list": [
               {
                 "id": "d38fbd09-e12a-4e4a-bf14-6fd008d9301e",
-                "name": "ShooterScript",
+                "name": "ShooterBehavior",
                 "options": {
                   "burstTimeout": 2000,
                   "burstAmount": 3,
@@ -13900,14 +13831,12 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "circleCollider",
-                "collider": {
-                  "centerX": 0,
-                  "centerY": 0,
-                  "radius": 8
-                }
+                "type": "circle",
+                "centerX": 0,
+                "centerY": 0,
+                "radius": 8
               }
             },
             {
@@ -13933,14 +13862,12 @@
               }
             },
             {
-              "name": "ColliderContainer",
+              "name": "Collider",
               "config": {
-                "type": "circleCollider",
-                "collider": {
-                  "centerX": 0,
-                  "centerY": 0,
-                  "radius": 160
-                }
+                "type": "circle",
+                "centerX": 0,
+                "centerY": 0,
+                "radius": 160
               }
             },
             {

@@ -18,7 +18,7 @@ import {
   MouseControl,
   KeyboardControl,
   RigidBody,
-  ColliderContainer,
+  Collider,
   Behaviors,
   Animatable,
   Sprite,
@@ -29,20 +29,19 @@ import {
 import {
   ParallaxSystem,
   Parallax,
-  EffectsSystem,
-  Effect,
-  ActiveEffects,
 } from 'dacha-game-systems';
 
-import * as GameSystems from './game/systems';
-import * as GameComponents from './game/components';
-import * as GameScripts from './game/scripts';
-import { effects } from './game/effects';
 import { isTouchDevice } from './utils/is-touch-device';
 import { applyIosSafariScreenFix } from './utils/ios-screen-fix';
 import { isIos } from './utils/is-ios';
+import { importAll } from './utils/import-all';
+import type { SystemConstructor, ComponentConstructor, BehaviorConstructor } from './types/utils';
 
 import config from '../data/data.json';
+
+const gameComponents = importAll(require.context('./', true, /.component.ts$/)) as ComponentConstructor[];
+const gameSystems = importAll(require.context('./', true, /.system.ts$/)) as SystemConstructor[];
+const gameBehaviors = importAll(require.context('./', true, /.behavior.ts$/)) as BehaviorConstructor[];
 
 const touchDevice = isTouchDevice();
 
@@ -67,15 +66,14 @@ const engine = new Engine({
       : []
     ),
     ParallaxSystem,
-    EffectsSystem,
-    ...Object.values(GameSystems),
+    ...gameSystems,
   ],
   components: [
     Camera,
     MouseControl,
     KeyboardControl,
     RigidBody,
-    ColliderContainer,
+    Collider,
     Animatable,
     Sprite,
     Light,
@@ -83,20 +81,17 @@ const engine = new Engine({
     Transform,
     Behaviors,
     Parallax,
-    Effect,
-    ActiveEffects,
-    ...Object.values(GameComponents),
+    ...gameComponents,
   ],
   resources: {
     [BehaviorSystem.systemName]: [
-      ...Object.values(GameScripts),
+      ...gameBehaviors,
     ],
     [UIBridge.systemName]: {
       // comment: to avoid eslint issues with extensions
       // eslint-disable-next-line import/extensions
       loadUI: () => import('./ui/index.tsx'),
     },
-    [EffectsSystem.systemName]: effects,
   },
 });
 

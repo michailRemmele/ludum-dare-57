@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import type { FC } from 'react';
 
-import { Score } from '../../../../../game/components';
+import Score from '../../../../../game/components/score/score.component';
 import { EngineContext } from '../../../../providers';
 import { MAIN_CAMERA_NAME } from '../../../../../consts/actors';
 import * as EventType from '../../../../../game/events';
