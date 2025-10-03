@@ -11,8 +11,6 @@ export const Kill = 'Kill';
 
 export const ResetSaveState = 'ResetSaveState';
 
-export const SendAnalytics = 'SendAnalytics';
-
 export const GameOver = 'GameOver';
 
 export const UpdateShoalIndex = 'UpdateShoalIndex';
@@ -38,11 +36,6 @@ export type DamageEvent = ActorEvent<{ value: number, actor?: Actor }>;
 
 export type UpdateShoalIndexEvent = ActorEvent<{
   index: number
-}>;
-
-export type SendAnalyticsEvent = SceneEvent<{
-  name: string
-  payload: Record<string, string | number | boolean>
 }>;
 
 export type GameOverEvent = SceneEvent<{
@@ -83,7 +76,6 @@ declare module 'dacha' {
 
   export interface SceneEventMap {
     [ResetSaveState]: SceneEvent
-    [SendAnalytics]: SendAnalyticsEvent
     [GameOver]: GameOverEvent
     [IncreaseScorePoints]: IncreaseScorePointsEvent
     [LevelUp]: LevelUpEvent

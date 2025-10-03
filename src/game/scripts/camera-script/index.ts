@@ -136,18 +136,7 @@ export class CameraScript extends Script {
     }
   };
 
-  private handleGameOver = (event: GameOverEvent): void => {
-    const { isWin, levelIndex, score } = event;
-
-    this.scene.dispatchEvent(EventType.SendAnalytics, {
-      name: 'game_over',
-      payload: {
-        isWin,
-        levelIndex,
-        score,
-      },
-    });
-
+  private handleGameOver = (): void => {
     this.isGameOver = true;
   };
 

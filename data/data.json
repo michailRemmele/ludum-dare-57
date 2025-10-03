@@ -5,10 +5,6 @@
       "name": "MainMenu",
       "systems": [
         {
-          "name": "AnalyticsSystem",
-          "options": {}
-        },
-        {
           "name": "Saver",
           "options": {}
         },
@@ -29,10 +25,6 @@
       "id": "cd85bb20-d3c0-42e1-840b-d5dc5f09daef",
       "name": "Game",
       "systems": [
-        {
-          "name": "AnalyticsSystem",
-          "options": {}
-        },
         {
           "name": "Saver",
           "options": {}
